@@ -99,10 +99,13 @@ export default function ContactForm() {
           type="url"
           name="website"
           required
-          placeholder="https://"
+          placeholder="https://yourcompany.com"
           autoComplete="url"
           className={inputClass}
         />
+        <p className="mt-2 text-small text-ink-faint">
+          Please include <span className="font-medium text-ink-muted">https://</span> at the start of your URL.
+        </p>
       </div>
 
       <div>
