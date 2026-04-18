@@ -12,27 +12,27 @@ export const metadata = {
 const FAQS = [
   {
     q: 'What is Growth-as-a-Service?',
-    a: 'Growth-as-a-Service is an ongoing engagement where I take responsibility for identifying, prioritizing, and removing growth bottlenecks across your marketing and revenue systems. Instead of isolated tactics, you get continuous strategy, execution oversight, and optimization focused on revenue growth. This works best for businesses that already have traction but feel stuck, inconsistent, or inefficient.',
+    a: 'Growth-as-a-Service is an ongoing engagement where I take responsibility for identifying, prioritizing, and removing the bottlenecks slowing your revenue. Instead of isolated tactics, you get continuous strategy, execution oversight, and optimization. Best fit: businesses with traction that feel stuck, inconsistent, or inefficient.',
   },
   {
-    q: 'How is Growth-as-a-Service different from hiring a marketing agency?',
-    a: 'Most agencies focus on delivering tactics — ads, SEO, content, funnels. Growth-as-a-Service focuses on owning the growth challenge itself: diagnosing what is actually blocking growth, deciding what should be worked on (and what should not), coordinating strategy, messaging, funnels, and execution, and optimizing for revenue, not activity. You are not buying outputs. You are buying clarity, speed, and results.',
+    q: 'How is it different from a marketing agency?',
+    a: 'Agencies deliver tactics — ads, SEO, content, funnels. Growth-as-a-Service owns the growth challenge itself: diagnosing what is blocking revenue, deciding what to work on (and what to ignore), and coordinating strategy and execution against a number. You are not buying outputs. You are buying clarity, speed, and results.',
   },
   {
     q: 'Is this the same as a fractional CMO?',
-    a: 'Growth-as-a-Service includes fractional CMO-level thinking, but it is more execution-oriented. A fractional CMO often focuses on leadership, planning, and team direction. Growth-as-a-Service focuses on rapid diagnosis, practical prioritization, removing blockers, and improving conversion and revenue flow. For many clients, it functions like a hands-on revenue growth strategist embedded in the business.',
+    a: 'It includes fractional CMO-level thinking, but it is more execution-oriented. A fractional CMO usually focuses on leadership, planning, and team direction. Growth-as-a-Service focuses on rapid diagnosis, ruthless prioritization, removing blockers, and improving conversion. For most clients, it functions like a hands-on revenue strategist embedded in the business.',
   },
   {
-    q: 'Who is Growth-as-a-Service best for?',
-    a: 'This is best for founders and operators of established businesses, companies doing 7- to 9-figure revenue, teams that are doing the work but not seeing proportional results, and businesses tired of guessing which lever will actually move growth. If you are pre-revenue or just starting out, this is usually not the right fit.',
+    q: 'Who is it best for?',
+    a: 'Founders and operators of established businesses doing 7- to 9-figure revenue, where the team is doing the work but not seeing proportional results. If you are pre-revenue or just starting out, this is not the right fit.',
   },
   {
-    q: 'What does Growth-as-a-Service typically include?',
-    a: 'Every engagement is customized, but Growth-as-a-Service commonly includes growth diagnosis and prioritization, funnel and conversion optimization, messaging and positioning refinement, marketing strategy and execution guidance, and ongoing performance review and iteration. The focus is always on what will create the biggest growth impact next.',
+    q: 'What does it typically include?',
+    a: 'Engagements are customized, but commonly include growth diagnosis and prioritization, funnel and conversion optimization, messaging and positioning refinement, marketing strategy and execution guidance, and ongoing performance review. The focus is always on the next biggest growth lever.',
   },
   {
     q: 'How long does it take to see results?',
-    a: 'Many clients gain clarity and direction in the first few weeks as the highest-leverage bottlenecks are surfaced. Measurable improvements typically follow as those bottlenecks are removed and systems are optimized. Because this is an ongoing service, the long-term goal is sustainable, compounding growth — not a one-time spike.',
+    a: 'Most clients gain clarity and direction in the first few weeks as the highest-leverage bottlenecks are surfaced. Measurable improvements follow as those bottlenecks are removed. The long-term goal is sustainable, compounding growth — not a one-time spike.',
   },
 ]
 
