@@ -9,6 +9,43 @@ export const metadata = {
     'A fractional GTM partnership for founder-led brands. We architect and operate the revenue system with you — not just advise on it.',
 }
 
+const FAQS = [
+  {
+    q: 'What is Growth-as-a-Service?',
+    a: 'Growth-as-a-Service is an ongoing engagement where I take responsibility for identifying, prioritizing, and removing growth bottlenecks across your marketing and revenue systems. Instead of isolated tactics, you get continuous strategy, execution oversight, and optimization focused on revenue growth. This works best for businesses that already have traction but feel stuck, inconsistent, or inefficient.',
+  },
+  {
+    q: 'How is Growth-as-a-Service different from hiring a marketing agency?',
+    a: 'Most agencies focus on delivering tactics — ads, SEO, content, funnels. Growth-as-a-Service focuses on owning the growth challenge itself: diagnosing what is actually blocking growth, deciding what should be worked on (and what should not), coordinating strategy, messaging, funnels, and execution, and optimizing for revenue, not activity. You are not buying outputs. You are buying clarity, speed, and results.',
+  },
+  {
+    q: 'Is this the same as a fractional CMO?',
+    a: 'Growth-as-a-Service includes fractional CMO-level thinking, but it is more execution-oriented. A fractional CMO often focuses on leadership, planning, and team direction. Growth-as-a-Service focuses on rapid diagnosis, practical prioritization, removing blockers, and improving conversion and revenue flow. For many clients, it functions like a hands-on revenue growth strategist embedded in the business.',
+  },
+  {
+    q: 'Who is Growth-as-a-Service best for?',
+    a: 'This is best for founders and operators of established businesses, companies doing 7- to 9-figure revenue, teams that are doing the work but not seeing proportional results, and businesses tired of guessing which lever will actually move growth. If you are pre-revenue or just starting out, this is usually not the right fit.',
+  },
+  {
+    q: 'What does Growth-as-a-Service typically include?',
+    a: 'Every engagement is customized, but Growth-as-a-Service commonly includes growth diagnosis and prioritization, funnel and conversion optimization, messaging and positioning refinement, marketing strategy and execution guidance, and ongoing performance review and iteration. The focus is always on what will create the biggest growth impact next.',
+  },
+  {
+    q: 'How long does it take to see results?',
+    a: 'Many clients gain clarity and direction in the first few weeks as the highest-leverage bottlenecks are surfaced. Measurable improvements typically follow as those bottlenecks are removed and systems are optimized. Because this is an ongoing service, the long-term goal is sustainable, compounding growth — not a one-time spike.',
+  },
+]
+
+const FAQ_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+
 export default function GrowthAsAServicePage() {
   return (
     <>
@@ -137,6 +174,33 @@ export default function GrowthAsAServicePage() {
               </li>
             </ul>
           </div>
+        </Section>
+
+        {/* FAQ */}
+        <Section bg="paper" width="content">
+          <div className="max-w-prose mb-12">
+            <div className="eyebrow mb-4">Frequently Asked Questions</div>
+            <h2 className="text-h1 font-semibold tracking-tight text-ink">
+              What founders ask before saying yes.
+            </h2>
+          </div>
+          <div className="divide-y divide-rule border-t border-b border-rule">
+            {FAQS.map((f, i) => (
+              <details key={i} className="group py-6">
+                <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
+                  <h3 className="text-h3 font-semibold text-ink leading-snug">{f.q}</h3>
+                  <span className="text-ink-muted text-h3 leading-none transition-transform group-open:rotate-45 select-none">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 text-body text-ink-soft leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+          />
         </Section>
 
         {/* CTA */}
