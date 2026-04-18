@@ -19,9 +19,15 @@ export default function Header() {
           </Link>
           <Link
             href="/#briefings"
-            className="text-ink hover:text-accent transition-colors font-medium"
+            className="text-ink-muted hover:text-ink transition-colors"
           >
             Briefings
+          </Link>
+          <Link
+            href="/contact"
+            className="text-ink hover:text-accent transition-colors font-medium"
+          >
+            Contact
           </Link>
         </nav>
       </div>
