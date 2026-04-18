@@ -23,7 +23,8 @@ const CLIENTS = [
   'Remix Your Business',
   'Zenpreneurs',
   '10X GrowthCon',
-  '10X Health IV Academy',
+  '10X Health UK',
+  'IV Academy',
   '10X Roofing',
   '10X Home Services',
   '10X DECODE',
@@ -125,8 +126,8 @@ export default function Home() {
         {/* 2. AUTHORITY STRIP */}
         <section className="bg-paper-grey border-y border-rule py-12">
           <div className="max-w-wide mx-auto px-6">
-            <p className="eyebrow text-ink-muted mb-6 text-center">Selected Clients &amp; Projects</p>
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-small text-ink-soft">
+            <p className="text-h3 font-semibold text-ink mb-6 text-center">Selected Clients &amp; Projects</p>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-body text-ink-soft">
               {CLIENTS.map((c) => (
                 <span key={c} className="whitespace-nowrap">{c}</span>
               ))}
