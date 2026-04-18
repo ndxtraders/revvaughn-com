@@ -1,9 +1,19 @@
+import { Poppins } from 'next/font/google'
+import './globals.css'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+})
+
 export const metadata = {
-  title: 'Rev Vaughn | GTM Strategy & Revenue Systems',
-  description: 'GTM Strategist & Fractional CMO. Turn traffic into predictable revenue.',
+  title: 'Rev Vaughn | GTM Strategy & Revenue Growth Systems for Founder-led Brands',
+  description: 'GTM strategy and revenue growth systems for founder-led brands. Diagnose bottlenecks, architect the system, operate it with AI where it adds leverage.',
   openGraph: {
-    title: 'Rev Vaughn | GTM Strategy & Revenue Systems',
-    description: 'GTM Strategist & Fractional CMO. Turn traffic into predictable revenue.',
+    title: 'Rev Vaughn | GTM Strategy & Revenue Growth Systems',
+    description: 'GTM strategy and revenue growth systems for founder-led brands.',
     url: 'https://revvaughn.com',
     type: 'website',
   },
@@ -12,29 +22,11 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <style>{`
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-          html {
-            scroll-behavior: smooth;
-          }
-          body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-          }
-        `}</style>
-      </head>
+    <html lang="en" className={poppins.variable}>
       <body>{children}</body>
     </html>
   )

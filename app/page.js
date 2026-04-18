@@ -1,203 +1,375 @@
-'use client'
-
 import Image from 'next/image'
-import { useState } from 'react'
+import Link from 'next/link'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Section from './components/Section'
+import Button from './components/Button'
+import EmailForm from './components/EmailForm'
+
+const CLIENTS = [
+  'Grant Cardone',
+  'Cardone Ventures',
+  '10X Health',
+  'VestRight',
+  'Allied Development',
+  'Copy Chief',
+  'SquadUp Summit',
+  '10X Business Coach',
+  'Heather Rae Essentials',
+  'Front Porch',
+  'Email Copy Academy',
+  'SpaSurge',
+  'CardoMax',
+  'Remix Your Business',
+  'Zenpreneurs',
+  '10X GrowthCon',
+  '10X Health IV Academy',
+  '10X Roofing',
+  '10X Home Services',
+  '10X DECODE',
+  'REVIVX',
+]
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "When I think of campaigns that convert, I think of Rev. PERIOD. I've brought Rev in on million-dollar campaign launches, hired him for my 7-figure marketing agency, and seen firsthand what happens when real, A-level copy hits the page. Getting time on Rev's calendar is rare. If he's available, take it. Most people won't get the chance. If you do, don't walk... run.",
+    name: 'Garen Mazon',
+    title: 'Co-Founder, SpaSurge',
+    org: '#1 Spa Marketing Agency',
+  },
+  {
+    quote:
+      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That’s because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
+    name: 'Kevin Rogers',
+    title: 'Founder, Copy Chief',
+    org: '#1 Copywriting Community',
+  },
+  {
+    quote:
+      'Knocked it out of the park. Exceeded our sales goal. I fully endorse Rev. Kevin Rogers and I hired him to redo our Email Copy Academy funnel, and Rev knocked it out of the park. We even exceeded our sales goal. I was blown away by how well it did.',
+    name: 'Chris Orzechowski',
+    title: 'Creator, Email Copy Academy',
+    org: '#1 Email Marketing Program',
+  },
+  {
+    quote:
+      'Our first launch sold out in only 48 hours, driven by email and social media. I had the opportunity to work with Rev on several of our consumer brands, including HRE Beauty and CardoMax. His ability to blend strategy, creative execution, and data made a measurable difference in how those brands grew.',
+    name: 'Lisa De Rosa',
+    title: 'Director, Corporate Partnerships',
+    org: 'Cardone Ventures',
+  },
+  {
+    quote:
+      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev’s work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. Rev managed complex, multi-brand campaigns across the Cardone Ventures portfolio, including 10X Health, REVIV X, CardoMax, IV Academy, and HRE Beauty. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
+    name: 'Joe Bradley',
+    title: 'Director, Marketing Partnerships',
+    org: 'Cardone Ventures',
+  },
+  {
+    quote:
+      "Listen to his training, and you'll make more money TODAY. I learned more about guiding people through the sales process than I learned from thousands of dollars in paid sales courses. It doesn't matter what industry you're in — listen to his training, and you'll make more money TODAY. You're amazeballs Rev!",
+    name: 'Jimmy Parent',
+    title: 'Persuasion Scientist',
+    org: '',
+  },
+]
+
+const CREDENTIALS = [
+  { name: 'Stanford University', detail: 'Advanced Project Management' },
+  { name: 'HubSpot', detail: 'Certified Sales Enablement' },
+  { name: 'Growthworks', detail: 'Certified Consultant' },
+  { name: 'DigitalMarketer', detail: '9 Full-Stack Marketer Certifications' },
+]
+
+const PROGRAMS = [
+  {
+    name: 'Quick Win Consult',
+    line: 'A 60-minute diagnostic to find the hidden bottleneck in your funnel.',
+    href: '/quick-win',
+  },
+  {
+    name: 'Growth-As-A-Service',
+    line: 'Fractional CMO-level leadership and revenue system execution for 7–9 figure brands.',
+    href: '/growth-as-a-service',
+  },
+  {
+    name: 'The Mentor Program',
+    line: 'Private 1:1 mentorship for founders serious about building owned distribution. Only 2 spots.',
+    href: '/mentor',
+  },
+]
 
 export default function Home() {
-  const [email, setEmail] = useState('')
-  const [subscribed, setSubscribed] = useState(false)
-
-  const handleSubscribe = (e) => {
-    e.preventDefault()
-    if (email) {
-      console.log('Email submitted:', email)
-      setSubscribed(true)
-      setEmail('')
-      setTimeout(() => setSubscribed(false), 3000)
-    }
-  }
-
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: '#ffffff', color: '#0f172a', WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
-      {/* HERO */}
-      <section style={{ padding: '5rem 1.5rem 3rem', maxWidth: '56rem', margin: '0 auto' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', marginBottom: '3rem' }}>
-          {/* Headshot */}
-          <div style={{ width: '12rem', height: '12rem', position: 'relative', flexShrink: 0 }}>
-            <Image
-              src="/headshot-4.png"
-              alt="Rev Vaughn"
-              fill
-              priority
-              style={{ borderRadius: '1rem', objectFit: 'cover', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}
-            />
-          </div>
-
-          {/* Hero Copy */}
-          <div style={{ textAlign: 'center' }}>
-            <p style={{ color: '#2563eb', fontWeight: 'bold', letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.75rem', marginBottom: '1rem' }}>
-              GTM Strategist & Direct Response Operator
-            </p>
-            <h1 style={{ fontSize: '2rem', fontWeight: '900', lineHeight: '1.2', marginBottom: '1.5rem' }}>
-              Turn traffic into predictable revenue
+    <>
+      <Header />
+      <main>
+        {/* 1. HERO */}
+        <Section bg="paper" width="content" className="pt-24 md:pt-28">
+          <div className="max-w-prose">
+            <p className="eyebrow mb-6">GTM Strategy · Revenue Systems · AI Leverage</p>
+            <h1 className="font-sans font-semibold text-display mb-6 text-ink">
+              GTM strategy and revenue growth systems for founder-led brands.
             </h1>
-            <p style={{ fontSize: '1.125rem', color: '#475569', lineHeight: '1.6', marginBottom: '2rem' }}>
-              If growth feels harder than it should, the problem isn't more traffic. It's misalignment across your message, funnel, and conversion system.
+            <p className="text-lead text-ink-muted mb-10">
+              Most founders don’t have a traffic problem. They have a bottleneck problem — and AI makes it worse when it’s bolted onto a broken system. I help you fix the system first, then scale it.
             </p>
-            <a
-              href="#briefing"
-              style={{
-                display: 'inline-block',
-                padding: '1rem 2rem',
-                backgroundColor: '#1e293b',
-                color: '#ffffff',
-                fontWeight: 'bold',
-                borderRadius: '0.5rem',
-                textAlign: 'center',
-                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'background-color 0.3s'
-              }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#334155'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#1e293b'}
-            >
-              Check Availability
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* AUTHORITY STRIP */}
-      <div style={{ backgroundColor: '#f1f5f9', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0', padding: '2rem 1.5rem', textAlign: 'center', fontSize: '0.875rem', color: '#64748b' }}>
-        Worked with Grant Cardone, Cardone Ventures, 10X Health, and Copy Chief.
-      </div>
-
-      {/* AI INNER CIRCLE */}
-      <section style={{ padding: '5rem 1.5rem', maxWidth: '56rem', margin: '0 auto', borderBottom: '1px solid #e2e8f0' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-          <div style={{ width: '5rem', height: '5rem', position: 'relative' }}>
-            <Image
-              src="/ai-inner-circle-logo.jpg"
-              alt="AI Inner Circle"
-              fill
-              style={{ borderRadius: '9999px', objectFit: 'cover', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
-            />
-          </div>
-        </div>
-        <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1.5rem' }}>
-          Stop being the bottleneck.
-        </h2>
-        <p style={{ textAlign: 'center', color: '#475569', maxWidth: '28rem', margin: '0 auto 3rem', lineHeight: '1.6' }}>
-          The <strong>AI Inner Circle</strong> is a trust-first system built to remove execution bottlenecks without losing your voice or quality.
-        </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-          <div style={{ padding: '1.5rem', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.75rem', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}>
-            <p style={{ fontWeight: '600', color: '#1e293b' }}>
-              <strong>Strategic Foundations:</strong> Clear upstream bottlenecks.
-            </p>
-          </div>
-          <div style={{ padding: '1.5rem', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.75rem', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}>
-            <p style={{ fontWeight: '600', color: '#1e293b' }}>
-              <strong>Messaging Systems:</strong> Capture founder insight at scale.
-            </p>
-          </div>
-          <div style={{ padding: '1.5rem', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.75rem', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}>
-            <p style={{ fontWeight: '600', color: '#1e293b' }}>
-              <strong>GTM Execution:</strong> Deploy workflows for momentum.
-            </p>
-          </div>
-        </div>
-        <p style={{ textAlign: 'center', fontStyle: 'italic', color: '#64748b' }}>
-          Human for Trust, AI for Scale.
-        </p>
-      </section>
-
-      {/* OPT-IN */}
-      <section id="briefing" style={{ padding: '5rem 1.5rem', backgroundColor: '#1e293b', color: '#ffffff', textAlign: 'center' }}>
-        <div style={{ maxWidth: '28rem', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1rem' }}>Strategic Briefings</h2>
-          <p style={{ color: '#cbd5e1', marginBottom: '2rem' }}>
-            Practical breakdowns on revenue, positioning, and AI execution.
-          </p>
-
-          {subscribed ? (
-            <div style={{ padding: '1rem', backgroundColor: '#16a34a', borderRadius: '0.5rem', color: '#ffffff', fontWeight: '600' }}>
-              ✓ Thanks! Check your email.
+            <div className="flex flex-wrap gap-3">
+              <Button href="#programs" variant="primary">See My Work</Button>
+              <Button href="#briefings" variant="secondary">Subscribe to Briefings</Button>
             </div>
-          ) : (
-            <form onSubmit={handleSubscribe} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <input
-                type="email"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                style={{
-                  padding: '1rem 1.25rem',
-                  borderRadius: '0.5rem',
-                  backgroundColor: '#334155',
-                  border: '1px solid #475569',
-                  color: '#ffffff',
-                  outline: 'none',
-                  fontSize: '1rem'
-                }}
-              />
-              <button
-                type="submit"
-                style={{
-                  width: '100%',
-                  padding: '1rem',
-                  backgroundColor: '#2563eb',
-                  color: '#ffffff',
-                  fontWeight: 'bold',
-                  borderRadius: '0.5rem',
-                  border: 'none',
-                  cursor: 'pointer',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                  transition: 'background-color 0.3s'
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#1d4ed8'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#2563eb'}
+          </div>
+        </Section>
+
+        {/* 2. AUTHORITY STRIP */}
+        <section className="bg-paper-grey border-y border-rule py-12">
+          <div className="max-w-wide mx-auto px-6">
+            <p className="eyebrow text-ink-muted mb-6 text-center">Selected Clients &amp; Projects</p>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-small text-ink-soft">
+              {CLIENTS.map((c) => (
+                <span key={c} className="whitespace-nowrap">{c}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 3. POSITIONING */}
+        <Section bg="paper" width="prose">
+          <p className="eyebrow mb-6">The Work</p>
+          <p className="text-h2 font-light text-ink leading-tight">
+            I help founder-led brands diagnose where revenue leaks, architect the system that fixes it, and operate it until it compounds.
+          </p>
+        </Section>
+
+        {/* 4. WHAT I DO */}
+        <Section bg="grey" width="content">
+          <div className="max-w-prose mb-14">
+            <p className="eyebrow mb-6">AI Growth Systems</p>
+            <h2 className="text-h1 font-semibold mb-6">Human for trust. AI for scale.</h2>
+            <p className="text-lead text-ink-muted">
+              Most founders don’t have a traffic problem. They have a bottleneck problem — and AI makes it worse when it’s bolted onto a broken system. I build revenue systems where AI amplifies trust instead of eroding it.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-10">
+            <div>
+              <div className="eyebrow mb-3">01 / Diagnose</div>
+              <h3 className="text-h3 font-semibold mb-3">Find the real bottleneck</h3>
+              <p className="text-body text-ink-muted">
+                Not vanity metrics. Not tactics. The actual structural break between traffic, message, and conversion.
+              </p>
+            </div>
+            <div>
+              <div className="eyebrow mb-3">02 / Architect</div>
+              <h3 className="text-h3 font-semibold mb-3">Design the system</h3>
+              <p className="text-body text-ink-muted">
+                Messaging, funnel, and conversion logic that compound over time. Owned distribution, not rented attention.
+              </p>
+            </div>
+            <div>
+              <div className="eyebrow mb-3">03 / Operate</div>
+              <h3 className="text-h3 font-semibold mb-3">Run it with leverage</h3>
+              <p className="text-body text-ink-muted">
+                AI where it adds leverage. Humans where trust matters. Weekly iteration until growth is predictable.
+              </p>
+            </div>
+          </div>
+        </Section>
+
+        {/* 5. PROGRAMS */}
+        <Section bg="paper" width="content" id="programs">
+          <div className="max-w-prose mb-14">
+            <p className="eyebrow mb-6">Programs</p>
+            <h2 className="text-h1 font-semibold">Three ways to work together.</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {PROGRAMS.map((p) => (
+              <Link
+                key={p.name}
+                href={p.href}
+                className="group border border-rule bg-paper p-8 hover:border-ink transition-colors flex flex-col"
               >
-                Get Updates & News
-              </button>
-            </form>
-          )}
-        </div>
-      </section>
+                <h3 className="text-h3 font-semibold mb-3 text-ink group-hover:text-accent transition-colors">
+                  {p.name}
+                </h3>
+                <p className="text-body text-ink-muted mb-8 flex-1">{p.line}</p>
+                <span className="text-small font-medium text-ink group-hover:text-accent transition-colors">
+                  Learn More →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Section>
 
-      {/* MOBILE STICKY CTA */}
-      <div style={{ position: 'fixed', bottom: '1.5rem', left: '1.5rem', right: '1.5rem', zIndex: 50, display: 'none' }}>
-        <a
-          href="#briefing"
-          style={{
-            display: 'block',
-            width: '100%',
-            padding: '1rem',
-            backgroundColor: '#1e293b',
-            color: '#ffffff',
-            fontWeight: 'bold',
-            borderRadius: '9999px',
-            textAlign: 'center',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            textDecoration: 'none',
-            transition: 'background-color 0.3s'
-          }}
-          onMouseEnter={(e) => e.target.style.backgroundColor = '#334155'}
-          onMouseLeave={(e) => e.target.style.backgroundColor = '#1e293b'}
-        >
-          Let's Talk
-        </a>
-      </div>
+        {/* 6. AI INNER CIRCLE */}
+        <Section bg="grey" width="content" id="ai-inner-circle">
+          <div className="grid md:grid-cols-12 gap-10 items-start">
+            <div className="md:col-span-4">
+              <div className="w-40 h-40 md:w-48 md:h-48 relative mb-6">
+                <Image
+                  src="/ai-inner-circle-logo.jpg"
+                  alt="AI Inner Circle"
+                  fill
+                  sizes="192px"
+                  className="object-cover rounded-sm"
+                />
+              </div>
+              <div className="eyebrow mb-3">Community</div>
+              <div className="text-h3 font-semibold">AI Inner Circle</div>
+            </div>
+            <div className="md:col-span-8">
+              <h2 className="text-h1 font-semibold mb-6 leading-tight">
+                Stop being the bottleneck in your own company.
+              </h2>
+              <p className="text-lead text-ink-muted mb-8">
+                The AI Inner Circle is a trust-first system for founder-led brands to scale execution without losing voice or quality. Three pillars. One outcome: you’re no longer the bottleneck.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-6 mb-10">
+                <div className="border-t-2 border-accent pt-4">
+                  <div className="text-small font-semibold mb-2">Strategic Foundations</div>
+                  <p className="text-small text-ink-muted">Clear upstream bottlenecks before they compound.</p>
+                </div>
+                <div className="border-t-2 border-accent pt-4">
+                  <div className="text-small font-semibold mb-2">Messaging Systems</div>
+                  <p className="text-small text-ink-muted">Capture founder insight at scale without flattening it.</p>
+                </div>
+                <div className="border-t-2 border-accent pt-4">
+                  <div className="text-small font-semibold mb-2">GTM Execution</div>
+                  <p className="text-small text-ink-muted">Deploy workflows that create momentum, not busywork.</p>
+                </div>
+              </div>
+              <p className="text-body italic text-ink-muted mb-8">Human for Trust. AI for Scale.</p>
+              <Button href="/ai-inner-circle" variant="primary">Learn More</Button>
+            </div>
+          </div>
+        </Section>
 
-      <style>{`
-        @media (max-width: 768px) {
-          div:last-child {
-            display: block !important;
-          }
-        }
-      `}</style>
-    </main>
+        {/* 7. INFLUENTIAL FOUNDER TEASER */}
+        <Section bg="paper" width="content">
+          <div className="max-w-prose">
+            <p className="eyebrow mb-6">New Research · Founder-led Brands</p>
+            <h2 className="text-h1 font-semibold mb-4 leading-tight">
+              By the end of 2026, there will be only two types of founders.
+            </h2>
+            <p className="text-h2 font-light text-ink-muted mb-10">
+              The Invisible. And The Influential.
+            </p>
+            <p className="text-lead text-ink mb-8">Founders are being systematically erased. Three ways:</p>
+            <div className="space-y-6 mb-10">
+              <div>
+                <div className="text-small font-semibold mb-2">1. Organic collapsed.</div>
+                <p className="text-body text-ink-muted">
+                  Instagram went from 10–15% reach in 2020 to 2–3% today. A Facebook page with 10,000 followers now reaches 137 people per post.
+                </p>
+              </div>
+              <div>
+                <div className="text-small font-semibold mb-2">2. Paid broke.</div>
+                <p className="text-body text-ink-muted">
+                  iOS 14 dropped Meta ROAS 38% overnight. Google CPCs rose 30–50%. Costs doubled. Effectiveness didn’t.
+                </p>
+              </div>
+              <div>
+                <div className="text-small font-semibold mb-2">3. Attribution died.</div>
+                <p className="text-body text-ink-muted">
+                  AI Overviews appear in 80% of search queries. Only 47% of top-10 pages get cited. Your ideas spread. Your name doesn’t.
+                </p>
+              </div>
+            </div>
+            <p className="text-body text-ink mb-4">This isn’t an algorithm problem. It’s structural.</p>
+            <p className="text-body text-ink-muted mb-10">
+              The <em>Influential Founder Report</em> maps the three invisibilities, the three authorities that reverse them, and the 90-day plan to move from invisible to influential. I’ve had more requests for early access than I expected.
+            </p>
+            <Button href="#" external variant="accent">Read the Report →</Button>
+          </div>
+        </Section>
+
+        {/* 8. TESTIMONIALS */}
+        <Section bg="grey" width="wide">
+          <div className="max-w-prose mb-14">
+            <p className="eyebrow mb-6">What the Experts Say</p>
+            <h2 className="text-h1 font-semibold">Selected endorsements.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-14">
+            {TESTIMONIALS.map((t) => (
+              <blockquote key={t.name} className="border-l-2 border-accent pl-6">
+                <p className="text-body text-ink mb-6 leading-relaxed">“{t.quote}”</p>
+                <footer className="text-small">
+                  <div className="font-semibold text-ink">{t.name}</div>
+                  <div className="text-ink-muted">{t.title}</div>
+                  {t.org && <div className="text-ink-faint">{t.org}</div>}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </Section>
+
+        {/* 9. CREDENTIALS */}
+        <Section bg="paper" width="content">
+          <p className="eyebrow mb-8 text-center">Credentials</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {CREDENTIALS.map((c) => (
+              <div key={c.name} className="border border-rule p-6">
+                <div className="font-semibold text-ink mb-1">{c.name}</div>
+                <div className="text-small text-ink-muted">{c.detail}</div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* 10. ABOUT */}
+        <Section bg="grey" width="content" id="about">
+          <div className="grid md:grid-cols-12 gap-10 items-start">
+            <div className="md:col-span-4">
+              <div className="aspect-[4/5] relative w-full max-w-xs">
+                <Image
+                  src="/headshot-4.png"
+                  alt="Rev Vaughn"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 320px"
+                  className="object-cover grayscale"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-8">
+              <p className="eyebrow mb-6">About</p>
+              <h2 className="text-h1 font-semibold mb-6 leading-tight">
+                Most revenue problems don’t come from a lack of leads or effort. They come from breakdowns inside the funnel. That’s where I work.
+              </h2>
+              <div className="space-y-5 text-body text-ink-muted">
+                <p>
+                  I help established businesses fix funnel leaks, sharpen messaging, and close the gap between marketing and sales. My approach combines strategy, psychology, and execution — supported by AI where it adds leverage.
+                </p>
+                <p>
+                  After 25 years building businesses across six countries, I now help founders and leadership teams create revenue systems that convert more consistently and scale more predictably.
+                </p>
+                <p className="text-ink">A few things I’ve done:</p>
+                <ul className="space-y-2 list-none pl-0">
+                  <li>• Created the control campaign for Grant Cardone’s 10X Business Coach ($1M+ in sales)</li>
+                  <li>• Converted 40%+ of prospects to buyers for the SquadUp Summit event ($6.57M total)</li>
+                  <li>• Helped grow martech company FrontPorch from startup to $20M+ annually</li>
+                  <li>• Led an online ad network with clients in 26 countries</li>
+                  <li>• Launched more than a dozen businesses in Japan, Korea, Taiwan, China, the UK, and the US</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* 11. BRIEFINGS */}
+        <Section bg="paper" width="content" id="briefings">
+          <div className="max-w-prose">
+            <p className="eyebrow mb-6">The Briefings</p>
+            <h2 className="text-h1 font-semibold mb-6 leading-tight">
+              Short, direct breakdowns for founders building revenue systems.
+            </h2>
+            <p className="text-lead text-ink-muted mb-10">
+              No fluff. No recycled LinkedIn takes. Each briefing covers one real bottleneck I’m seeing in the field — how founders diagnose it, how they fix it, and what AI actually does (and doesn’t do) in the solution. Delivered when I have something worth saying.
+            </p>
+            <EmailForm />
+          </div>
+        </Section>
+      </main>
+      <Footer />
+    </>
   )
 }
