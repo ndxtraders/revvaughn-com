@@ -324,42 +324,42 @@ export default function Home() {
           <div className="max-w-prose mb-12">
             <p className="eyebrow mb-4">Selected Wins</p>
             <h2 className="text-h1 font-semibold text-ink leading-tight">
-              A few of the cool things I&rsquo;ve done.
+              A few cool things I&rsquo;ve done.
             </h2>
           </div>
           <ul className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-            <li className="border-t border-ink pt-5">
+            <li className="border-l-2 border-accent pl-6">
               <p className="text-body text-ink-soft leading-relaxed">
                 Created the control campaign for Grant Cardone&rsquo;s 10X Business Coach
                 (<span className="text-ink font-semibold">$1M+ in sales</span>).
               </p>
             </li>
-            <li className="border-t border-ink pt-5">
+            <li className="border-l-2 border-accent pl-6">
               <p className="text-body text-ink-soft leading-relaxed">
                 Converted <span className="text-ink font-semibold">40%+ of prospects</span> to
                 buyers for the new SquadUp Summit event
                 (<span className="text-ink font-semibold">$6.57M total</span>).
               </p>
             </li>
-            <li className="border-t border-ink pt-5">
+            <li className="border-l-2 border-accent pl-6">
               <p className="text-body text-ink-soft leading-relaxed">
                 Helped grow martech company Front Porch from startup to
                 <span className="text-ink font-semibold"> $20M+ annually</span>.
               </p>
             </li>
-            <li className="border-t border-ink pt-5">
+            <li className="border-l-2 border-accent pl-6">
               <p className="text-body text-ink-soft leading-relaxed">
                 Led an online ad network with clients in
                 <span className="text-ink font-semibold"> 26 countries</span>.
               </p>
             </li>
-            <li className="border-t border-ink pt-5">
+            <li className="border-l-2 border-accent pl-6">
               <p className="text-body text-ink-soft leading-relaxed">
                 Launched <span className="text-ink font-semibold">more than a dozen businesses</span>{' '}
                 in Japan, Korea, Taiwan, China, the UK, and the US.
               </p>
             </li>
-            <li className="border-t border-ink pt-5">
+            <li className="border-l-2 border-accent pl-6">
               <p className="text-body text-ink-soft leading-relaxed">
                 Introduced <span className="text-ink font-semibold">thousands of products and
                 services</span> into new markets.
