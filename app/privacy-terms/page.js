@@ -289,7 +289,7 @@ export default function PrivacyTermsPage() {
             <h1 className="text-h1 font-semibold tracking-tight text-ink mb-4">
               Terms &amp; Conditions
             </h1>
-            <p className="text-small text-ink-faint mb-10">Effective Date: August 2012</p>
+            <p className="text-small text-ink-faint mb-10">Effective Date: April 2026</p>
 
             <div className="space-y-6 text-body text-ink-soft leading-relaxed">
               <p>

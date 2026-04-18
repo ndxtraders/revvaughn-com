@@ -249,37 +249,52 @@ export default function Home() {
           <div className="max-w-prose">
             <p className="eyebrow mb-6">New Research · Founder-led Brands</p>
             <h2 className="text-h1 font-semibold mb-4 leading-tight">
-              By the end of 2026, there will be only two types of founders.
+              The Invisible Founder
             </h2>
-            <p className="text-h2 font-light text-ink-muted mb-10">
-              The Invisible. And The Influential.
+            <p className="text-lead text-ink mb-10">
+              Over the past few days, I&rsquo;ve shared research on the three ways founders are being systematically erased.
             </p>
-            <p className="text-lead text-ink mb-8">Founders are being systematically erased. Three ways:</p>
-            <div className="space-y-6 mb-10">
+
+            <div className="space-y-8 mb-10">
               <div>
-                <div className="text-small font-semibold mb-2">1. Organic collapsed.</div>
+                <div className="text-small font-semibold mb-2">Post 1 — Organic Reach Collapse</div>
                 <p className="text-body text-ink-muted">
-                  Instagram went from 10–15% reach in 2020 to 2–3% today. A Facebook page with 10,000 followers now reaches 137 people per post.
+                  Instagram went from 10–15% reach in 2020 to 2–3% today. Facebook pages with 10K followers reach 137 people per post.
                 </p>
               </div>
               <div>
-                <div className="text-small font-semibold mb-2">2. Paid broke.</div>
+                <div className="text-small font-semibold mb-2">Post 2 — The Paid Media Trap</div>
                 <p className="text-body text-ink-muted">
-                  iOS 14 dropped Meta ROAS 38% overnight. Google CPCs rose 30–50%. Costs doubled. Effectiveness didn’t.
+                  iOS 14 broke targeting. ROAS dropped 38% overnight. Costs doubled or tripled. Can&rsquo;t stop paying because organic is dead. Can&rsquo;t sustain paying because costs keep rising.
                 </p>
               </div>
               <div>
-                <div className="text-small font-semibold mb-2">3. Attribution died.</div>
+                <div className="text-small font-semibold mb-2">Post 3 — The Attribution Crisis</div>
                 <p className="text-body text-ink-muted">
-                  AI Overviews appear in 80% of search queries. Only 47% of top-10 pages get cited. Your ideas spread. Your name doesn’t.
+                  AI Overviews appear in 80% of search queries. Only 47% of top-10 pages get cited. Your ideas spread everywhere. Your name appears nowhere.
                 </p>
               </div>
             </div>
-            <p className="text-body text-ink mb-4">This isn’t an algorithm problem. It’s structural.</p>
-            <p className="text-body text-ink-muted mb-10">
-              The <em>Influential Founder Report</em> maps the three invisibilities, the three authorities that reverse them, and the 90-day plan to move from invisible to influential. I’ve had more requests for early access than I expected.
+
+            <p className="text-body text-ink mb-8">
+              I&rsquo;ve received more requests from Founders for early access than I could have guessed.
             </p>
-            <Button href="#" external variant="accent">Read the Report →</Button>
+            <p className="text-body text-ink mb-4 font-medium">Part 1 of the complete research is now live.</p>
+
+            <p className="text-body text-ink-muted mb-4">Inside Part 1:</p>
+            <ul className="space-y-2 mb-10 text-body text-ink-muted">
+              <li>→ The visibility collapse timeline (2018–2027)</li>
+              <li>→ When each structural break happened and why</li>
+              <li>→ The data proving this is systematic, not accidental</li>
+              <li>→ The turning point and what happens next</li>
+              <li>→ What happens if you do nothing (+ the nightmare scenario)</li>
+            </ul>
+
+            <p className="text-body text-ink-muted mb-10">
+              This connects everything from the last few days with the complete big picture.
+            </p>
+
+            <Button href="#" external variant="accent">Read Part 1 →</Button>
           </div>
         </Section>
 
