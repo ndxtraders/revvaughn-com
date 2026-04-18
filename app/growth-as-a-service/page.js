@@ -184,17 +184,12 @@ export default function GrowthAsAServicePage() {
               What founders ask before saying yes.
             </h2>
           </div>
-          <div className="divide-y divide-rule border-t border-b border-rule">
+          <div className="space-y-10">
             {FAQS.map((f, i) => (
-              <details key={i} className="group py-6">
-                <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
-                  <h3 className="text-h3 font-semibold text-ink leading-snug">{f.q}</h3>
-                  <span className="text-ink-muted text-h3 leading-none transition-transform group-open:rotate-45 select-none">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-4 text-body text-ink-soft leading-relaxed">{f.a}</p>
-              </details>
+              <div key={i} className="border-l-2 border-accent pl-6">
+                <h3 className="text-h3 font-semibold text-ink leading-snug mb-3">{f.q}</h3>
+                <p className="text-body text-ink-soft leading-relaxed">{f.a}</p>
+              </div>
             ))}
           </div>
           <script
