@@ -228,7 +228,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-3 gap-6 mb-10">
                 <div className="border-t-2 border-accent pt-4">
                   <div className="text-small font-semibold mb-2">Strategic Foundations</div>
-                  <p className="text-small text-ink-muted">Remove the upstream bottlenecks — offer, positioning, priorities — before AI scales the wrong thing..</p>
+                  <p className="text-small text-ink-muted">Remove the upstream bottlenecks — offer, positioning, messaging — before AI scales the wrong thing.</p>
                 </div>
                 <div className="border-t-2 border-accent pt-4">
                   <div className="text-small font-semibold mb-2">Messaging Systems</div>
