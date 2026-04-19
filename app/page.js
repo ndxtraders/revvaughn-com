@@ -295,7 +295,7 @@ export default function Home() {
               This connects everything from the last few days with the complete big picture.
             </p>
 
-            <Button href="#" external variant="accent">Read Part 1 →</Button>
+            <Button href="https://www.linkedin.com/pulse/part-1-invisible-founder-leadsandclients-9g2gc" external variant="accent">Read Part 1 →</Button>
           </div>
         </Section>
 

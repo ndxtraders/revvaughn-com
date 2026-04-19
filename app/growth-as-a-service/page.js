@@ -63,7 +63,7 @@ export default function GrowthAsAServicePage() {
               inside the business, architect the GTM system, and run it alongside your team until
               it compounds.
             </p>
-            <Button href="#" variant="primary">
+            <Button href="https://docs.google.com/document/d/1v_764Nc9JfAsrEQLV7vnv3byJuA0yz5tsv8AWBSLTr8/edit?usp=sharing" external variant="primary">
               Learn More
             </Button>
           </div>
@@ -207,7 +207,7 @@ export default function GrowthAsAServicePage() {
             <p className="text-lead text-ink-muted mb-10">
               The engagement structure, scope, and investment are detailed in the program doc.
             </p>
-            <Button href="#" variant="primary">
+            <Button href="https://docs.google.com/document/d/1v_764Nc9JfAsrEQLV7vnv3byJuA0yz5tsv8AWBSLTr8/edit?usp=sharing" external variant="primary">
               Learn More
             </Button>
           </div>

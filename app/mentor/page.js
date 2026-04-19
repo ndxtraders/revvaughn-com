@@ -25,7 +25,7 @@ export default function MentorPage() {
               1:1 mentorship for founder-operators doing the work — writing the copy, running the
               funnel, closing the deals — and who need a sharper thinking partner in the room.
             </p>
-            <Button href="#" variant="primary">
+            <Button href="https://docs.google.com/document/d/1prAsSeJHWxznyWPqZ467mUCMULQ2FeB_anCGcAhbcZQ/edit?usp=sharing" external variant="primary">
               Learn More
             </Button>
           </div>
@@ -147,7 +147,7 @@ export default function MentorPage() {
             <p className="text-lead text-ink-muted mb-10">
               Structure, cadence, and investment are detailed in the program doc.
             </p>
-            <Button href="#" variant="primary">
+            <Button href="https://docs.google.com/document/d/1prAsSeJHWxznyWPqZ467mUCMULQ2FeB_anCGcAhbcZQ/edit?usp=sharing" external variant="primary">
               Learn More
             </Button>
           </div>

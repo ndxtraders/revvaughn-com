@@ -47,7 +47,7 @@ export default function AIInnerCirclePage() {
               qualified pipeline — without losing the founder&rsquo;s voice, craft, or point of view.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="#" variant="primary">
+              <Button href="https://www.skool.com/ai-inner-circle-7018/about" external variant="primary">
                 Learn More
               </Button>
               <Button href="/#briefings" variant="ghost">
@@ -138,7 +138,7 @@ export default function AIInnerCirclePage() {
               Membership details, pricing, and the current cohort are in the invite doc. Read it
               before you decide.
             </p>
-            <Button href="#" variant="primary">
+            <Button href="https://www.skool.com/ai-inner-circle-7018/about" external variant="primary">
               Learn More
             </Button>
           </div>

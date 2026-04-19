@@ -25,7 +25,7 @@ export default function QuickWinPage() {
               A focused sprint for founder-led brands that need clarity on where revenue is
               actually breaking — before spending another dollar on traffic, tools, or team.
             </p>
-            <Button href="#" variant="primary">
+            <Button href="https://docs.google.com/document/d/1US9lt00lMMkuCSLJtij56VZSjE9Q2DBD/edit?usp=sharing" external variant="primary">
               Learn More
             </Button>
           </div>
@@ -124,7 +124,7 @@ export default function QuickWinPage() {
             <p className="text-lead text-ink-muted mb-10">
               The full scope, timeline, and investment are in the program doc.
             </p>
-            <Button href="#" variant="primary">
+            <Button href="https://docs.google.com/document/d/1US9lt00lMMkuCSLJtij56VZSjE9Q2DBD/edit?usp=sharing" external variant="primary">
               Learn More
             </Button>
           </div>
