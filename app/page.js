@@ -109,12 +109,12 @@ export default function Home() {
         {/* 1. HERO */}
         <Section bg="paper" width="content" className="pt-24 md:pt-28">
           <div className="max-w-prose">
-            <p className="eyebrow mb-6">GTM Strategy · Revenue Systems · AI Leverage</p>
+            <p className="eyebrow mb-6">G0-To-Market · Revenue Systems · AI Leverage</p>
             <h1 className="font-sans font-semibold text-display mb-6 text-ink">
               GTM strategy and revenue growth systems for founder-led brands.
             </h1>
             <p className="text-lead text-ink-muted mb-10">
-              Most founders don’t have a traffic problem. They have a bottleneck problem — and AI makes it worse when it’s bolted onto a broken system. I help you fix the system first, then scale it.
+              Turn traffic into qualified pipeline and predictable revenue. 
             </p>
             <div className="flex flex-wrap gap-3">
               <Button href="#programs" variant="primary">See My Work</Button>
@@ -149,7 +149,7 @@ export default function Home() {
             <p className="eyebrow mb-6">AI Growth Systems</p>
             <h2 className="text-h1 font-semibold mb-6">Human for trust. AI for scale.</h2>
             <p className="text-lead text-ink-muted">
-              Most founders don’t have a traffic problem. They have a bottleneck problem — and AI makes it worse when it’s bolted onto a broken system. I build revenue systems where AI amplifies trust instead of eroding it.
+              Most founders don’t have a traffic problem. They have a bottleneck problem — and AI makes it worse when it’s bolted onto a broken system. I help you fix the system first, then scale it.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -223,20 +223,20 @@ export default function Home() {
                 Stop being the bottleneck in your own company.
               </h2>
               <p className="text-lead text-ink-muted mb-8">
-                The AI Inner Circle is a trust-first system for founder-led brands to scale execution without losing voice or quality. Three pillars. One outcome: you’re no longer the bottleneck.
+                The AI Inner Circle is a trust-first system for founder-led brands to scale execution without losing voice or quality. Three pillars. One outcome: you’re no longer the growth bottleneck.
               </p>
               <div className="grid sm:grid-cols-3 gap-6 mb-10">
                 <div className="border-t-2 border-accent pt-4">
                   <div className="text-small font-semibold mb-2">Strategic Foundations</div>
-                  <p className="text-small text-ink-muted">Clear upstream bottlenecks before they compound.</p>
+                  <p className="text-small text-ink-muted">Remove the upstream bottlenecks — offer, positioning, priorities — before AI scales the wrong thing..</p>
                 </div>
                 <div className="border-t-2 border-accent pt-4">
                   <div className="text-small font-semibold mb-2">Messaging Systems</div>
-                  <p className="text-small text-ink-muted">Capture founder insight at scale without flattening it.</p>
+                  <p className="text-small text-ink-muted">Turn founder insight into scalable, trust-building assets without losing your voice.</p>
                 </div>
                 <div className="border-t-2 border-accent pt-4">
                   <div className="text-small font-semibold mb-2">GTM Execution</div>
-                  <p className="text-small text-ink-muted">Deploy workflows that create momentum, not busywork.</p>
+                  <p className="text-small text-ink-muted">Remove the downstream bottlenecks. Ship campaigns and workflows with less friction.</p>
                 </div>
               </div>
               <p className="text-body italic text-ink-muted mb-8">Human for Trust. AI for Scale.</p>
@@ -402,19 +402,11 @@ export default function Home() {
               </h2>
               <div className="space-y-5 text-body text-ink-muted">
                 <p>
-                  I help established businesses fix funnel leaks, sharpen messaging, and close the gap between marketing and sales. My approach combines strategy, psychology, and execution — supported by AI where it adds leverage.
+                  I help founders fix funnel leaks, sharpen messaging, and close the gap between marketing and sales. My approach combines strategy, psychology, and execution — supported by AI where it adds leverage.
                 </p>
                 <p>
                   After 25 years building businesses across six countries, I now help founders and leadership teams create revenue systems that convert more consistently and scale more predictably.
                 </p>
-                <p className="text-ink">A few things I’ve done:</p>
-                <ul className="space-y-2 list-none pl-0">
-                  <li>• Created the control campaign for Grant Cardone’s 10X Business Coach ($1M+ in sales)</li>
-                  <li>• Converted 40%+ of prospects to buyers for the SquadUp Summit event ($6.57M total)</li>
-                  <li>• Helped grow martech company FrontPorch from startup to $20M+ annually</li>
-                  <li>• Led an online ad network with clients in 26 countries</li>
-                  <li>• Launched more than a dozen businesses in Japan, Korea, Taiwan, China, the UK, and the US</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -428,7 +420,7 @@ export default function Home() {
               Short, direct breakdowns for founders building revenue systems.
             </h2>
             <p className="text-lead text-ink-muted mb-10">
-              No fluff. No recycled LinkedIn takes. Each briefing covers one real bottleneck I’m seeing in the field — how founders diagnose it, how they fix it, and what AI actually does (and doesn’t do) in the solution. Delivered when I have something worth saying.
+              Each briefing covers one real bottleneck I’m seeing in the field and reveals how founders diagnose it, how they fix it, and what AI actually does (and doesn’t do) in the solution. Delivered when I have something worth saying.
             </p>
             <EmailForm />
           </div>
