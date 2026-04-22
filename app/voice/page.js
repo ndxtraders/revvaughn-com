@@ -6,7 +6,7 @@ import Section from '../components/Section'
 export const metadata = {
   title: 'DISC Voice — AI Writing That Sounds Human | Rev Vaughn',
   description:
-    'Stop sending AI sludge to your market. Download the DISC Voice to leveage AI and scale your content while maintaining human trust.',
+    'Stop sending AI sludge. Download the DISC Voice to leveage AI and scale your content while maintaining human trust.',
 }
 
 const DELIVERABLES = [
