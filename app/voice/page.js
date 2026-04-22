@@ -44,7 +44,7 @@ export default function VoicePage() {
         <Section bg="paper" width="prose" className="pt-20 md:pt-28">
           <div className="eyebrow mb-6">Free Resource</div>
           <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
-            At last! AI writing that sounds like a human. Not a robot.
+            At last! AI writing that sounds like a human (and Not a robot)
           </h1>
           <p className="text-lead text-ink-muted leading-relaxed">
             Stop sending &ldquo;AI sludge&rdquo; to your market. Download the DISC Voice.
