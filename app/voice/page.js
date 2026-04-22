@@ -48,8 +48,7 @@ export default function VoicePage() {
           </h1>
           <p className="text-lead text-ink-muted leading-relaxed">
             Stop sending &ldquo;AI sludge&rdquo; to your market. Download the DISC Voice.
-            This is the behavioral infrastructure I use to scale content while maintaining
-            human trust.
+            Scale content while maintaining human trust.
           </p>
         </Section>
 
