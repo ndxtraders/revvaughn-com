@@ -24,6 +24,12 @@ export default function Header() {
             Briefings
           </Link>
           <Link
+            href="/resources"
+            className="text-ink-muted hover:text-ink transition-colors"
+          >
+            Resources
+          </Link>
+          <Link
             href="/contact"
             className="text-ink hover:text-accent transition-colors font-medium"
           >
