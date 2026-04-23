@@ -47,8 +47,7 @@ export default function VoicePage() {
             AI writing that sounds human (Not robotic)
           </h1>
           <p className="text-lead text-ink-muted leading-relaxed">
-            Stop sending &ldquo;AI sludge&rdquo; to your market. Download the DISC Voice.
-            Scale content while maintaining human trust.
+            Stop sending &ldquo;AI sludge.&rdquo; Get the DISC Voice to scale your AI content while protecting human trust.
           </p>
         </Section>
 
