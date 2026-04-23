@@ -17,6 +17,8 @@ const nextConfig = {
       { source: '/rev-vaughn', destination: '/#about', permanent: true },
       { source: '/booking-15-min-call', destination: '/contact', permanent: true },
       { source: '/influential-founder', destination: '/', permanent: true },
+      { source: '/invitation-funnel', destination: '/resources', permanent: true },
+      { source: '/coach-s-checklist', destination: '/resources', permanent: true },
     ]
   },
 }
