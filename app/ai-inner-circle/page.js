@@ -44,10 +44,11 @@ export default function AIInnerCirclePage() {
             </h1>
             <p className="text-lead text-ink-muted mb-10">
               A community for founder-led brands building revenue systems that turn attention into
-              qualified pipeline — without losing the founder&rsquo;s voice, craft, or point of view.
+              qualified pipeline — without losing the founder&rsquo;s voice, craft, or point of view. 
+                Contact me to get Membership details, pricing.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="https://www.skool.com/ai-inner-circle-7018/about" external variant="primary">
+              <Button href="https://revvaughn.com/ai-inner-circle" external variant="primary">
                 Learn More
               </Button>
               <Button href="/#briefings" variant="ghost">
@@ -135,10 +136,9 @@ export default function AIInnerCirclePage() {
               Inside the circle, you&rsquo;ll stop guessing.
             </h2>
             <p className="text-lead text-ink-muted mb-10">
-              Membership details, pricing, and the current cohort are in the invite doc. Read it
-              before you decide.
+              Contact me to get Membership details, pricing.
             </p>
-            <Button href="https://www.skool.com/ai-inner-circle-7018/about" external variant="primary">
+            <Button href="https://revvaughn.com/ai-inner-circle" external variant="primary">
               Learn More
             </Button>
           </div>
