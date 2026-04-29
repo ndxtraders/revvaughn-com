@@ -40,7 +40,7 @@ export default function AIInnerCirclePage() {
           <div className="max-w-prose">
             <div className="eyebrow mb-6">AI Inner Circle</div>
             <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
-              Your voice sells. AI scales it.
+              Your human voice sells it. AI scales it.
             </h1>
             <p className="text-lead text-ink-muted mb-10">
               A working group for founder-led brands that need revenue systems, not more content ideas.
