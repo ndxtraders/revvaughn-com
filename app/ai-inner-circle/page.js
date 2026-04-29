@@ -4,9 +4,9 @@ import Section from '../components/Section'
 import Button from '../components/Button'
 
 export const metadata = {
-  title: 'AI Inner Circle — Rev Vaughn',
+  title: 'AI Inner Circle | Rev Vaughn',
   description:
-    'A community for founder-led brands building revenue systems with AI. Human for trust. AI for scale.',
+    'Where founder-led brands build revenue systems that actually scale. Your voice. AI doing the work.',
 }
 
 const PILLARS = [
@@ -14,19 +14,19 @@ const PILLARS = [
     n: '01',
     title: 'Strategic Foundations',
     body:
-      'Clarify your category, positioning, and offer before you scale. The wrong foundation multiplies the wrong results.',
+      'Lock in your category, positioning, and offer first. If the foundation is wrong, everything you build on top of it breaks faster.',
   },
   {
     n: '02',
     title: 'Messaging Systems',
     body:
-      'Translate your expertise into words that convert — ICP, hooks, proof, and objection stacks that work across channels.',
+      'Turn what you know into words that sell. ICP clarity, hooks, proof stacks, and objection handling that works in every channel.',
   },
   {
     n: '03',
     title: 'GTM Execution',
     body:
-      'Assemble the system: traffic, opt-in, nurture, sales, onboarding. Measure what matters. Fix what breaks.',
+      'Build the full system. Traffic, opt-in, nurture, sales, onboarding. Track what moves revenue. Cut what doesn&rsquo;t.',
   },
 ]
 
@@ -40,16 +40,15 @@ export default function AIInnerCirclePage() {
           <div className="max-w-prose">
             <div className="eyebrow mb-6">AI Inner Circle</div>
             <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
-              Human for trust. AI for scale.
+              Your voice sells. AI scales it.
             </h1>
             <p className="text-lead text-ink-muted mb-10">
-              A community for founder-led brands building revenue systems that turn attention into
-              qualified pipeline — without losing the founder&rsquo;s voice, craft, or point of view. 
-                Contact me to get Membership details, pricing.
+              A working group for founder-led brands that need revenue systems, not more content ideas.
+              You stay the voice. AI does the production. Pipeline grows without burning you out.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="https://revvaughn.com/contact" external variant="primary">
-                Learn More
+                Get Membership Details
               </Button>
               <Button href="/#briefings" variant="ghost">
                 Get the Briefings
@@ -64,21 +63,22 @@ export default function AIInnerCirclePage() {
             <div>
               <div className="eyebrow mb-4">Why it exists</div>
               <h2 className="text-h1 font-semibold tracking-tight text-ink">
-                Founders are being told to &ldquo;just use AI.&rdquo; That&rsquo;s not a strategy.
+                &ldquo;Just use AI&rdquo; is not a growth strategy.
               </h2>
             </div>
             <div className="space-y-5 text-body text-ink-soft">
               <p>
-                Most founder-led brands are stuck between two extremes: manual labor that
-                can&rsquo;t scale, or AI slop that erodes trust. Both kill pipeline.
+                Here&rsquo;s what I see every week. Founders doing $1M to $20M in revenue, stuck
+                in one of two places. Either they&rsquo;re writing everything themselves and can&rsquo;t
+                keep up. Or they&rsquo;re using AI and publishing content their audience ignores.
               </p>
               <p>
-                The Inner Circle is where we architect the middle path — systems where the founder
-                remains the voice of the brand, and AI does the heavy lifting behind the scenes.
+                Both cost pipeline. Both waste time.
               </p>
               <p>
-                You&rsquo;ll work through diagnostics, frameworks, and peer review with operators
-                building the same thing you are.
+                The Inner Circle is where we build the middle ground. You keep control of your voice
+                and your brand. AI handles the execution. And you work alongside other operators
+                solving the same problem.
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function AIInnerCirclePage() {
           <div className="max-w-prose mb-14">
             <div className="eyebrow mb-4">The three pillars</div>
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
-              What we build inside the circle.
+              What we build together.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -109,21 +109,21 @@ export default function AIInnerCirclePage() {
             <div>
               <div className="eyebrow mb-4">Who it&rsquo;s for</div>
               <h2 className="text-h1 font-semibold tracking-tight text-ink">
-                Founder-led brands doing $1M–$20M.
+                Founder-led brands doing $1M to $20M.
               </h2>
             </div>
             <ul className="space-y-4 text-body text-ink-soft">
               <li className="border-b border-rule pb-4">
-                You&rsquo;re the face of the brand — and the bottleneck.
+                You are the brand. That&rsquo;s your advantage and your constraint.
               </li>
               <li className="border-b border-rule pb-4">
-                You&rsquo;ve spent on agencies and courses that didn&rsquo;t move revenue.
+                You&rsquo;ve paid agencies and bought courses. Revenue didn&rsquo;t move.
               </li>
               <li className="border-b border-rule pb-4">
-                You want a system, not a list of tactics.
+                You need a system that compounds. Not another list of tactics.
               </li>
               <li className="pb-4">
-                You&rsquo;re willing to be coached — and to do the work.
+                You&rsquo;re ready to be coached. And to put in the work.
               </li>
             </ul>
           </div>
@@ -133,13 +133,13 @@ export default function AIInnerCirclePage() {
         <Section bg="paper" width="content">
           <div className="max-w-prose">
             <h2 className="text-h1 font-semibold tracking-tight text-ink mb-6">
-              Inside the circle, you&rsquo;ll stop guessing.
+              Stop guessing. Start building.
             </h2>
             <p className="text-lead text-ink-muted mb-10">
-              Contact me to get Membership details, pricing.
+              Reach out for membership details and pricing.
             </p>
             <Button href="https://revvaughn.com/contact" external variant="primary">
-              Learn More
+              Get Membership Details
             </Button>
           </div>
         </Section>
