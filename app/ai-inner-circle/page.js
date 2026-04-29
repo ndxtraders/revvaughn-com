@@ -48,7 +48,7 @@ export default function AIInnerCirclePage() {
                 Contact me to get Membership details, pricing.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="https://revvaughn.com/ai-inner-circle" external variant="primary">
+              <Button href="https://revvaughn.com/contact" external variant="primary">
                 Learn More
               </Button>
               <Button href="/#briefings" variant="ghost">
@@ -138,7 +138,7 @@ export default function AIInnerCirclePage() {
             <p className="text-lead text-ink-muted mb-10">
               Contact me to get Membership details, pricing.
             </p>
-            <Button href="https://revvaughn.com/ai-inner-circle" external variant="primary">
+            <Button href="https://revvaughn.com/contact" external variant="primary">
               Learn More
             </Button>
           </div>
