@@ -5,7 +5,7 @@ import Button from './Button'
 export default function HeroWithImage() {
   return (
     <Section bg="paper" width="content" className="pt-24 md:pt-28">
-      <div className="grid md:grid-cols-3 gap-10 items-end">
+      <div className="grid md:grid-cols-3 gap-10 items-start">
         {/* Text — 2/3 width */}
         <div className="md:col-span-2">
           <p className="eyebrow mb-6">G0-To-Market · Revenue Systems · AI Leverage</p>
@@ -21,8 +21,8 @@ export default function HeroWithImage() {
           </div>
         </div>
 
-        {/* Headshot — 1/3 width, aligned to bottom of text */}
-        <div className="hidden md:block">
+        {/* Headshot — 1/3 width, top-aligned with headline (below eyebrow) */}
+        <div className="hidden md:block pt-10">
           <div className="relative aspect-[4/5] w-full border border-rule">
             <Image
               src="/Rev Vaughn Hero.png"
