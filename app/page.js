@@ -42,7 +42,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That's because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
+      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That’s because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
     name: 'Kevin Rogers',
     title: 'Founder, Copy Chief',
     org: '#1 Copywriting Community',
@@ -63,7 +63,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev's work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. Rev managed complex, multi-brand campaigns across the Cardone Ventures portfolio, including 10X Health, REVIV X, CardoMax, IV Academy, and HRE Beauty. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
+      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev’s work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. Rev managed complex, multi-brand campaigns across the Cardone Ventures portfolio, including 10X Health, REVIV X, CardoMax, IV Academy, and HRE Beauty. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
     name: 'Joe Bradley',
     title: 'Director, Marketing Partnerships',
     org: 'Cardone Ventures',
