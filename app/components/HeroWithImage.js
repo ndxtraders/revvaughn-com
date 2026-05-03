@@ -5,9 +5,9 @@ import Button from './Button'
 export default function HeroWithImage() {
   return (
     <Section bg="paper" width="content" className="pt-24 md:pt-28">
-      <div className="flex items-start justify-between gap-10">
-        {/* Text — identical to current hero */}
-        <div className="max-w-prose">
+      <div className="grid md:grid-cols-3 gap-10 items-end">
+        {/* Text — 2/3 width */}
+        <div className="md:col-span-2">
           <p className="eyebrow mb-6">G0-To-Market · Revenue Systems · AI Leverage</p>
           <h1 className="font-sans font-semibold text-display mb-6 text-ink">
             GTM strategy and revenue growth systems for founder-led brands.
@@ -21,14 +21,14 @@ export default function HeroWithImage() {
           </div>
         </div>
 
-        {/* Headshot — smaller, right-aligned, hidden on mobile */}
-        <div className="hidden md:block flex-shrink-0">
-          <div className="relative w-[200px] h-[250px] border border-rule">
+        {/* Headshot — 1/3 width, aligned to bottom of text */}
+        <div className="hidden md:block">
+          <div className="relative aspect-[4/5] w-full border border-rule">
             <Image
               src="/Rev Vaughn Hero.png"
               alt="Rev Vaughn"
               fill
-              sizes="200px"
+              sizes="320px"
               className="object-cover grayscale"
               priority
             />
