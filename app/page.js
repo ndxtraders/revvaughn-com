@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Section from './components/Section'
 import Button from './components/Button'
 import EmailForm from './components/EmailForm'
+import HeroWithImage from './components/HeroWithImage'
 
 const CLIENTS = [
   'Grant Cardone',
@@ -41,7 +42,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That’s because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
+      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That's because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
     name: 'Kevin Rogers',
     title: 'Founder, Copy Chief',
     org: '#1 Copywriting Community',
@@ -62,14 +63,14 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev’s work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. Rev managed complex, multi-brand campaigns across the Cardone Ventures portfolio, including 10X Health, REVIV X, CardoMax, IV Academy, and HRE Beauty. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
+      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev's work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. Rev managed complex, multi-brand campaigns across the Cardone Ventures portfolio, including 10X Health, REVIV X, CardoMax, IV Academy, and HRE Beauty. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
     name: 'Joe Bradley',
     title: 'Director, Marketing Partnerships',
     org: 'Cardone Ventures',
   },
   {
     quote:
-      "Listen to his training, and you'll make more money TODAY. I learned more about guiding people through the sales process than I learned from thousands of dollars in paid sales courses. It doesn't matter what industry you're in — listen to his training, and you'll make more money TODAY. You're amazeballs Rev!",
+      "Listen to his training, and you'll make more money TODAY! I learned more about guiding people through the sales process than I learned from thousands of dollars in paid sales courses. It doesn't matter what industry you're in — listen to his training, and you'll make more money TODAY. You're amazeballs Rev!",
     name: 'Jimmy Parent',
     title: 'Persuasion Scientist',
     org: '',
@@ -107,21 +108,7 @@ export default function Home() {
       <Header />
       <main>
         {/* 1. HERO */}
-        <Section bg="paper" width="content" className="pt-24 md:pt-28">
-          <div className="max-w-prose">
-            <p className="eyebrow mb-6">G0-To-Market · Revenue Systems · AI Leverage</p>
-            <h1 className="font-sans font-semibold text-display mb-6 text-ink">
-              GTM strategy and revenue growth systems for founder-led brands.
-            </h1>
-            <p className="text-lead text-ink-muted mb-10">
-              Turn traffic into qualified pipeline and predictable revenue. 
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Button href="#programs" variant="primary">See My Work</Button>
-              <Button href="#briefings" variant="secondary">Subscribe to Briefings</Button>
-            </div>
-          </div>
-        </Section>
+        <HeroWithImage />
 
         {/* 2. AUTHORITY STRIP */}
         <section className="bg-paper-grey border-y border-rule py-12">
@@ -149,7 +136,7 @@ export default function Home() {
             <p className="eyebrow mb-6">AI Growth Systems</p>
             <h2 className="text-h1 font-semibold mb-6">Human for trust. AI for scale.</h2>
             <p className="text-lead text-ink-muted">
-              Most founders don’t have a traffic problem. They have a bottleneck problem — and AI makes it worse when it’s bolted onto a broken system. I help you fix the system first, then scale it.
+              Most founders don't have a traffic problem. They have a bottleneck problem — and AI makes it worse when it's bolted onto a broken system. I help you fix the system first, then scale it.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -223,7 +210,7 @@ export default function Home() {
                 Stop being the bottleneck in your own company.
               </h2>
               <p className="text-lead text-ink-muted mb-8">
-                The AI Inner Circle is a trust-first system for founder-led brands to scale execution without losing voice or quality. Three pillars. One outcome: you’re no longer the growth bottleneck.
+                The AI Inner Circle is a trust-first system for founder-led brands to scale execution without losing voice or quality. Three pillars. One outcome: you're no longer the growth bottleneck.
               </p>
               <div className="grid sm:grid-cols-3 gap-6 mb-10">
                 <div className="border-t-2 border-accent pt-4">
@@ -308,7 +295,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-14">
             {TESTIMONIALS.map((t) => (
               <blockquote key={t.name} className="border-l-2 border-accent pl-6">
-                <p className="text-body text-ink mb-6 leading-relaxed">“{t.quote}”</p>
+                <p className="text-body text-ink mb-6 leading-relaxed">"{t.quote}"</p>
                 <footer className="text-small">
                   <div className="font-semibold text-ink">{t.name}</div>
                   <div className="text-ink-muted">{t.title}</div>
@@ -398,7 +385,7 @@ export default function Home() {
             <div className="md:col-span-8">
               <p className="eyebrow mb-6">About</p>
               <h2 className="text-h1 font-semibold mb-6 leading-tight">
-                Most revenue problems don’t come from a lack of leads or effort. They come from breakdowns inside the funnel. That’s where I work.
+                Most revenue problems don't come from a lack of leads or effort. They come from breakdowns inside the funnel. That's where I work.
               </h2>
               <div className="space-y-5 text-body text-ink-muted">
                 <p>
@@ -420,7 +407,7 @@ export default function Home() {
               Short, direct breakdowns for founders building revenue systems.
             </h2>
             <p className="text-lead text-ink-muted mb-10">
-              Each briefing covers one real bottleneck I’m seeing in the field and reveals how founders diagnose it, how they fix it, and what AI actually does (and doesn’t do) in the solution. Delivered when I have something worth saying.
+              Each briefing covers one real bottleneck I'm seeing in the field and reveals how founders diagnose it, how they fix it, and what AI actually does (and doesn't do) in the solution. Delivered when I have something worth saying.
             </p>
             <EmailForm />
           </div>
