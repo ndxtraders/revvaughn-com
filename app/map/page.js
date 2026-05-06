@@ -471,9 +471,8 @@ export default function MapPage() {
                     AI Priority Map
                   </h1>
                   <p className="text-lead text-ink-muted">
-                    12 symptom-based questions. Four operational pillars. One clear picture of
-                    where your business is bleeding time, money, and momentum — and exactly
-                    where AI can stop the leak.
+                    Answer 12 questions. Find the real bottleneck. See exactly where your
+                    business is leaking time and money and the exact AI fix for each one.
                   </p>
                 </div>
                 <div className="hidden md:flex items-start justify-center pt-4">
