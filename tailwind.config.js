@@ -37,7 +37,7 @@ module.exports = {
         'lead': ['clamp(1.0625rem, 1.3vw, 1.25rem)', { lineHeight: '1.55' }],
         'body': ['1rem', { lineHeight: '1.65' }],
         'small': ['0.875rem', { lineHeight: '1.5' }],
-        'eyebrow': ['0.75rem', { lineHeight: '1', letterSpacing: '0.15em' }],
+        'eyebrow': ['0.875rem', { lineHeight: '1', letterSpacing: '0.15em' }],
       },
       maxWidth: {
         'prose': '38rem',

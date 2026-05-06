@@ -8,7 +8,7 @@ export default function HeroWithImage() {
       <div className="grid md:grid-cols-3 gap-10 items-start">
         {/* Text — 2/3 width */}
         <div className="md:col-span-2">
-          <p className="eyebrow mb-6">G0-To-Market · Revenue Systems · AI Leverage</p>
+          <p className="eyebrow mb-6 whitespace-nowrap text-[0.7rem] sm:text-eyebrow">G0-To-Market · Revenue Systems · AI Leverage</p>
           <h1 className="font-sans font-semibold text-display mb-6 text-ink">
             GTM strategy and revenue growth systems for founder-led brands.
           </h1>
