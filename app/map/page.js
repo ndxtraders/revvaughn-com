@@ -1064,16 +1064,14 @@ export default function MapPage() {
                       </h3>
                       <p className="text-lead text-ink-faint mb-10">
                         In an AI Systems Audit, I provide the exact tech stack and roadmap to
-                        flip these to Green. The details are in the offer document below.
+                        flip these to Green.
                       </p>
-                      <a
-                        href="https://docs.google.com/document/d/1QU5izjT6wg1j1V5iEmNcaMUpyJiZNUwfk4p3MQwYt98/edit?usp=sharing"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        href="/ai-audit"
                         className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent"
                       >
                         Book Your Full Systems Diagnostic <ArrowRight className="w-4 h-4" />
-                      </a>
+                      </Link>
                     </>
                   ) : (
                     <>
