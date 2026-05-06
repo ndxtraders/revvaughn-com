@@ -140,7 +140,7 @@ export default function Home() {
             <p className="eyebrow mb-6">AI Growth Systems</p>
             <h2 className="text-h1 font-semibold mb-6">Human for trust. AI for scale.</h2>
             <p className="text-lead text-ink-muted">
-              Most founders don't have a traffic problem. They have a bottleneck problem — and AI makes it worse when it's bolted onto a broken system. I help you fix the system first, then scale it.
+              Most founders have a bottleneck problem and adding AI before fixing it makes it worse. I help you fix the system first, then scale it.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
