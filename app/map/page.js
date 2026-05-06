@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -303,45 +303,260 @@ export default function MapPage() {
   const [tempSelection, setTempSelection] = useState(null)
   const [justSetCell, setJustSetCell] = useState(null)
   const [fadeKey, setFadeKey] = useState(0)
-  const resultsRef = useRef(null)
 
   const progress = answers.filter((a) => a !== null).length
   const question = QUESTIONS[currentQuestion]
+  const categoryStatuses = CATEGORIES.map((_, i) => getCategoryStatus(answers, i))
+  const categoryFrictions = CATEGORIES.map((_, i) => getCategoryFriction(answers, i))
+  const totalFriction = getTotalFriction(answers)
+  const redCount = answers.filter((a) => a === 'red').length
+  const hasRed = redCount > 0
+  const redQuestions = QUESTIONS.filter((_, i) => answers[i] === 'red')
 
-  // Download results as PDF
+  // Download results as PDF (programmatic — includes all content)
   const handleDownload = useCallback(async () => {
-    if (!resultsRef.current) return
     try {
-      const html2canvas = (await import('html2canvas')).default
       const { default: jsPDF } = await import('jspdf')
-      const canvas = await html2canvas(resultsRef.current, {
-        backgroundColor: '#F5F5F5',
-        scale: 2,
-        useCORS: true,
-      })
-      const imgData = canvas.toDataURL('image/png')
-      const imgWidth = 210
-      const imgHeight = (canvas.height * imgWidth) / canvas.width
       const pdf = new jsPDF('p', 'mm', 'a4')
+      const pageWidth = 210
       const pageHeight = 297
-      let position = 0
-      let remainingHeight = imgHeight
+      const margin = 20
+      const contentWidth = pageWidth - margin * 2
+      let y = margin
 
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
-      remainingHeight -= pageHeight
-
-      while (remainingHeight > 0) {
-        position -= pageHeight
-        pdf.addPage()
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
-        remainingHeight -= pageHeight
+      const checkPage = (needed) => {
+        if (y + needed > pageHeight - margin) {
+          pdf.addPage()
+          y = margin
+        }
       }
+
+      // Colors
+      const ink = [26, 26, 26]
+      const muted = [120, 120, 120]
+      const faint = [170, 170, 170]
+      const red = [217, 83, 79]
+      const yellow = [240, 173, 78]
+      const green = [92, 184, 92]
+      const statusColors = { red, yellow, green }
+
+      // ── Header
+      pdf.setFont('helvetica', 'bold')
+      pdf.setFontSize(10)
+      pdf.setTextColor(...faint)
+      pdf.text('AI PRIORITY MAP RESULTS', margin, y)
+      y += 6
+      pdf.setTextColor(...muted)
+      pdf.setFontSize(8)
+      pdf.text('revvaughn.com/map', margin, y)
+      y += 4
+      pdf.setDrawColor(...faint)
+      pdf.line(margin, y, pageWidth - margin, y)
+      y += 12
+
+      // ── Total Friction Score
+      pdf.setFont('helvetica', 'bold')
+      pdf.setFontSize(28)
+      pdf.setTextColor(...ink)
+      pdf.text(`${totalFriction}%`, margin, y)
+      pdf.setFont('helvetica', 'normal')
+      pdf.setFontSize(11)
+      pdf.setTextColor(...muted)
+      pdf.text('Total Business Friction', margin + 30, y)
+      y += 6
+
+      // Friction bar
+      const barWidth = contentWidth
+      const barHeight = 3
+      pdf.setFillColor(230, 230, 230)
+      pdf.rect(margin, y, barWidth, barHeight, 'F')
+      const barColor = totalFriction >= 50 ? red : totalFriction >= 25 ? yellow : green
+      pdf.setFillColor(...barColor)
+      pdf.rect(margin, y, barWidth * (totalFriction / 100), barHeight, 'F')
+      y += 12
+
+      // ── Warning
+      if (hasRed) {
+        pdf.setFillColor(255, 245, 245)
+        pdf.rect(margin, y, contentWidth, 10, 'F')
+        pdf.setFillColor(...red)
+        pdf.rect(margin, y, 1, 10, 'F')
+        pdf.setFont('helvetica', 'normal')
+        pdf.setFontSize(9)
+        pdf.setTextColor(...red)
+        pdf.text(
+          'Your business is at a breaking point that might be improved with AI.',
+          margin + 5,
+          y + 6.5
+        )
+        y += 16
+      }
+
+      // ── Pillar Breakdown
+      pdf.setFont('helvetica', 'bold')
+      pdf.setFontSize(8)
+      pdf.setTextColor(...faint)
+      pdf.text('PILLAR BREAKDOWN', margin, y)
+      y += 8
+
+      CATEGORIES.forEach((cat, catIdx) => {
+        checkPage(18)
+        const catStatus = categoryStatuses[catIdx]
+        const friction = categoryFrictions[catIdx]
+        const color = catStatus ? statusColors[catStatus] : faint
+
+        pdf.setFont('helvetica', 'bold')
+        pdf.setFontSize(9)
+        pdf.setTextColor(...ink)
+        pdf.text(cat, margin, y)
+
+        pdf.setFont('helvetica', 'normal')
+        pdf.setFontSize(8)
+        pdf.setTextColor(...color)
+        const statusText = catStatus ? `${STATUS_LABEL[catStatus]} · ${friction}%` : `${friction}%`
+        pdf.text(statusText, pageWidth - margin, y, { align: 'right' })
+        y += 4
+
+        // Mini friction bar
+        pdf.setFillColor(230, 230, 230)
+        pdf.rect(margin, y, contentWidth, 2, 'F')
+        pdf.setFillColor(...color)
+        pdf.rect(margin, y, contentWidth * (friction / 100), 2, 'F')
+        y += 8
+      })
+
+      y += 4
+
+      // ── Heatmap Grid
+      checkPage(50)
+      pdf.setFont('helvetica', 'bold')
+      pdf.setFontSize(8)
+      pdf.setTextColor(...faint)
+      pdf.text('PRIORITY MAP', margin, y)
+      y += 6
+
+      CATEGORIES.forEach((cat, catIdx) => {
+        checkPage(18)
+        pdf.setFont('helvetica', 'normal')
+        pdf.setFontSize(7)
+        pdf.setTextColor(...faint)
+        pdf.text(cat.toUpperCase(), margin, y)
+        y += 4
+
+        const catQuestions = QUESTIONS.filter((q) => q.categoryIndex === catIdx)
+        const cellSize = 12
+        const cellGap = 3
+
+        catQuestions.forEach((q, qi) => {
+          const qIndex = q.id - 1
+          const status = answers[qIndex]
+          const x = margin + qi * (cellSize + cellGap)
+          const color = status ? statusColors[status] : [240, 240, 240]
+
+          pdf.setFillColor(...color)
+          pdf.rect(x, y, cellSize, cellSize, 'F')
+
+          pdf.setFont('helvetica', 'bold')
+          pdf.setFontSize(7)
+          pdf.setTextColor(status ? 255 : 180, status ? 255 : 180, status ? 255 : 180)
+          pdf.text(String(q.id), x + cellSize / 2, y + cellSize / 2 + 1.5, {
+            align: 'center',
+          })
+        })
+        y += cellSize + 5
+      })
+
+      y += 6
+
+      // ── Red Zone Results
+      if (hasRed) {
+        checkPage(12)
+        pdf.setFont('helvetica', 'bold')
+        pdf.setFontSize(8)
+        pdf.setTextColor(...faint)
+        pdf.text('BREAKING POINTS — IMMEDIATE ATTENTION REQUIRED', margin, y)
+        y += 8
+
+        redQuestions.forEach((q) => {
+          // Estimate card height (label + implication + solution)
+          const implLines = pdf.splitTextToSize(q.implication, contentWidth - 10)
+          const solLines = pdf.splitTextToSize(q.solution, contentWidth - 10)
+          const cardHeight = 30 + implLines.length * 4 + solLines.length * 4
+          checkPage(cardHeight)
+
+          // Left red border
+          pdf.setFillColor(...red)
+          pdf.rect(margin, y, 1.5, cardHeight - 4, 'F')
+
+          // Category + status
+          const xContent = margin + 5
+          pdf.setFont('helvetica', 'normal')
+          pdf.setFontSize(7)
+          pdf.setTextColor(...faint)
+          pdf.text(q.category.toUpperCase(), xContent, y + 4)
+          pdf.setTextColor(...red)
+          pdf.text('BREAKING POINT', pageWidth - margin, y + 4, { align: 'right' })
+
+          // Label
+          pdf.setFont('helvetica', 'bold')
+          pdf.setFontSize(11)
+          pdf.setTextColor(...ink)
+          pdf.text(q.label, xContent, y + 11)
+
+          // Implication
+          let innerY = y + 17
+          pdf.setFont('helvetica', 'bold')
+          pdf.setFontSize(7)
+          pdf.setTextColor(...faint)
+          pdf.text('IMPLICATION', xContent, innerY)
+          innerY += 4
+          pdf.setFont('helvetica', 'normal')
+          pdf.setFontSize(9)
+          pdf.setTextColor(...muted)
+          implLines.forEach((line) => {
+            pdf.text(line, xContent, innerY)
+            innerY += 4
+          })
+
+          // Solution
+          innerY += 2
+          pdf.setFont('helvetica', 'bold')
+          pdf.setFontSize(7)
+          pdf.setTextColor(...faint)
+          pdf.text('POTENTIAL SOLUTION', xContent, innerY)
+          innerY += 4
+          pdf.setFont('helvetica', 'normal')
+          pdf.setFontSize(9)
+          pdf.setTextColor(...ink)
+          solLines.forEach((line) => {
+            pdf.text(line, xContent, innerY)
+            innerY += 4
+          })
+
+          y = innerY + 6
+        })
+      }
+
+      // ── Footer
+      checkPage(16)
+      y += 4
+      pdf.setDrawColor(...faint)
+      pdf.line(margin, y, pageWidth - margin, y)
+      y += 6
+      pdf.setFont('helvetica', 'normal')
+      pdf.setFontSize(8)
+      pdf.setTextColor(...muted)
+      pdf.text(
+        'Next step: Book your AI Systems Audit at revvaughn.com',
+        margin,
+        y
+      )
 
       pdf.save('ai-priority-map-results.pdf')
     } catch (err) {
       console.error('Download failed:', err)
     }
-  }, [])
+  }, [answers, totalFriction, hasRed, categoryStatuses, categoryFrictions, redQuestions])
 
   // Trigger fade animation on question change
   useEffect(() => {
@@ -396,13 +611,6 @@ export default function MapPage() {
     setTempSelection(null)
     setJustSetCell(null)
   }
-
-  const categoryStatuses = CATEGORIES.map((_, i) => getCategoryStatus(answers, i))
-  const categoryFrictions = CATEGORIES.map((_, i) => getCategoryFriction(answers, i))
-  const totalFriction = getTotalFriction(answers)
-  const redCount = answers.filter((a) => a === 'red').length
-  const hasRed = redCount > 0
-  const redQuestions = QUESTIONS.filter((_, i) => answers[i] === 'red')
 
   return (
     <>
@@ -697,7 +905,7 @@ export default function MapPage() {
             {/* Downloadable Results Section */}
             <section className="bg-paper-grey py-section">
               <div className="max-w-content mx-auto px-6">
-                <div ref={resultsRef} className="pb-8">
+                <div className="pb-8">
                   {/* Pillar Friction Cards */}
                   <p className="eyebrow mb-6">Pillar Breakdown</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
