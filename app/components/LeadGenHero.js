@@ -24,6 +24,7 @@ export default function LeadGenHero() {
       })
 
       if (response.ok) {
+        sessionStorage.setItem('map_email', email)
         router.push('/map')
       } else {
         const data = await response.json().catch(() => ({}))

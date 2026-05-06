@@ -596,6 +596,27 @@ export default function MapPage() {
     const final = commitAnswer()
     if (final && final.every((a) => a !== null)) {
       setRevealed(true)
+
+      // Send results to MailerLite (fire and forget — don't block the reveal)
+      try {
+        const email = sessionStorage.getItem('map_email')
+        if (email) {
+          const friction = getTotalFriction(final)
+          const reds = final.filter((a) => a === 'red').length
+          fetch('/api/save-results', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email,
+              answers: final,
+              totalFriction: friction,
+              redCount: reds,
+            }),
+          }).catch(() => {}) // Silent fail — results page still shows
+        }
+      } catch (e) {
+        // sessionStorage might not be available — don't break the experience
+      }
     }
   }
 
