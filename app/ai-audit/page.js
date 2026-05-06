@@ -49,7 +49,7 @@ export default function AIAuditPage() {
             <div>
               <div className="eyebrow mb-4">The Problem</div>
               <h2 className="text-h1 font-semibold tracking-tight text-ink">
-                You know you need AI. You don&rsquo;t know where to start.
+                If you know you need AI and don&rsquo;t know where to start...
               </h2>
             </div>
             <div className="space-y-5 text-body text-ink-soft">
@@ -79,9 +79,9 @@ export default function AIAuditPage() {
             </div>
             <div className="space-y-5 text-body text-ink-soft">
               <p>
-                You&rsquo;re not short on effort. You&rsquo;re short on leverage. The manual
+                Get AI leverage working for you. The manual
                 processes, the copy-paste workflows, the decisions that wait on your approval
-                &mdash; those are compounding costs, not one-time inconveniences.
+               are compounding costs, not one-time inconveniences.
               </p>
               <p>
                 The AI Systems Audit is a surgical strike on your business friction. I find the
@@ -107,9 +107,9 @@ export default function AIAuditPage() {
                 Discovery &amp; Diagnostic
               </h3>
               <p className="text-body text-ink-muted">
-                A 60&ndash;90 minute deep-dive into your current tech stack and team workflows.
-                I look for the Data Gymnastics and the Status Update Taxes that are currently
-                invisible to you. We identify exactly where the leaks are.
+                A 60&ndash;90 minute deep-dive call. I analyze your current tech stack and team workflows 
+               and find the bottlenecks and leaks that are currently
+                invisible to you. We identify exactly what and where they are.
               </p>
             </div>
             <div className="border-t border-ink pt-6">
@@ -154,7 +154,7 @@ export default function AIAuditPage() {
                 if you want it done right, right now.
               </p>
               <p>
-                This is your buy list and your action plan. Not a deck of suggestions. A
+                This is your action plan. A
                 prioritized path with specific tools, specific sequences, and specific
                 integration steps.
               </p>
