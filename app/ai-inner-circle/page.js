@@ -26,7 +26,7 @@ const PILLARS = [
     n: '03',
     title: 'GTM Execution',
     body:
-      'Build the full system. Traffic, opt-in, nurture, sales, onboarding. Track what moves revenue. Cut what doesn't.',
+      'Build the full system. Traffic, opt-in, nurture, sales, onboarding. Track what moves revenue.',
   },
 ]
 
