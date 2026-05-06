@@ -471,7 +471,7 @@ export default function MapPage() {
                     AI Priority Map
                   </h1>
                   <p className="text-lead text-ink-muted">
-                    Answer 12 questions. Find the real bottleneck. See exactly where your
+                    Find the real bottleneck. See exactly where your
                     business is leaking time and money and the exact AI fix for each one.
                   </p>
                 </div>
