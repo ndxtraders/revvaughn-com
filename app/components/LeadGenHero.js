@@ -53,7 +53,7 @@ export default function LeadGenHero() {
 
         <div className="max-w-lg mx-auto">
           <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-4">
-            Take the 5-Minute AI Priority Map. Get clarity on where to start.
+            Get clarity with the 5-Minute AI Priority Map.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
