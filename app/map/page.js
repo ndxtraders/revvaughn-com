@@ -466,7 +466,7 @@ export default function MapPage() {
             <div className="max-w-content mx-auto px-6">
               <div className="grid md:grid-cols-3 gap-10 items-start">
                 <div className="md:col-span-2">
-                  <p className="eyebrow mb-6">10-Minute Diagnostic</p>
+                  <p className="eyebrow mb-6">5-Minute Diagnostic</p>
                   <h1 className="font-sans font-semibold text-display text-ink mb-6">
                     AI Priority Map
                   </h1>

@@ -6,6 +6,7 @@ import Section from './components/Section'
 import Button from './components/Button'
 import EmailForm from './components/EmailForm'
 import HeroWithImage from './components/HeroWithImage'
+import LeadGenHero from './components/LeadGenHero'
 
 const CLIENTS = [
   'Grant Cardone',
@@ -107,6 +108,9 @@ export default function Home() {
     <>
       <Header />
       <main>
+        {/* 0. LEAD GEN HERO */}
+        <LeadGenHero />
+
         {/* 1. HERO */}
         <HeroWithImage />
 
