@@ -26,7 +26,7 @@ const PILLARS = [
     n: '03',
     title: 'GTM Execution',
     body:
-      'Build the full system. Traffic, opt-in, nurture, sales, onboarding. Track what moves revenue. Cut what doesn&rsquo;t.',
+      'Build the full system. Traffic, opt-in, nurture, sales, onboarding. Track what moves revenue. Cut what doesn't.',
   },
 ]
 
@@ -43,8 +43,8 @@ export default function AIInnerCirclePage() {
               Your human voice sells it. AI scales it.
             </h1>
             <p className="text-lead text-ink-muted mb-10">
-              A working group for founder-led brands that need revenue systems, not more content ideas.
-              You stay the voice. AI does the production. Pipeline grows without burning you out.
+              A working group for founder-led brands that need revenue systems, not more "ideas"
+              So pipeline grows without burning you out.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="https://revvaughn.com/contact" external variant="primary">
@@ -114,7 +114,7 @@ export default function AIInnerCirclePage() {
             </div>
             <ul className="space-y-4 text-body text-ink-soft">
               <li className="border-b border-rule pb-4">
-                You are the brand. That&rsquo;s your advantage and your constraint.
+                You are the face and voice of the brand. That's your advantage and your constraint.
               </li>
               <li className="border-b border-rule pb-4">
                 You&rsquo;ve paid agencies and bought courses. Revenue didn&rsquo;t move.
