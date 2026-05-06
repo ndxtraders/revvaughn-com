@@ -393,7 +393,7 @@ export default function Home() {
               </h2>
               <div className="space-y-5 text-body text-ink-muted">
                 <p>
-                  I help founders fix funnel leaks, sharpen messaging, and close the gap between marketing and sales. My approach combines strategy, psychology, and execution — supported by AI where it adds leverage.
+                  I help founders fix funnel leaks, sharpen messaging, and close the gap between marketing and sales. My approach combines strategy, psychology, and execution... supported by AI where it adds leverage.
                 </p>
                 <p>
                   After 25 years building businesses across six countries, I now help founders and leadership teams create revenue systems that convert more consistently and scale more predictably.
