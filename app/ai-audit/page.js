@@ -192,7 +192,7 @@ export default function AIAuditPage() {
         <Section bg="paper" width="content">
           <div className="max-w-prose">
             <h2 className="text-h1 font-semibold tracking-tight text-ink mb-6">
-              Ready to turn your Red Zones into Green Assets?
+              Ready to turn your <span style={{color:'#990000'}}>Red Zones</span> into <span style={{color:'#83B14E'}}>Green Assets</span>?
             </h2>
             <p className="text-lead text-ink-muted mb-10">
               Stop experimenting. Start executing with a clear, prioritized roadmap built
