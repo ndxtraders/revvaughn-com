@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, CheckCircle2, AlertCircle, XCircle, ChevronRight } from 'lucide-react'
+import { ArrowRight, CheckCircle2, AlertCircle, XCircle, ChevronRight, Download } from 'lucide-react'
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -283,9 +283,30 @@ export default function MapPage() {
   const [tempSelection, setTempSelection] = useState(null)
   const [justSetCell, setJustSetCell] = useState(null)
   const [fadeKey, setFadeKey] = useState(0)
+  const resultsRef = useRef(null)
 
   const progress = answers.filter((a) => a !== null).length
   const question = QUESTIONS[currentQuestion]
+
+  // Download results as PNG using html2canvas (loaded on demand)
+  const handleDownload = useCallback(async () => {
+    if (!resultsRef.current) return
+    try {
+      // Dynamically import html2canvas — only loads when user clicks download
+      const html2canvas = (await import('html2canvas')).default
+      const canvas = await html2canvas(resultsRef.current, {
+        backgroundColor: '#F5F5F5',
+        scale: 2,
+        useCORS: true,
+      })
+      const link = document.createElement('a')
+      link.download = 'ai-priority-map-results.png'
+      link.href = canvas.toDataURL('image/png')
+      link.click()
+    } catch (err) {
+      console.error('Download failed:', err)
+    }
+  }, [])
 
   // Trigger fade animation on question change
   useEffect(() => {
@@ -596,6 +617,7 @@ export default function MapPage() {
             {/* Final Heatmap + Diagnostics */}
             <section className="bg-paper-grey py-section">
               <div className="max-w-content mx-auto px-6">
+                <div ref={resultsRef} className="pb-8">
                 {/* Final Map */}
                 <div className="mb-14">
                   <p className="eyebrow mb-6">Priority Map</p>
@@ -670,6 +692,18 @@ export default function MapPage() {
                     )
                   })}
                 </div>
+                </div>
+
+                {/* Download */}
+                <div className="mt-8">
+                  <button
+                    onClick={handleDownload}
+                    className="inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-ink hover:bg-ink hover:text-paper"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Results as Image
+                  </button>
+                </div>
               </div>
             </section>
 
@@ -684,15 +718,19 @@ export default function MapPage() {
                     A Map is only useful if you take the first step.
                   </h3>
                   <p className="text-lead text-ink-faint mb-10">
-                    Book a Pressure Test with Rev. Sixty minutes to identify the real bottleneck,
-                    confirm where AI gives you leverage, and get a clear prioritized action plan.
+                    Your Priority Map identified the friction. The AI Systems Audit turns it into
+                    a customized implementation roadmap — exactly which tools to use, in what
+                    order, and how to integrate them without breaking your team&rsquo;s workflow.
+                    The details are in the offer document below.
                   </p>
-                  <Link
-                    href="/quick-win"
+                  <a
+                    href="https://docs.google.com/document/d/1QU5izjT6wg1j1V5iEmNcaMUpyJiZNUwfk4p3MQwYt98/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent"
                   >
-                    Book Your Pressure Test <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    See the AI Systems Audit Details <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </section>
