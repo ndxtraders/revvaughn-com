@@ -31,8 +31,8 @@ export default function AIAuditPage() {
             </h1>
             <p className="text-lead text-ink-muted mb-10">
               I spend 6&ndash;10 hours deep-diving into your specific processes to find the
-              exact AI tools, sequence, and integrations that fit your business. Not theory.
-              A roadmap you can execute this quarter.
+              exact AI tools, sequence, and integrations that fit your business. You get 
+              an Action Plan you can execute.
             </p>
             <Button href="https://buy.stripe.com/6oU7sLfh1eptdyPbSWcAo00" external variant="primary">
               Book Your AI Systems Audit
