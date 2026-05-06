@@ -3,178 +3,167 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, CheckCircle2, AlertCircle, XCircle, ChevronRight, Download } from 'lucide-react'
+import {
+  ArrowRight,
+  CheckCircle2,
+  AlertCircle,
+  XCircle,
+  ChevronRight,
+  Download,
+  AlertTriangle,
+} from 'lucide-react'
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const QUESTIONS = [
+  // Pillar 1: Founder Freedom
   {
     id: 1,
-    category: 'Founder Trap',
+    category: 'Founder Freedom',
     categoryIndex: 0,
     label: 'The Vacation Test',
     symptom:
-      'If you took two weeks off with no phone, would revenue meaningfully drop or operations stall?',
-    redLabel: 'Yes — everything stops',
-    yellowLabel: 'Somewhat — a few things break',
-    greenLabel: 'No — it runs without me',
+      'If you left for 2 weeks with no phone, would your business revenue stop or decline?',
+    implication: 'Your business is a \u201Cjob\u201D you can\u2019t leave.',
+    solution: 'Build \u201CAI Agentic Workflows\u201D to handle routine decisions.',
   },
   {
     id: 2,
-    category: 'Founder Trap',
+    category: 'Founder Freedom',
     categoryIndex: 0,
-    label: 'The Brain Lock',
+    label: 'The Brain Trap',
     symptom:
-      'Are critical decisions — pricing, hiring, offers — waiting on your personal approval before moving forward?',
-    redLabel: 'All decisions route through me',
-    yellowLabel: 'Most do, but some are delegated',
-    greenLabel: 'Team handles it with clear criteria',
+      'Does every process live in your head instead of a written guide?',
+    implication: 'You are the single point of failure.',
+    solution:
+      'Use AI voice-to-text tools to document your \u201CBrain\u201D into a searchable Team Knowledge Base.',
   },
   {
     id: 3,
-    category: 'Founder Trap',
+    category: 'Founder Freedom',
     categoryIndex: 0,
-    label: 'Decision Density',
+    label: 'The Decision Tax',
     symptom:
-      'How many times per day are you pulled out of deep work to make low-stakes operational calls?',
-    redLabel: 'Constantly — 10+ times daily',
-    yellowLabel: 'A few times — 3–5 per day',
-    greenLabel: 'Rarely — team is self-sufficient',
+      'Does your team need to ask you \u201CWhat\u2019s next?\u201D multiple times a day?',
+    implication:
+      'You are overpaying for your own time to manage small tasks.',
+    solution:
+      'Implement a \u201CFirst-Line AI Assistant\u201D to answer team questions based on your style.',
   },
+  // Pillar 2: Growth Engine
   {
     id: 4,
-    category: 'Revenue Velocity',
+    category: 'Growth Engine',
     categoryIndex: 1,
-    label: 'Speed to Lead',
+    label: 'Lead Speed',
     symptom:
-      'How fast does a qualified lead receive a meaningful human (or AI) touchpoint after expressing interest?',
-    redLabel: 'Hours or longer',
-    yellowLabel: 'Within the hour',
-    greenLabel: 'Within 5 minutes',
+      'Do new leads ever wait longer than 5 minutes for a response?',
+    implication:
+      'You are losing hot leads to faster competitors every hour.',
+    solution: 'An AI Lead Responder that qualifies leads 24/7.',
   },
   {
     id: 5,
-    category: 'Revenue Velocity',
+    category: 'Growth Engine',
     categoryIndex: 1,
-    label: 'Ghost Database',
+    label: 'The Follow-Up Gap',
     symptom:
-      'Do you have unconverted leads sitting in your CRM older than 90 days with no active nurture sequence?',
-    redLabel: 'Yes — hundreds rotting',
-    yellowLabel: 'Some — sporadic follow-up',
-    greenLabel: 'No — automated sequences active',
+      'Do old leads sit in your database without getting regular check-ins?',
+    implication:
+      'You have a \u201CGhost Database\u201D of money left on the table.',
+    solution: 'An automated AI Reactivation Campaign for old leads.',
   },
   {
     id: 6,
-    category: 'Revenue Velocity',
+    category: 'Growth Engine',
     categoryIndex: 1,
-    label: 'Content Gap',
+    label: 'Content Grind',
     symptom:
-      'Is your content consistently moving cold audiences toward a first conversion event?',
-    redLabel: 'No consistent content strategy',
-    yellowLabel: 'Sporadic — no clear system',
-    greenLabel: 'Yes — documented and publishing',
+      'Do you spend hours manually creating content instead of using an automated system?',
+    implication: 'Your best marketing ideas are dying in production.',
+    solution:
+      'A Content Multiplier workflow to turn one raw video into 10+ assets.',
   },
+  // Pillar 3: Team Work
   {
     id: 7,
-    category: 'Admin Friction',
+    category: 'Team Work',
     categoryIndex: 2,
-    label: 'Data Gymnastics',
+    label: 'Copy-Paste Pain',
     symptom:
-      'How much time does your team spend manually moving data between tools (copy/paste, reformatting, re-entry)?',
-    redLabel: 'Hours per week per person',
-    yellowLabel: 'Some — a few hours',
-    greenLabel: 'Minimal — mostly automated',
+      'Does your team spend time manually moving info from one app to another?',
+    implication: 'You are paying for strategy but getting data entry.',
+    solution:
+      'Use \u201CSystem Bridges\u201D (Make/Zapier) to move data automatically.',
   },
   {
     id: 8,
-    category: 'Admin Friction',
+    category: 'Team Work',
     categoryIndex: 2,
-    label: 'Search & Rescue',
+    label: 'High-Value Work',
     symptom:
-      'How long does it take a team member to find a specific document, asset, or piece of client info?',
-    redLabel: '5+ minutes — or it\u2019s lost',
-    yellowLabel: '2–5 minutes of searching',
-    greenLabel: 'Under 60 seconds',
+      'Does your team spend hours on low-level, repetitive data entry instead of high-value work?',
+    implication:
+      'Your profit margins are being drained by repetitive tasks.',
+    solution:
+      'Replace the top 5 repetitive team tasks with custom AI Agents.',
   },
   {
     id: 9,
-    category: 'Admin Friction',
+    category: 'Team Work',
     categoryIndex: 2,
-    label: 'Status Update Tax',
+    label: 'The Status Tax',
     symptom:
-      'How much time is spent in meetings or messages answering \u2018where are we on this?\u2019 questions?',
-    redLabel: 'Multiple check-ins daily',
-    yellowLabel: 'Weekly recurring status calls',
-    greenLabel: 'Async dashboards handle it',
+      'Do you have to ask \u201CWhere are we on this?\u201D to know what\u2019s happening?',
+    implication:
+      'You are losing hours every week just asking what is happening.',
+    solution:
+      'An automated \u201CProject Pulse\u201D dashboard for daily status.',
   },
+  // Pillar 4: Client Experience
   {
     id: 10,
-    category: 'Operational Integrity',
+    category: 'Client Experience',
     categoryIndex: 3,
-    label: 'Onboarding Experience',
+    label: 'New Client Welcome',
     symptom:
-      'When a new client signs, is their onboarding experience consistent, fast, and self-explanatory?',
-    redLabel: 'Manual chaos every time',
-    yellowLabel: 'Semi-structured — some gaps',
-    greenLabel: 'Documented and systematized',
+      'Does your client onboarding process require manual work or suffer from inconsistencies?',
+    implication:
+      'Your first impression is inconsistent and risks churn.',
+    solution:
+      'A 100% automated onboarding sequence for contracts and intake.',
   },
   {
     id: 11,
-    category: 'Operational Integrity',
+    category: 'Client Experience',
     categoryIndex: 3,
-    label: 'Meeting ROI',
+    label: 'Meeting Waste',
     symptom:
-      'Do your internal meetings produce clear decisions and next actions — or are they status updates that could be a Loom?',
-    redLabel: 'Mostly updates, rarely decisions',
-    yellowLabel: 'Mixed — some productive',
-    greenLabel: 'Agendas, decisions, actions every time',
+      'Are notes and tasks from your client meetings often lost or forgotten?',
+    implication: 'You\u2019re having the same conversations twice.',
+    solution:
+      'AI Meeting Intelligence synced directly to your CRM/Project Manager.',
   },
   {
     id: 12,
-    category: 'Operational Integrity',
+    category: 'Client Experience',
     categoryIndex: 3,
-    label: 'Staff Fulfillment',
+    label: 'The Reporting Grind',
     symptom:
-      'Are your team members spending the majority of their time on high-value work — or repetitive manual tasks?',
-    redLabel: 'Mostly repetitive and manual',
-    yellowLabel: 'Split — some high-value, some not',
-    greenLabel: 'Primarily high-value work',
+      'Do you manually compile reports from different systems instead of having them generated automatically?',
+    implication:
+      'You are making decisions based on old, manual data.',
+    solution:
+      'A live \u201CBusiness Health Dashboard\u201D pulling automated data from all apps.',
   },
 ]
 
 const CATEGORIES = [
-  'Founder Trap',
-  'Revenue Velocity',
-  'Admin Friction',
-  'Operational Integrity',
+  'Founder Freedom',
+  'Growth Engine',
+  'Team Work',
+  'Client Experience',
 ]
-
-const DIAGNOSTICS = {
-  'Founder Trap': {
-    red: 'You don\u2019t own a business; you own a high-pressure job. Your personal involvement is the primary bottleneck.',
-    yellow:
-      'You\u2019re partially dependent. The system works — until it doesn\u2019t. One departure or spike in demand reveals the gap.',
-    green: 'Strong. Your business has genuine leverage at the founder layer.',
-  },
-  'Revenue Velocity': {
-    red: 'You are burning cash. Your \u2018Speed to Lead\u2019 and follow-up gaps are allowing competitors to steal market share.',
-    yellow:
-      'Revenue is moving, but leaving money in the pipeline. Consistency and automation will compound results.',
-    green: 'Revenue engine is operational. Focus shifts to volume and conversion optimization.',
-  },
-  'Admin Friction': {
-    red: 'Your team is drowning in \u2018Data Gymnastics.\u2019 You are paying for intelligence but receiving manual labor.',
-    yellow:
-      'Friction exists but isn\u2019t fatal — yet. As you scale, these gaps compound into real cost.',
-    green: 'Lean operations. AI and automation are doing the heavy lifting where it counts.',
-  },
-  'Operational Integrity': {
-    red: 'Your \u2018Delivery\u2019 is a manual grind. Every new client creates more stress, not more momentum.',
-    yellow:
-      'Delivery works, but depends on individual effort rather than system reliability.',
-    green: 'Delivery is systematized. New clients create predictable workload, not chaos.',
-  },
-}
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -185,12 +174,34 @@ const STATUS_HEX = {
 }
 
 const STATUS_LABEL = {
-  red: 'Critical',
-  yellow: 'Warning',
-  green: 'Efficient',
+  red: 'Breaking Point',
+  yellow: 'Caution',
+  green: 'Under Control',
 }
 
+const POINTS = { red: 10, yellow: 5, green: 0 }
+const MAX_TOTAL = 120
+const MAX_PER_CATEGORY = 30
+
 // ─── Helpers ─────────────────────────────────────────────────────────────────
+
+function getCategoryFriction(answers, categoryIndex) {
+  let sum = 0
+  answers.forEach((a, i) => {
+    if (QUESTIONS[i] && QUESTIONS[i].categoryIndex === categoryIndex && a) {
+      sum += POINTS[a]
+    }
+  })
+  return Math.round((sum / MAX_PER_CATEGORY) * 100)
+}
+
+function getTotalFriction(answers) {
+  let sum = 0
+  answers.forEach((a) => {
+    if (a) sum += POINTS[a]
+  })
+  return Math.round((sum / MAX_TOTAL) * 100)
+}
 
 function getCategoryStatus(answers, categoryIndex) {
   const catAnswers = answers.filter(
@@ -209,9 +220,7 @@ function HeatmapCell({ status, questionNumber, isActive, justSet }) {
     <div
       className={[
         'relative flex items-center justify-center transition-all duration-500',
-        isActive && !status ? 'border-ink ring-1 ring-ink' : '',
-        !status && !isActive ? 'border-rule' : '',
-        status ? 'border-transparent' : '',
+        isActive && !status ? 'ring-1 ring-ink' : '',
         justSet ? 'animate-bloom' : '',
       ].join(' ')}
       style={{
@@ -240,37 +249,48 @@ function HeatmapCell({ status, questionNumber, isActive, justSet }) {
   )
 }
 
-function StatusButton({ value, label, selected, onClick }) {
-  const configs = {
-    red: {
-      color: '#d9534f',
-      icon: <XCircle className="w-4 h-4 shrink-0" />,
-    },
-    yellow: {
-      color: '#f0ad4e',
-      icon: <AlertCircle className="w-4 h-4 shrink-0" />,
-    },
-    green: {
-      color: '#5cb85c',
-      icon: <CheckCircle2 className="w-4 h-4 shrink-0" />,
-    },
-  }
-
-  const config = configs[value]
-
+function StatusButton({ label, icon, selected, onClick, color }) {
   return (
     <button
       onClick={onClick}
       className="w-full flex items-center gap-3 px-5 py-3 text-small font-medium transition-all duration-200 text-left border-2"
       style={{
-        borderColor: config.color,
-        backgroundColor: selected ? config.color : '#FFFFFF',
-        color: selected ? '#FFFFFF' : config.color,
+        borderColor: color,
+        backgroundColor: selected ? color : '#FFFFFF',
+        color: selected ? '#FFFFFF' : color,
       }}
     >
-      {config.icon}
+      {icon}
       <span>{label}</span>
     </button>
+  )
+}
+
+function FrictionBar({ percentage, status }) {
+  const color = status ? STATUS_HEX[status] : '#E5E5E5'
+  return (
+    <div className="w-full">
+      <div className="w-full h-2 bg-paper-greyDark overflow-hidden">
+        <div
+          className="h-full transition-all duration-700 ease-out"
+          style={{
+            width: `${percentage}%`,
+            backgroundColor: color,
+          }}
+        />
+      </div>
+      <div className="flex items-center justify-between mt-1">
+        <span
+          className="text-eyebrow font-bold tracking-widest uppercase"
+          style={{ color }}
+        >
+          {status ? STATUS_LABEL[status] : '\u2014'}
+        </span>
+        <span className="text-eyebrow font-semibold tracking-widest text-ink-faint">
+          {percentage}% friction
+        </span>
+      </div>
+    </div>
   )
 }
 
@@ -288,21 +308,36 @@ export default function MapPage() {
   const progress = answers.filter((a) => a !== null).length
   const question = QUESTIONS[currentQuestion]
 
-  // Download results as PNG using html2canvas (loaded on demand)
+  // Download results as PDF
   const handleDownload = useCallback(async () => {
     if (!resultsRef.current) return
     try {
-      // Dynamically import html2canvas — only loads when user clicks download
       const html2canvas = (await import('html2canvas')).default
+      const { default: jsPDF } = await import('jspdf')
       const canvas = await html2canvas(resultsRef.current, {
         backgroundColor: '#F5F5F5',
         scale: 2,
         useCORS: true,
       })
-      const link = document.createElement('a')
-      link.download = 'ai-priority-map-results.png'
-      link.href = canvas.toDataURL('image/png')
-      link.click()
+      const imgData = canvas.toDataURL('image/png')
+      const imgWidth = 210
+      const imgHeight = (canvas.height * imgWidth) / canvas.width
+      const pdf = new jsPDF('p', 'mm', 'a4')
+      const pageHeight = 297
+      let position = 0
+      let remainingHeight = imgHeight
+
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
+      remainingHeight -= pageHeight
+
+      while (remainingHeight > 0) {
+        position -= pageHeight
+        pdf.addPage()
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
+        remainingHeight -= pageHeight
+      }
+
+      pdf.save('ai-priority-map-results.pdf')
     } catch (err) {
       console.error('Download failed:', err)
     }
@@ -363,10 +398,15 @@ export default function MapPage() {
   }
 
   const categoryStatuses = CATEGORIES.map((_, i) => getCategoryStatus(answers, i))
+  const categoryFrictions = CATEGORIES.map((_, i) => getCategoryFriction(answers, i))
+  const totalFriction = getTotalFriction(answers)
+  const redCount = answers.filter((a) => a === 'red').length
+  const hasRed = redCount > 0
+  const redQuestions = QUESTIONS.filter((_, i) => answers[i] === 'red')
 
   return (
     <>
-      {/* Bloom keyframe — injected once */}
+      {/* Bloom keyframe */}
       <style jsx global>{`
         @keyframes bloom {
           0% {
@@ -387,7 +427,7 @@ export default function MapPage() {
         }
       `}</style>
 
-      {/* Header — matches site Header.js */}
+      {/* Header */}
       <header className="border-b border-rule bg-paper">
         <div className="max-w-wide mx-auto px-6 py-5 flex items-center justify-between">
           <Link
@@ -420,7 +460,7 @@ export default function MapPage() {
       </header>
 
       <main className="bg-paper">
-        {/* ─── Hero (only before first answer) ─────────────────────────── */}
+        {/* ─── Hero (before first answer) ──────────────────────────────── */}
         {currentQuestion === 0 && progress === 0 && !revealed && (
           <section className="bg-paper py-section">
             <div className="max-w-content mx-auto px-6">
@@ -431,9 +471,9 @@ export default function MapPage() {
                     AI Priority Map
                   </h1>
                   <p className="text-lead text-ink-muted">
-                    12 symptom-based questions. Four operational categories. One clear picture
-                    of where AI gives you real leverage — and where you have a systems problem
-                    first.
+                    12 symptom-based questions. Four operational pillars. One clear picture of
+                    where your business is bleeding time, money, and momentum — and exactly
+                    where AI can stop the leak.
                   </p>
                 </div>
                 <div className="hidden md:flex items-start justify-center pt-4">
@@ -475,7 +515,7 @@ export default function MapPage() {
                     </div>
                   </div>
 
-                  {/* Question content — fades on change */}
+                  {/* Question content */}
                   <div key={fadeKey} className="fade-up">
                     <p className="eyebrow mb-3">{question.category}</p>
                     <h2 className="font-sans font-semibold text-h1 text-ink mb-3">
@@ -483,25 +523,28 @@ export default function MapPage() {
                     </h2>
                     <p className="text-body text-ink-muted mb-10">{question.symptom}</p>
 
-                    {/* Options */}
+                    {/* Unified button labels */}
                     <div className="flex flex-col gap-3 mb-10">
                       <StatusButton
-                        value="red"
-                        label={question.redLabel}
+                        label="Yes, often"
+                        icon={<XCircle className="w-4 h-4 shrink-0" />}
                         selected={tempSelection === 'red'}
                         onClick={() => handleSelect('red')}
+                        color="#d9534f"
                       />
                       <StatusButton
-                        value="yellow"
-                        label={question.yellowLabel}
+                        label="Sometimes"
+                        icon={<AlertCircle className="w-4 h-4 shrink-0" />}
                         selected={tempSelection === 'yellow'}
                         onClick={() => handleSelect('yellow')}
+                        color="#f0ad4e"
                       />
                       <StatusButton
-                        value="green"
-                        label={question.greenLabel}
+                        label="No, never"
+                        icon={<CheckCircle2 className="w-4 h-4 shrink-0" />}
                         selected={tempSelection === 'green'}
                         onClick={() => handleSelect('green')}
+                        color="#5cb85c"
                       />
                     </div>
                   </div>
@@ -595,10 +638,10 @@ export default function MapPage() {
           </section>
         )}
 
-        {/* ─── Diagnostic Reveal ──────────────────────────────────────── */}
+        {/* ─── Results Reveal ─────────────────────────────────────────── */}
         {revealed && (
           <>
-            {/* Headline */}
+            {/* Headline + Total Score */}
             <section className="bg-paper py-section">
               <div className="max-w-content mx-auto px-6">
                 <div className="max-w-prose fade-up">
@@ -606,22 +649,91 @@ export default function MapPage() {
                   <h2 className="font-sans font-semibold text-display text-ink mb-6">
                     Your AI Priority Map
                   </h2>
-                  <p className="text-lead text-ink-muted">
-                    Based on your answers, here&rsquo;s where your leverage is — and where the
-                    leaks are.
-                  </p>
+
+                  {/* Total Friction Score */}
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <span className="font-sans font-semibold text-display text-ink">
+                        {totalFriction}%
+                      </span>
+                      <span className="text-body text-ink-muted">
+                        Total Business Friction
+                      </span>
+                    </div>
+                    <div className="w-full h-3 bg-paper-greyDark overflow-hidden">
+                      <div
+                        className="h-full transition-all duration-1000 ease-out"
+                        style={{
+                          width: `${totalFriction}%`,
+                          backgroundColor:
+                            totalFriction >= 50
+                              ? STATUS_HEX.red
+                              : totalFriction >= 25
+                                ? STATUS_HEX.yellow
+                                : STATUS_HEX.green,
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Warning */}
+                  {hasRed && (
+                    <div
+                      className="flex items-start gap-3 p-4 border-l-[3px] bg-paper fade-up"
+                      style={{ borderLeftColor: STATUS_HEX.red }}
+                    >
+                      <AlertTriangle
+                        className="w-5 h-5 shrink-0 mt-0.5"
+                        style={{ color: STATUS_HEX.red }}
+                      />
+                      <p className="text-body text-ink">
+                        Your business is at a breaking point that might be improved with AI.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </section>
 
-            {/* Final Heatmap + Diagnostics */}
+            {/* Downloadable Results Section */}
             <section className="bg-paper-grey py-section">
               <div className="max-w-content mx-auto px-6">
                 <div ref={resultsRef} className="pb-8">
-                {/* Final Map */}
-                <div className="mb-14">
+                  {/* Pillar Friction Cards */}
+                  <p className="eyebrow mb-6">Pillar Breakdown</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+                    {CATEGORIES.map((cat, catIdx) => {
+                      const catStatus = categoryStatuses[catIdx]
+                      const friction = categoryFrictions[catIdx]
+
+                      return (
+                        <div
+                          key={cat}
+                          className="p-6 bg-paper border border-rule fade-up"
+                          style={{ animationDelay: `${catIdx * 0.1}s` }}
+                        >
+                          <div className="flex items-start justify-between mb-4">
+                            <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
+                              {cat}
+                            </p>
+                            <span
+                              className="w-3 h-3 rounded-full shrink-0"
+                              style={{
+                                backgroundColor: catStatus
+                                  ? STATUS_HEX[catStatus]
+                                  : '#E5E5E5',
+                              }}
+                            />
+                          </div>
+                          <FrictionBar percentage={friction} status={catStatus} />
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {/* Heatmap Recap */}
                   <p className="eyebrow mb-6">Priority Map</p>
-                  <div className="flex flex-col gap-5 max-w-sm">
+                  <div className="flex flex-col gap-5 max-w-sm mb-14">
                     {CATEGORIES.map((cat, catIdx) => (
                       <div key={cat}>
                         <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-2">
@@ -644,93 +756,114 @@ export default function MapPage() {
                       </div>
                     ))}
                   </div>
-                </div>
 
-                {/* Category Breakdowns */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {CATEGORIES.map((cat, catIdx) => {
-                    const catStatus = categoryStatuses[catIdx]
-                    const diagnostic = DIAGNOSTICS[cat]
-                    const message =
-                      catStatus === 'red'
-                        ? diagnostic.red
-                        : catStatus === 'yellow'
-                          ? diagnostic.yellow
-                          : diagnostic.green
-
-                    return (
-                      <div
-                        key={cat}
-                        className="p-6 bg-paper border border-rule fade-up"
-                        style={{
-                          animationDelay: `${catIdx * 0.1}s`,
-                          borderLeftWidth: '3px',
-                          borderLeftColor: catStatus ? STATUS_HEX[catStatus] : '#E5E5E5',
-                        }}
-                      >
-                        <div className="flex items-start justify-between mb-4">
-                          <div>
-                            <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">
-                              {cat}
-                            </p>
-                            <span
-                              className="text-eyebrow uppercase font-bold tracking-widest"
-                              style={{ color: catStatus ? STATUS_HEX[catStatus] : '#8a8a8a' }}
-                            >
-                              {catStatus ? STATUS_LABEL[catStatus] : '\u2014'}
-                            </span>
-                          </div>
-                          <span
-                            className="w-3 h-3 rounded-full mt-1 shrink-0"
+                  {/* Red-Only Triage Results */}
+                  {hasRed && (
+                    <>
+                      <p className="eyebrow mb-6">
+                        Breaking Points &mdash; Immediate Attention Required
+                      </p>
+                      <div className="flex flex-col gap-4">
+                        {redQuestions.map((q, idx) => (
+                          <div
+                            key={q.id}
+                            className="p-6 bg-paper border border-rule fade-up"
                             style={{
-                              backgroundColor: catStatus ? STATUS_HEX[catStatus] : '#E5E5E5',
+                              animationDelay: `${idx * 0.08}s`,
+                              borderLeftWidth: '3px',
+                              borderLeftColor: STATUS_HEX.red,
                             }}
-                          />
-                        </div>
-                        <p className="text-body text-ink-muted">{message}</p>
+                          >
+                            <div className="flex items-start justify-between mb-1">
+                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
+                                {q.category}
+                              </p>
+                              <span
+                                className="text-eyebrow uppercase font-bold tracking-widest"
+                                style={{ color: STATUS_HEX.red }}
+                              >
+                                Breaking Point
+                              </span>
+                            </div>
+                            <h3 className="font-sans font-semibold text-h3 text-ink mb-3">
+                              {q.label}
+                            </h3>
+                            <div className="mb-3">
+                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">
+                                Implication
+                              </p>
+                              <p className="text-body text-ink-muted">{q.implication}</p>
+                            </div>
+                            <div>
+                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">
+                                Potential Solution
+                              </p>
+                              <p className="text-body text-ink">{q.solution}</p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    )
-                  })}
-                </div>
+                    </>
+                  )}
                 </div>
 
-                {/* Download */}
+                {/* Download Button */}
                 <div className="mt-8">
                   <button
                     onClick={handleDownload}
                     className="inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-ink hover:bg-ink hover:text-paper"
                   >
                     <Download className="w-4 h-4" />
-                    Download Results as Image
+                    Download Results as PDF
                   </button>
                 </div>
               </div>
             </section>
 
-            {/* CTA */}
+            {/* ─── Dynamic CTA ────────────────────────────────────────── */}
             <section className="bg-ink py-section">
               <div className="max-w-content mx-auto px-6">
                 <div className="max-w-prose">
                   <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-6">
                     Next Step
                   </p>
-                  <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
-                    A Map is only useful if you take the first step.
-                  </h3>
-                  <p className="text-lead text-ink-faint mb-10">
-                    Your Priority Map identified the friction. The AI Systems Audit turns it into
-                    a customized implementation roadmap — exactly which tools to use, in what
-                    order, and how to integrate them without breaking your team&rsquo;s workflow.
-                    The details are in the offer document below.
-                  </p>
-                  <a
-                    href="https://docs.google.com/document/d/1QU5izjT6wg1j1V5iEmNcaMUpyJiZNUwfk4p3MQwYt98/edit?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent"
-                  >
-                    See the AI Systems Audit Details <ArrowRight className="w-4 h-4" />
-                  </a>
+
+                  {hasRed ? (
+                    <>
+                      <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
+                        You have {redCount} Red Zone{redCount > 1 ? 's' : ''} that need
+                        immediate attention.
+                      </h3>
+                      <p className="text-lead text-ink-faint mb-10">
+                        In an AI Systems Audit, I provide the exact tech stack and roadmap to
+                        flip these to Green. The details are in the offer document below.
+                      </p>
+                      <a
+                        href="https://docs.google.com/document/d/1QU5izjT6wg1j1V5iEmNcaMUpyJiZNUwfk4p3MQwYt98/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent"
+                      >
+                        Book Your Full Systems Diagnostic <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
+                        You&rsquo;ve avoided critical breaking points.
+                      </h3>
+                      <p className="text-lead text-ink-faint mb-10">
+                        You have scale risks, but no fires. To keep optimizing and stay ahead of
+                        the curve, join a community of founders mastering these systems.
+                      </p>
+                      <Link
+                        href="/ai-inner-circle"
+                        className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent"
+                      >
+                        Join the AI Inner Circle <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </>
+                  )}
                 </div>
               </div>
             </section>
@@ -750,7 +883,7 @@ export default function MapPage() {
         )}
       </main>
 
-      {/* Footer — matches site Footer.js */}
+      {/* Footer */}
       <footer className="border-t border-rule bg-paper-grey">
         <div className="max-w-wide mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-small text-ink-muted">
           <div>&copy; {new Date().getFullYear()} Rev Vaughn. All rights reserved.</div>
