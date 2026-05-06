@@ -143,7 +143,7 @@ export default function AIAuditPage() {
             <div>
               <div className="eyebrow mb-4">The Deliverable</div>
               <h2 className="text-h1 font-semibold tracking-tight text-ink">
-                A document you can act on immediately.
+                A plan you can act on immediately.
               </h2>
             </div>
             <div className="space-y-5 text-body text-ink-soft">
@@ -176,7 +176,7 @@ export default function AIAuditPage() {
             </div>
             <div className="space-y-5 text-body text-ink-soft">
               <p>
-                This is a founder&rsquo;s price based on current capacity. To maintain the
+                Founder&rsquo;s early access special pricing is based on my current capacity. To maintain the
                 6&ndash;10 hours of manual attention I give to every audit, this price will
                 be increasing very soon. If you leave and come back later, it will likely be higher.
               </p>
