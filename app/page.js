@@ -130,7 +130,7 @@ export default function Home() {
         <Section bg="paper" width="prose">
           <p className="eyebrow mb-6">The Work</p>
           <p className="text-h2 font-light text-ink leading-tight">
-            I help founder-led brands diagnose where revenue leaks, architect the system that fixes it, and operate it until it compounds.
+            I help founder-led brands diagnose where revenue leaks and architect the systems that fix it
           </p>
         </Section>
 
