@@ -1,25 +1,30 @@
 import { NextResponse } from 'next/server'
 
-const FIELD_KEYS = [
-  'vacation_test',
-  'brain_trap',
-  'decision_tax',
-  'lead_speed',
-  'follow_up_gap',
-  'content_grind',
-  'copy_paste_pain',
-  'high_value_work',
-  'status_tax',
-  'new_client_welcome',
-  'meeting_waste',
-  'reporting_grind',
+// Maps question index to MailerLite field key
+// Q14 (index 13) and Q15 (index 14) are null — not sent to MailerLite
+const FIELD_MAP = [
+  'vacation_test',   // Q1
+  'missed_emails',   // Q2
+  'brain_trap',      // Q3
+  'lead_response',   // Q4
+  'content_grind',   // Q5
+  'spam_outreach',   // Q6
+  'slow_quotes',     // Q7
+  'lead_neglect',    // Q8
+  'upsell_miss',     // Q9
+  'scope_creep',     // Q10
+  'time_tracking',   // Q11
+  'copy_paste_pain', // Q12
+  'client_churn',    // Q13
+  null,              // Q14 — not tracked in MailerLite
+  null,              // Q15 — not tracked in MailerLite
 ]
 
 export async function POST(request) {
   try {
-    const { email, answers, totalFriction, redCount } = await request.json()
+    const { email, answers, totalFriction } = await request.json()
 
-    if (!email || !answers || answers.length !== 12) {
+    if (!email || !answers || answers.length !== 15) {
       return NextResponse.json({ error: 'Invalid data' }, { status: 400 })
     }
 
@@ -30,15 +35,15 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
     }
 
-    // Build custom fields object
+    // Build custom fields — skip null keys
     const fields = {}
-    FIELD_KEYS.forEach((key, i) => {
-      fields[key] = answers[i] || 'skipped'
+    FIELD_MAP.forEach((key, i) => {
+      if (key) {
+        fields[key] = answers[i] || 'skipped'
+      }
     })
     fields.total_friction = totalFriction
-    fields.red_count = redCount
 
-    // Update subscriber with quiz results
     const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {

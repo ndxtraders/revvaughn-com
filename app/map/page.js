@@ -23,144 +23,175 @@ const QUESTIONS = [
     categoryIndex: 0,
     label: 'The Vacation Test',
     symptom:
-      'If you left for 2 weeks with no phone, would your business revenue stop or decline?',
-    implication: 'Your business is a \u201Cjob\u201D you can\u2019t leave.',
-    solution: 'Build \u201CAI Agentic Workflows\u201D to handle routine decisions.',
+      'If you leave for 2 weeks, does revenue drop or operations slow down?',
+    pain:
+      'You own a stressful job, not a transferable asset. You are the operational ceiling.',
+    fieldKey: 'vacation_test',
   },
   {
     id: 2,
     category: 'Founder Freedom',
     categoryIndex: 0,
-    label: 'The Brain Trap',
+    label: 'Missed Emails',
     symptom:
-      'Does every process live in your head instead of a written guide?',
-    implication: 'You are the single point of failure.',
-    solution:
-      'Use AI voice-to-text tools to document your \u201CBrain\u201D into a searchable Team Knowledge Base.',
+      'Do you ever miss important emails from current or potential clients?',
+    pain:
+      'Instant high-ticket loss. Missing a massive opportunity simply because it was buried in your inbox.',
+    fieldKey: 'missed_emails',
   },
   {
     id: 3,
     category: 'Founder Freedom',
     categoryIndex: 0,
-    label: 'The Decision Tax',
+    label: 'The Brain Trap',
     symptom:
-      'Does your team need to ask you \u201CWhat\u2019s next?\u201D multiple times a day?',
-    implication:
-      'You are overpaying for your own time to manage small tasks.',
-    solution:
-      'Implement a \u201CFirst-Line AI Assistant\u201D to answer team questions based on your style.',
+      'Do your core processes live only in your head because you \u201Cdon\u2019t have time\u201D to write them down?',
+    pain:
+      'Massive key-person risk. If someone leaves, they take the company\u2019s \u201Csecret sauce\u201D with them.',
+    fieldKey: 'brain_trap',
   },
-  // Pillar 2: Growth Engine
+  // Pillar 2: Marketing Engine
   {
     id: 4,
-    category: 'Growth Engine',
+    category: 'Marketing Engine',
     categoryIndex: 1,
     label: 'Lead Speed',
     symptom:
-      'Do new leads ever wait longer than 5 minutes for a response?',
-    implication:
-      'You are losing hot leads to faster competitors every hour.',
-    solution: 'An AI Lead Responder that qualifies leads 24/7.',
+      'Do new leads wait so long for a reply that they end up calling your competitors?',
+    pain:
+      'Instant wasted marketing spend. You pay to generate the lead, but hand it to a faster rival.',
+    fieldKey: 'lead_response',
   },
   {
     id: 5,
-    category: 'Growth Engine',
-    categoryIndex: 1,
-    label: 'The Follow-Up Gap',
-    symptom:
-      'Do old leads sit in your database without getting regular check-ins?',
-    implication:
-      'You have a \u201CGhost Database\u201D of money left on the table.',
-    solution: 'An automated AI Reactivation Campaign for old leads.',
-  },
-  {
-    id: 6,
-    category: 'Growth Engine',
+    category: 'Marketing Engine',
     categoryIndex: 1,
     label: 'Content Grind',
     symptom:
-      'Do you spend hours manually creating content instead of using an automated system?',
-    implication: 'Your best marketing ideas are dying in production.',
-    solution:
-      'A Content Multiplier workflow to turn one raw video into 10+ assets.',
+      'Do you or your team spend too much time creating content that doesn\u2019t actually generate new qualified leads?',
+    pain:
+      'Massive drain on high-value billable time for founders and the team.',
+    fieldKey: 'content_grind',
   },
-  // Pillar 3: Team Work
+  {
+    id: 6,
+    category: 'Marketing Engine',
+    categoryIndex: 1,
+    label: 'Spam Outreach',
+    symptom:
+      'Are your outbound marketing emails getting completely ignored because they look like spam?',
+    pain:
+      'Burned domains and completely wasted outreach efforts that fail to convert.',
+    fieldKey: 'spam_outreach',
+  },
+  // Pillar 3: Sales Engine
   {
     id: 7,
-    category: 'Team Work',
+    category: 'Sales Engine',
     categoryIndex: 2,
-    label: 'Copy-Paste Pain',
+    label: 'Slow Quotes',
     symptom:
-      'Does your team spend time manually moving info from one app to another?',
-    implication: 'You are paying for strategy but getting data entry.',
-    solution:
-      'Use \u201CSystem Bridges\u201D (Make/Zapier) to move data automatically.',
+      'Do you lose deals because it takes you or your team too long to write and send a custom quote or proposal?',
+    pain:
+      'The #1 deal killer in B2B. Buyers often go with the first good quote they receive.',
+    fieldKey: 'slow_quotes',
   },
   {
     id: 8,
-    category: 'Team Work',
+    category: 'Sales Engine',
     categoryIndex: 2,
-    label: 'High-Value Work',
+    label: 'Lead Neglect',
     symptom:
-      'Does your team spend hours on low-level, repetitive data entry instead of high-value work?',
-    implication:
-      'Your profit margins are being drained by repetitive tasks.',
-    solution:
-      'Replace the top 5 repetitive team tasks with custom AI Agents.',
+      'Does your team give up on new leads after a few tries and ignore older leads?',
+    pain:
+      'Bleeding cash at the bottom of the funnel through pure neglect. Sitting on forgotten revenue.',
+    fieldKey: 'lead_neglect',
   },
   {
     id: 9,
-    category: 'Team Work',
+    category: 'Sales Engine',
     categoryIndex: 2,
-    label: 'The Status Tax',
+    label: 'Upsell Miss',
     symptom:
-      'Do you have to ask \u201CWhere are we on this?\u201D to know what\u2019s happening?',
-    implication:
-      'You are losing hours every week just asking what is happening.',
-    solution:
-      'An automated \u201CProject Pulse\u201D dashboard for daily status.',
+      'Do you leave easy revenue on the table because your team misses obvious chances to upsell or cross-sell current clients?',
+    pain:
+      'Leaving high-margin revenue on the table from people who already trust your business.',
+    fieldKey: 'upsell_miss',
   },
-  // Pillar 4: Client Experience
+  // Pillar 4: Team Work
   {
     id: 10,
-    category: 'Client Experience',
+    category: 'Team Work',
     categoryIndex: 3,
-    label: 'New Client Welcome',
+    label: 'Scope Creep',
     symptom:
-      'Does your client onboarding process require manual work or suffer from inconsistencies?',
-    implication:
-      'Your first impression is inconsistent and risks churn.',
-    solution:
-      'A 100% automated onboarding sequence for contracts and intake.',
+      'Does your team do extra work for free because they didn\u2019t check the project scope in the contract?',
+    pain:
+      'Destroys profit margins instantly. Your team is performing highly-skilled free work.',
+    fieldKey: 'scope_creep',
   },
   {
     id: 11,
-    category: 'Client Experience',
+    category: 'Team Work',
     categoryIndex: 3,
-    label: 'Meeting Waste',
+    label: 'Time Tracking',
     symptom:
-      'Are notes and tasks from your client meetings often lost or forgotten?',
-    implication: 'You\u2019re having the same conversations twice.',
-    solution:
-      'AI Meeting Intelligence synced directly to your CRM/Project Manager.',
+      'Do your workers forget to log their client work time, costing you money every week?',
+    pain:
+      'Literally throwing earned cash in the trash. The work is done, but never billed.',
+    fieldKey: 'time_tracking',
   },
   {
     id: 12,
-    category: 'Client Experience',
+    category: 'Team Work',
     categoryIndex: 3,
-    label: 'The Reporting Grind',
+    label: 'Copy-Paste Pain',
     symptom:
-      'Do you manually compile reports from different systems instead of having them generated automatically?',
-    implication:
-      'You are making decisions based on old, manual data.',
-    solution:
-      'A live \u201CBusiness Health Dashboard\u201D pulling automated data from all apps.',
+      'Does your team spend hours manually typing information from one platform into another?',
+    pain:
+      'Paying high human salaries for bot-level data entry, while inviting costly errors.',
+    fieldKey: 'copy_paste_pain',
+  },
+  // Pillar 5: Client Experience
+  {
+    id: 13,
+    category: 'Client Experience',
+    categoryIndex: 4,
+    label: 'Client Churn',
+    symptom:
+      'Do clients ever quit out of nowhere without warning you they were unhappy?',
+    pain:
+      'Losing an important account out of the blue. This is a recurring problem in B2B.',
+    fieldKey: 'client_churn',
+  },
+  {
+    id: 14,
+    category: 'Client Experience',
+    categoryIndex: 4,
+    label: 'Manual Reports',
+    symptom:
+      'Does your team spend too much time manually creating update reports for clients and management?',
+    pain:
+      'Report requests cause scope creep and your team wastes billable hours building manual reports.',
+    fieldKey: null, // Not sent to MailerLite
+  },
+  {
+    id: 15,
+    category: 'Client Experience',
+    categoryIndex: 4,
+    label: 'Invoice Chase',
+    symptom:
+      'Does your team have to manually track down unpaid invoices and send awkward reminder emails?',
+    pain:
+      'Your cash flow is artificially choked. You delivered the work, but you can\u2019t make payroll on time.',
+    fieldKey: null, // Not sent to MailerLite
   },
 ]
 
 const CATEGORIES = [
   'Founder Freedom',
-  'Growth Engine',
+  'Marketing Engine',
+  'Sales Engine',
   'Team Work',
   'Client Experience',
 ]
@@ -179,9 +210,9 @@ const STATUS_LABEL = {
   green: 'Under Control',
 }
 
-const POINTS = { red: 10, yellow: 5, green: 0 }
-const MAX_TOTAL = 120
-const MAX_PER_CATEGORY = 30
+const POINTS = { red: 5, yellow: 2, green: 0 }
+const MAX_TOTAL = 75 // 15 questions × 5 max each
+const MAX_PER_CATEGORY = 15 // 3 questions × 5 max each
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -297,7 +328,7 @@ function FrictionBar({ percentage, status }) {
 // ─── Page Component ──────────────────────────────────────────────────────────
 
 export default function MapPage() {
-  const [answers, setAnswers] = useState(Array(12).fill(null))
+  const [answers, setAnswers] = useState(Array(15).fill(null))
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [tempSelection, setTempSelection] = useState(null)
@@ -313,7 +344,7 @@ export default function MapPage() {
   const hasRed = redCount > 0
   const redQuestions = QUESTIONS.filter((_, i) => answers[i] === 'red')
 
-  // Download results as PDF (programmatic — includes all content)
+  // Download results as PDF
   const handleDownload = useCallback(async () => {
     try {
       const { default: jsPDF } = await import('jspdf')
@@ -331,7 +362,6 @@ export default function MapPage() {
         }
       }
 
-      // Colors
       const ink = [26, 26, 26]
       const muted = [120, 120, 120]
       const faint = [170, 170, 170]
@@ -340,7 +370,7 @@ export default function MapPage() {
       const green = [92, 184, 92]
       const statusColors = { red, yellow, green }
 
-      // ── Header
+      // Header
       pdf.setFont('helvetica', 'bold')
       pdf.setFontSize(10)
       pdf.setTextColor(...faint)
@@ -354,7 +384,7 @@ export default function MapPage() {
       pdf.line(margin, y, pageWidth - margin, y)
       y += 12
 
-      // ── Total Friction Score
+      // Total Friction
       pdf.setFont('helvetica', 'bold')
       pdf.setFontSize(28)
       pdf.setTextColor(...ink)
@@ -365,17 +395,14 @@ export default function MapPage() {
       pdf.text('Total Business Friction', margin + 30, y)
       y += 6
 
-      // Friction bar
-      const barWidth = contentWidth
-      const barHeight = 3
-      pdf.setFillColor(230, 230, 230)
-      pdf.rect(margin, y, barWidth, barHeight, 'F')
       const barColor = totalFriction >= 50 ? red : totalFriction >= 25 ? yellow : green
+      pdf.setFillColor(230, 230, 230)
+      pdf.rect(margin, y, contentWidth, 3, 'F')
       pdf.setFillColor(...barColor)
-      pdf.rect(margin, y, barWidth * (totalFriction / 100), barHeight, 'F')
+      pdf.rect(margin, y, contentWidth * (totalFriction / 100), 3, 'F')
       y += 12
 
-      // ── Warning
+      // Warning
       if (hasRed) {
         pdf.setFillColor(255, 245, 245)
         pdf.rect(margin, y, contentWidth, 10, 'F')
@@ -392,7 +419,7 @@ export default function MapPage() {
         y += 16
       }
 
-      // ── Pillar Breakdown
+      // Pillar Breakdown
       pdf.setFont('helvetica', 'bold')
       pdf.setFontSize(8)
       pdf.setTextColor(...faint)
@@ -409,15 +436,14 @@ export default function MapPage() {
         pdf.setFontSize(9)
         pdf.setTextColor(...ink)
         pdf.text(cat, margin, y)
-
         pdf.setFont('helvetica', 'normal')
         pdf.setFontSize(8)
         pdf.setTextColor(...color)
-        const statusText = catStatus ? `${STATUS_LABEL[catStatus]} · ${friction}%` : `${friction}%`
-        pdf.text(statusText, pageWidth - margin, y, { align: 'right' })
+        pdf.text(
+          catStatus ? `${STATUS_LABEL[catStatus]} \u00B7 ${friction}%` : `${friction}%`,
+          pageWidth - margin, y, { align: 'right' }
+        )
         y += 4
-
-        // Mini friction bar
         pdf.setFillColor(230, 230, 230)
         pdf.rect(margin, y, contentWidth, 2, 'F')
         pdf.setFillColor(...color)
@@ -427,8 +453,8 @@ export default function MapPage() {
 
       y += 4
 
-      // ── Heatmap Grid
-      checkPage(50)
+      // Heatmap
+      checkPage(60)
       pdf.setFont('helvetica', 'bold')
       pdf.setFontSize(8)
       pdf.setTextColor(...faint)
@@ -442,53 +468,43 @@ export default function MapPage() {
         pdf.setTextColor(...faint)
         pdf.text(cat.toUpperCase(), margin, y)
         y += 4
-
         const catQuestions = QUESTIONS.filter((q) => q.categoryIndex === catIdx)
         const cellSize = 12
         const cellGap = 3
-
         catQuestions.forEach((q, qi) => {
           const qIndex = q.id - 1
           const status = answers[qIndex]
           const x = margin + qi * (cellSize + cellGap)
           const color = status ? statusColors[status] : [240, 240, 240]
-
           pdf.setFillColor(...color)
           pdf.rect(x, y, cellSize, cellSize, 'F')
-
           pdf.setFont('helvetica', 'bold')
           pdf.setFontSize(7)
           pdf.setTextColor(status ? 255 : 180, status ? 255 : 180, status ? 255 : 180)
-          pdf.text(String(q.id), x + cellSize / 2, y + cellSize / 2 + 1.5, {
-            align: 'center',
-          })
+          pdf.text(String(q.id), x + cellSize / 2, y + cellSize / 2 + 1.5, { align: 'center' })
         })
         y += cellSize + 5
       })
 
       y += 6
 
-      // ── Red Zone Results
+      // Red Zone Results
       if (hasRed) {
         checkPage(12)
         pdf.setFont('helvetica', 'bold')
         pdf.setFontSize(8)
         pdf.setTextColor(...faint)
-        pdf.text('BREAKING POINTS — IMMEDIATE ATTENTION REQUIRED', margin, y)
+        pdf.text('BREAKING POINTS \u2014 IMMEDIATE ATTENTION REQUIRED', margin, y)
         y += 8
 
         redQuestions.forEach((q) => {
-          // Estimate card height (label + implication + solution)
-          const implLines = pdf.splitTextToSize(q.implication, contentWidth - 10)
-          const solLines = pdf.splitTextToSize(q.solution, contentWidth - 10)
-          const cardHeight = 30 + implLines.length * 4 + solLines.length * 4
+          const painLines = pdf.splitTextToSize(q.pain, contentWidth - 10)
+          const cardHeight = 20 + painLines.length * 4
           checkPage(cardHeight)
 
-          // Left red border
           pdf.setFillColor(...red)
           pdf.rect(margin, y, 1.5, cardHeight - 4, 'F')
 
-          // Category + status
           const xContent = margin + 5
           pdf.setFont('helvetica', 'normal')
           pdf.setFontSize(7)
@@ -497,38 +513,21 @@ export default function MapPage() {
           pdf.setTextColor(...red)
           pdf.text('BREAKING POINT', pageWidth - margin, y + 4, { align: 'right' })
 
-          // Label
           pdf.setFont('helvetica', 'bold')
           pdf.setFontSize(11)
           pdf.setTextColor(...ink)
           pdf.text(q.label, xContent, y + 11)
 
-          // Implication
           let innerY = y + 17
           pdf.setFont('helvetica', 'bold')
           pdf.setFontSize(7)
           pdf.setTextColor(...faint)
-          pdf.text('IMPLICATION', xContent, innerY)
+          pdf.text('THE PAIN', xContent, innerY)
           innerY += 4
           pdf.setFont('helvetica', 'normal')
           pdf.setFontSize(9)
           pdf.setTextColor(...muted)
-          implLines.forEach((line) => {
-            pdf.text(line, xContent, innerY)
-            innerY += 4
-          })
-
-          // Solution
-          innerY += 2
-          pdf.setFont('helvetica', 'bold')
-          pdf.setFontSize(7)
-          pdf.setTextColor(...faint)
-          pdf.text('POTENTIAL SOLUTION', xContent, innerY)
-          innerY += 4
-          pdf.setFont('helvetica', 'normal')
-          pdf.setFontSize(9)
-          pdf.setTextColor(...ink)
-          solLines.forEach((line) => {
+          painLines.forEach((line) => {
             pdf.text(line, xContent, innerY)
             innerY += 4
           })
@@ -537,7 +536,7 @@ export default function MapPage() {
         })
       }
 
-      // ── Footer
+      // Footer
       checkPage(16)
       y += 4
       pdf.setDrawColor(...faint)
@@ -546,11 +545,7 @@ export default function MapPage() {
       pdf.setFont('helvetica', 'normal')
       pdf.setFontSize(8)
       pdf.setTextColor(...muted)
-      pdf.text(
-        'Next step: Book your AI Systems Audit at revvaughn.com',
-        margin,
-        y
-      )
+      pdf.text('Next step: Book your AI Systems Audit at revvaughn.com/ai-audit', margin, y)
 
       pdf.save('ai-priority-map-results.pdf')
     } catch (err) {
@@ -558,12 +553,11 @@ export default function MapPage() {
     }
   }, [answers, totalFriction, hasRed, categoryStatuses, categoryFrictions, redQuestions])
 
-  // Trigger fade animation on question change
+  // Animations
   useEffect(() => {
     setFadeKey((k) => k + 1)
   }, [currentQuestion])
 
-  // Clear bloom animation after it plays
   useEffect(() => {
     if (justSetCell !== null) {
       const t = setTimeout(() => setJustSetCell(null), 600)
@@ -587,7 +581,7 @@ export default function MapPage() {
 
   const handleNext = () => {
     commitAnswer()
-    if (currentQuestion < 11) {
+    if (currentQuestion < 14) {
       setCurrentQuestion(currentQuestion + 1)
     }
   }
@@ -597,12 +591,11 @@ export default function MapPage() {
     if (final && final.every((a) => a !== null)) {
       setRevealed(true)
 
-      // Send results to MailerLite (fire and forget — don't block the reveal)
+      // Send results to MailerLite
       try {
         const email = sessionStorage.getItem('map_email')
         if (email) {
           const friction = getTotalFriction(final)
-          const reds = final.filter((a) => a === 'red').length
           fetch('/api/save-results', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -610,12 +603,11 @@ export default function MapPage() {
               email,
               answers: final,
               totalFriction: friction,
-              redCount: reds,
             }),
-          }).catch(() => {}) // Silent fail — results page still shows
+          }).catch(() => {})
         }
       } catch (e) {
-        // sessionStorage might not be available — don't break the experience
+        // sessionStorage might not be available
       }
     }
   }
@@ -626,7 +618,7 @@ export default function MapPage() {
   }
 
   const handleReset = () => {
-    setAnswers(Array(12).fill(null))
+    setAnswers(Array(15).fill(null))
     setCurrentQuestion(0)
     setRevealed(false)
     setTempSelection(null)
@@ -635,61 +627,34 @@ export default function MapPage() {
 
   return (
     <>
-      {/* Bloom keyframe */}
       <style jsx global>{`
         @keyframes bloom {
-          0% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15);
-          }
-          40% {
-            transform: scale(1.12);
-            box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.08);
-          }
-          100% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-          }
+          0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,0,0,0.15); }
+          40% { transform: scale(1.12); box-shadow: 0 0 12px 4px rgba(0,0,0,0.08); }
+          100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,0,0,0); }
         }
-        .animate-bloom {
-          animation: bloom 0.5s ease-out;
-        }
+        .animate-bloom { animation: bloom 0.5s ease-out; }
       `}</style>
 
       {/* Header */}
       <header className="border-b border-rule bg-paper">
         <div className="max-w-wide mx-auto px-6 py-5 flex items-center justify-between">
-          <Link
-            href="/"
-            className="font-semibold text-lg tracking-tight hover:text-accent transition-colors"
-          >
+          <Link href="/" className="font-semibold text-lg tracking-tight hover:text-accent transition-colors">
             Rev Vaughn
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-small">
-            <Link href="/#programs" className="text-ink-muted hover:text-ink transition-colors">
-              Programs
-            </Link>
-            <Link href="/ai-inner-circle" className="text-ink-muted hover:text-ink transition-colors">
-              AI Inner Circle
-            </Link>
-            <Link href="/#about" className="text-ink-muted hover:text-ink transition-colors">
-              About
-            </Link>
-            <Link href="/#briefings" className="text-ink-muted hover:text-ink transition-colors">
-              Briefings
-            </Link>
-            <Link href="/resources" className="text-ink-muted hover:text-ink transition-colors">
-              Resources
-            </Link>
-            <Link href="/contact" className="text-ink hover:text-accent transition-colors font-medium">
-              Contact
-            </Link>
+            <Link href="/#programs" className="text-ink-muted hover:text-ink transition-colors">Programs</Link>
+            <Link href="/ai-inner-circle" className="text-ink-muted hover:text-ink transition-colors">AI Inner Circle</Link>
+            <Link href="/#about" className="text-ink-muted hover:text-ink transition-colors">About</Link>
+            <Link href="/#briefings" className="text-ink-muted hover:text-ink transition-colors">Briefings</Link>
+            <Link href="/resources" className="text-ink-muted hover:text-ink transition-colors">Resources</Link>
+            <Link href="/contact" className="text-ink hover:text-accent transition-colors font-medium">Contact</Link>
           </nav>
         </div>
       </header>
 
       <main className="bg-paper">
-        {/* ─── Hero (before first answer) ──────────────────────────────── */}
+        {/* Hero */}
         {currentQuestion === 0 && progress === 0 && !revealed && (
           <section className="bg-paper py-section">
             <div className="max-w-content mx-auto px-6">
@@ -700,163 +665,94 @@ export default function MapPage() {
                     AI Priority Map
                   </h1>
                   <p className="text-lead text-ink-muted">
-                    Find the real bottleneck. See exactly where your
-                    business is leaking time and money and the exact AI fix for each one.
+                    Find the real bottleneck. See exactly where your business is leaking time
+                    and money and the exact AI fix for each one.
                   </p>
                 </div>
                 <div className="hidden md:flex items-start justify-center pt-4">
-                  <Image
-                    src="/ai-inner-circle-logo.jpg"
-                    alt="AI Inner Circle"
-                    width={200}
-                    height={200}
-                    className="opacity-80"
-                  />
+                  <Image src="/ai-inner-circle-logo.jpg" alt="AI Inner Circle" width={200} height={200} className="opacity-80" />
                 </div>
               </div>
             </div>
           </section>
         )}
 
-        {/* ─── Assessment ──────────────────────────────────────────────── */}
+        {/* Assessment */}
         {!revealed && (
           <section className="bg-paper-grey py-section">
             <div className="max-w-content mx-auto px-6">
               <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
-                {/* Question Panel */}
                 <div className="md:col-span-3">
-                  {/* Progress bar */}
+                  {/* Progress */}
                   <div className="mb-10">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
-                        Question {currentQuestion + 1} of 12
+                        Question {currentQuestion + 1} of 15
                       </span>
                       <span className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
                         {progress} answered
                       </span>
                     </div>
                     <div className="w-full h-px bg-rule overflow-hidden">
-                      <div
-                        className="h-full bg-ink transition-all duration-500"
-                        style={{ width: `${(progress / 12) * 100}%` }}
-                      />
+                      <div className="h-full bg-ink transition-all duration-500" style={{ width: `${(progress / 15) * 100}%` }} />
                     </div>
                   </div>
 
-                  {/* Question content */}
+                  {/* Question */}
                   <div key={fadeKey} className="fade-up">
                     <p className="eyebrow mb-3">{question.category}</p>
-                    <h2 className="font-sans font-semibold text-h1 text-ink mb-3">
-                      {question.label}
-                    </h2>
+                    <h2 className="font-sans font-semibold text-h1 text-ink mb-3">{question.label}</h2>
                     <p className="text-body text-ink-muted mb-10">{question.symptom}</p>
 
-                    {/* Unified button labels */}
                     <div className="flex flex-col gap-3 mb-10">
-                      <StatusButton
-                        label="Yes, often"
-                        icon={<XCircle className="w-4 h-4 shrink-0" />}
-                        selected={tempSelection === 'red'}
-                        onClick={() => handleSelect('red')}
-                        color="#d9534f"
-                      />
-                      <StatusButton
-                        label="Sometimes"
-                        icon={<AlertCircle className="w-4 h-4 shrink-0" />}
-                        selected={tempSelection === 'yellow'}
-                        onClick={() => handleSelect('yellow')}
-                        color="#f0ad4e"
-                      />
-                      <StatusButton
-                        label="No, never"
-                        icon={<CheckCircle2 className="w-4 h-4 shrink-0" />}
-                        selected={tempSelection === 'green'}
-                        onClick={() => handleSelect('green')}
-                        color="#5cb85c"
-                      />
+                      <StatusButton label="Yes, often" icon={<XCircle className="w-4 h-4 shrink-0" />} selected={tempSelection === 'red'} onClick={() => handleSelect('red')} color="#d9534f" />
+                      <StatusButton label="Sometimes" icon={<AlertCircle className="w-4 h-4 shrink-0" />} selected={tempSelection === 'yellow'} onClick={() => handleSelect('yellow')} color="#f0ad4e" />
+                      <StatusButton label="No, never" icon={<CheckCircle2 className="w-4 h-4 shrink-0" />} selected={tempSelection === 'green'} onClick={() => handleSelect('green')} color="#5cb85c" />
                     </div>
                   </div>
 
-                  {/* Navigation */}
+                  {/* Nav */}
                   <div className="flex gap-3">
                     {currentQuestion > 0 && (
-                      <button
-                        onClick={handleBack}
-                        className="inline-flex items-center justify-center px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-ink hover:bg-ink hover:text-paper"
-                      >
+                      <button onClick={handleBack} className="inline-flex items-center justify-center px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-ink hover:bg-ink hover:text-paper">
                         &larr; Back
                       </button>
                     )}
-
-                    {currentQuestion < 11 ? (
-                      <button
-                        onClick={handleNext}
-                        disabled={tempSelection === null}
-                        className={[
-                          'inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 border',
-                          tempSelection !== null
-                            ? 'bg-ink text-paper border-ink hover:bg-accent hover:border-accent'
-                            : 'bg-paper-greyDark text-ink-faint border-rule cursor-not-allowed',
-                        ].join(' ')}
-                      >
+                    {currentQuestion < 14 ? (
+                      <button onClick={handleNext} disabled={tempSelection === null} className={['inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 border', tempSelection !== null ? 'bg-ink text-paper border-ink hover:bg-accent hover:border-accent' : 'bg-paper-greyDark text-ink-faint border-rule cursor-not-allowed'].join(' ')}>
                         Next <ChevronRight className="w-4 h-4" />
                       </button>
                     ) : (
-                      <button
-                        onClick={handleReveal}
-                        disabled={tempSelection === null}
-                        className={[
-                          'inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 border',
-                          tempSelection !== null
-                            ? 'bg-ink text-paper border-ink hover:bg-accent hover:border-accent'
-                            : 'bg-paper-greyDark text-ink-faint border-rule cursor-not-allowed',
-                        ].join(' ')}
-                      >
+                      <button onClick={handleReveal} disabled={tempSelection === null} className={['inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 border', tempSelection !== null ? 'bg-ink text-paper border-ink hover:bg-accent hover:border-accent' : 'bg-paper-greyDark text-ink-faint border-rule cursor-not-allowed'].join(' ')}>
                         Reveal My Map <ArrowRight className="w-4 h-4" />
                       </button>
                     )}
                   </div>
                 </div>
 
-                {/* ─── Heatmap ───────────────────────────────────────────── */}
+                {/* Heatmap */}
                 <div className="md:col-span-2">
                   <p className="eyebrow mb-6">Live Priority Map</p>
-
                   <div className="flex flex-col gap-5">
                     {CATEGORIES.map((cat, catIdx) => (
                       <div key={cat}>
-                        <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-2">
-                          {cat}
-                        </p>
+                        <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-2">{cat}</p>
                         <div className="grid grid-cols-3 gap-2">
                           {QUESTIONS.filter((q) => q.categoryIndex === catIdx).map((q) => {
                             const qIndex = q.id - 1
                             return (
-                              <HeatmapCell
-                                key={q.id}
-                                status={answers[qIndex]}
-                                questionNumber={q.id}
-                                isActive={currentQuestion === qIndex}
-                                justSet={justSetCell === qIndex}
-                              />
+                              <HeatmapCell key={q.id} status={answers[qIndex]} questionNumber={q.id} isActive={currentQuestion === qIndex} justSet={justSetCell === qIndex} />
                             )
                           })}
                         </div>
                       </div>
                     ))}
                   </div>
-
-                  {/* Legend */}
                   <div className="mt-6 flex gap-5">
                     {['red', 'yellow', 'green'].map((s) => (
                       <div key={s} className="flex items-center gap-1.5">
-                        <span
-                          className="w-2.5 h-2.5 rounded-full"
-                          style={{ backgroundColor: STATUS_HEX[s] }}
-                        />
-                        <span className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
-                          {STATUS_LABEL[s]}
-                        </span>
+                        <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: STATUS_HEX[s] }} />
+                        <span className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">{STATUS_LABEL[s]}</span>
                       </div>
                     ))}
                   </div>
@@ -866,92 +762,49 @@ export default function MapPage() {
           </section>
         )}
 
-        {/* ─── Results Reveal ─────────────────────────────────────────── */}
+        {/* Results */}
         {revealed && (
           <>
-            {/* Headline + Total Score */}
+            {/* Score */}
             <section className="bg-paper py-section">
               <div className="max-w-content mx-auto px-6">
                 <div className="max-w-prose fade-up">
                   <p className="eyebrow mb-6">Your Diagnostic</p>
-                  <h2 className="font-sans font-semibold text-display text-ink mb-6">
-                    Your AI Priority Map
-                  </h2>
-
-                  {/* Total Friction Score */}
+                  <h2 className="font-sans font-semibold text-display text-ink mb-6">Your AI Priority Map</h2>
                   <div className="mb-6">
                     <div className="flex items-baseline gap-3 mb-2">
-                      <span className="font-sans font-semibold text-display text-ink">
-                        {totalFriction}%
-                      </span>
-                      <span className="text-body text-ink-muted">
-                        Total Business Friction
-                      </span>
+                      <span className="font-sans font-semibold text-display text-ink">{totalFriction}%</span>
+                      <span className="text-body text-ink-muted">Total Business Friction</span>
                     </div>
                     <div className="w-full h-3 bg-paper-greyDark overflow-hidden">
-                      <div
-                        className="h-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: `${totalFriction}%`,
-                          backgroundColor:
-                            totalFriction >= 50
-                              ? STATUS_HEX.red
-                              : totalFriction >= 25
-                                ? STATUS_HEX.yellow
-                                : STATUS_HEX.green,
-                        }}
-                      />
+                      <div className="h-full transition-all duration-1000 ease-out" style={{ width: `${totalFriction}%`, backgroundColor: totalFriction >= 50 ? STATUS_HEX.red : totalFriction >= 25 ? STATUS_HEX.yellow : STATUS_HEX.green }} />
                     </div>
                   </div>
-
-                  {/* Warning */}
                   {hasRed && (
-                    <div
-                      className="flex items-start gap-3 p-4 border-l-[3px] bg-paper fade-up"
-                      style={{ borderLeftColor: STATUS_HEX.red }}
-                    >
-                      <AlertTriangle
-                        className="w-5 h-5 shrink-0 mt-0.5"
-                        style={{ color: STATUS_HEX.red }}
-                      />
-                      <p className="text-body text-ink">
-                        Your business is at a breaking point that might be improved with AI.
-                      </p>
+                    <div className="flex items-start gap-3 p-4 border-l-[3px] bg-paper fade-up" style={{ borderLeftColor: STATUS_HEX.red }}>
+                      <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: STATUS_HEX.red }} />
+                      <p className="text-body text-ink">Your business is at a breaking point that might be improved with AI.</p>
                     </div>
                   )}
                 </div>
               </div>
             </section>
 
-            {/* Downloadable Results Section */}
+            {/* Breakdown + Red Results */}
             <section className="bg-paper-grey py-section">
               <div className="max-w-content mx-auto px-6">
                 <div className="pb-8">
-                  {/* Pillar Friction Cards */}
+                  {/* Pillar Cards */}
                   <p className="eyebrow mb-6">Pillar Breakdown</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
                     {CATEGORIES.map((cat, catIdx) => {
                       const catStatus = categoryStatuses[catIdx]
                       const friction = categoryFrictions[catIdx]
-
                       return (
-                        <div
-                          key={cat}
-                          className="p-6 bg-paper border border-rule fade-up"
-                          style={{ animationDelay: `${catIdx * 0.1}s` }}
-                        >
+                        <div key={cat} className="p-6 bg-paper border border-rule fade-up" style={{ animationDelay: `${catIdx * 0.1}s` }}>
                           <div className="flex items-start justify-between mb-4">
-                            <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
-                              {cat}
-                            </p>
-                            <span
-                              className="w-3 h-3 rounded-full shrink-0"
-                              style={{
-                                backgroundColor: catStatus
-                                  ? STATUS_HEX[catStatus]
-                                  : '#E5E5E5',
-                              }}
-                            />
+                            <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">{cat}</p>
+                            <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: catStatus ? STATUS_HEX[catStatus] : '#E5E5E5' }} />
                           </div>
                           <FrictionBar percentage={friction} status={catStatus} />
                         </div>
@@ -959,74 +812,37 @@ export default function MapPage() {
                     })}
                   </div>
 
-                  {/* Heatmap Recap */}
+                  {/* Heatmap */}
                   <p className="eyebrow mb-6">Priority Map</p>
                   <div className="flex flex-col gap-5 max-w-sm mb-14">
                     {CATEGORIES.map((cat, catIdx) => (
                       <div key={cat}>
-                        <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-2">
-                          {cat}
-                        </p>
+                        <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-2">{cat}</p>
                         <div className="grid grid-cols-3 gap-2">
                           {QUESTIONS.filter((q) => q.categoryIndex === catIdx).map((q) => {
                             const qIndex = q.id - 1
-                            return (
-                              <HeatmapCell
-                                key={q.id}
-                                status={answers[qIndex]}
-                                questionNumber={q.id}
-                                isActive={false}
-                                justSet={false}
-                              />
-                            )
+                            return <HeatmapCell key={q.id} status={answers[qIndex]} questionNumber={q.id} isActive={false} justSet={false} />
                           })}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* Red-Only Triage Results */}
+                  {/* Red-Only */}
                   {hasRed && (
                     <>
-                      <p className="eyebrow mb-6">
-                        Breaking Points &mdash; Immediate Attention Required
-                      </p>
+                      <p className="eyebrow mb-6">Breaking Points &mdash; Immediate Attention Required</p>
                       <div className="flex flex-col gap-4">
                         {redQuestions.map((q, idx) => (
-                          <div
-                            key={q.id}
-                            className="p-6 bg-paper border border-rule fade-up"
-                            style={{
-                              animationDelay: `${idx * 0.08}s`,
-                              borderLeftWidth: '3px',
-                              borderLeftColor: STATUS_HEX.red,
-                            }}
-                          >
+                          <div key={q.id} className="p-6 bg-paper border border-rule fade-up" style={{ animationDelay: `${idx * 0.08}s`, borderLeftWidth: '3px', borderLeftColor: STATUS_HEX.red }}>
                             <div className="flex items-start justify-between mb-1">
-                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
-                                {q.category}
-                              </p>
-                              <span
-                                className="text-eyebrow uppercase font-bold tracking-widest"
-                                style={{ color: STATUS_HEX.red }}
-                              >
-                                Breaking Point
-                              </span>
+                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">{q.category}</p>
+                              <span className="text-eyebrow uppercase font-bold tracking-widest" style={{ color: STATUS_HEX.red }}>Breaking Point</span>
                             </div>
-                            <h3 className="font-sans font-semibold text-h3 text-ink mb-3">
-                              {q.label}
-                            </h3>
-                            <div className="mb-3">
-                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">
-                                Implication
-                              </p>
-                              <p className="text-body text-ink-muted">{q.implication}</p>
-                            </div>
+                            <h3 className="font-sans font-semibold text-h3 text-ink mb-3">{q.label}</h3>
                             <div>
-                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">
-                                Potential Solution
-                              </p>
-                              <p className="text-body text-ink">{q.solution}</p>
+                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">The Pain</p>
+                              <p className="text-body text-ink-muted">{q.pain}</p>
                             </div>
                           </div>
                         ))}
@@ -1035,12 +851,9 @@ export default function MapPage() {
                   )}
                 </div>
 
-                {/* Download Button */}
+                {/* Download */}
                 <div className="mt-8">
-                  <button
-                    onClick={handleDownload}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-ink hover:bg-ink hover:text-paper"
-                  >
+                  <button onClick={handleDownload} className="inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-ink hover:bg-ink hover:text-paper">
                     <Download className="w-4 h-4" />
                     Download Results as PDF
                   </button>
@@ -1048,28 +861,20 @@ export default function MapPage() {
               </div>
             </section>
 
-            {/* ─── Dynamic CTA ────────────────────────────────────────── */}
+            {/* Dynamic CTA */}
             <section className="bg-ink py-section">
               <div className="max-w-content mx-auto px-6">
                 <div className="max-w-prose">
-                  <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-6">
-                    Next Step
-                  </p>
-
+                  <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-6">Next Step</p>
                   {hasRed ? (
                     <>
                       <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
-                        You have {redCount} Red Zone{redCount > 1 ? 's' : ''} that need
-                        immediate attention.
+                        You have {redCount} Red Zone{redCount > 1 ? 's' : ''} that need immediate attention.
                       </h3>
                       <p className="text-lead text-ink-faint mb-10">
-                        In an AI Systems Audit, I provide the exact tech stack and roadmap to
-                        flip these to Green.
+                        In an AI Systems Audit, I provide the exact tech stack and roadmap to flip these to Green.
                       </p>
-                      <Link
-                        href="/ai-audit"
-                        className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent"
-                      >
+                      <Link href="/ai-audit" className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent">
                         Book Your Full Systems Diagnostic <ArrowRight className="w-4 h-4" />
                       </Link>
                     </>
@@ -1079,13 +884,9 @@ export default function MapPage() {
                         You&rsquo;ve avoided critical breaking points.
                       </h3>
                       <p className="text-lead text-ink-faint mb-10">
-                        You have scale risks, but no fires. To keep optimizing and stay ahead of
-                        the curve, join a community of founders mastering these systems.
+                        You have scale risks, but no fires. To keep optimizing and stay ahead of the curve, join a community of founders mastering these systems.
                       </p>
-                      <Link
-                        href="/ai-inner-circle"
-                        className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent"
-                      >
+                      <Link href="/ai-inner-circle" className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent">
                         Join the AI Inner Circle <ArrowRight className="w-4 h-4" />
                       </Link>
                     </>
@@ -1097,12 +898,7 @@ export default function MapPage() {
             {/* Restart */}
             <section className="bg-paper py-10">
               <div className="max-w-content mx-auto px-6 text-center">
-                <button
-                  onClick={handleReset}
-                  className="text-small text-ink-muted hover:text-ink transition-colors underline underline-offset-4"
-                >
-                  Start over
-                </button>
+                <button onClick={handleReset} className="text-small text-ink-muted hover:text-ink transition-colors underline underline-offset-4">Start over</button>
               </div>
             </section>
           </>
@@ -1114,15 +910,9 @@ export default function MapPage() {
         <div className="max-w-wide mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-small text-ink-muted">
           <div>&copy; {new Date().getFullYear()} Rev Vaughn. All rights reserved.</div>
           <div className="flex items-center gap-6">
-            <Link href="/resources" className="hover:text-ink transition-colors">
-              Resources
-            </Link>
-            <Link href="/contact" className="hover:text-ink transition-colors">
-              Contact
-            </Link>
-            <Link href="/privacy-terms" className="hover:text-ink transition-colors">
-              Privacy &amp; Terms
-            </Link>
+            <Link href="/resources" className="hover:text-ink transition-colors">Resources</Link>
+            <Link href="/contact" className="hover:text-ink transition-colors">Contact</Link>
+            <Link href="/privacy-terms" className="hover:text-ink transition-colors">Privacy &amp; Terms</Link>
           </div>
         </div>
       </footer>
