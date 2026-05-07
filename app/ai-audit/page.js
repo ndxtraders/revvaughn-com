@@ -34,11 +34,11 @@ export default function AIAuditPage() {
               exact AI tools, sequence, and integrations that fit your business. You get 
               an Action Plan you can execute.
             </p>
-            <Button href="https://buy.stripe.com/6oU7sLfh1eptdyPbSWcAo00" external variant="primary">
+            <Button href="https://checkout.mailerlite.com/checkout/18357" external variant="primary">
               Book Your AI Systems Audit
             </Button>
             <p className="text-small text-ink-faint mt-3">
-              You&rsquo;ll be taken to a secure Stripe checkout page to complete your booking.
+              Your order will be processed by Stripe via a secure MailerLite checkout form.
             </p>
           </div>
         </Section>
@@ -198,11 +198,11 @@ export default function AIAuditPage() {
               Stop experimenting. Start executing with a clear, prioritized roadmap built
               for your specific business.
             </p>
-            <Button href="https://buy.stripe.com/6oU7sLfh1eptdyPbSWcAo00" external variant="primary">
+            <Button href="https://checkout.mailerlite.com/checkout/18357" external variant="primary">
               Book Your AI Systems Audit
             </Button>
             <p className="text-small text-ink-faint mt-3">
-              You&rsquo;ll be taken to a secure Stripe checkout page to complete your booking.
+              Your order will be processed by Stripe via a secure MailerLite checkout form.
             </p>
           </div>
         </Section>
