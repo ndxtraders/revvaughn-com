@@ -26,6 +26,8 @@ const QUESTIONS = [
       'If you leave for 2 weeks, does revenue drop or operations slow down?',
     pain:
       'You own a stressful job, not a transferable asset. You are the operational ceiling.',
+    solution:
+      'Build AI Agentic Workflows that handle routine decisions, approvals, and client communication while you\u2019re away.',
     fieldKey: 'vacation_test',
   },
   {
@@ -37,6 +39,8 @@ const QUESTIONS = [
       'Do you ever miss important emails from current or potential clients?',
     pain:
       'Instant high-ticket loss. Missing a massive opportunity simply because it was buried in your inbox.',
+    solution:
+      'Deploy an AI Email Triage system that flags high-priority messages, auto-drafts responses, and ensures nothing revenue-critical gets buried.',
     fieldKey: 'missed_emails',
   },
   {
@@ -48,6 +52,8 @@ const QUESTIONS = [
       'Do your core processes live only in your head because you \u201Cdon\u2019t have time\u201D to write them down?',
     pain:
       'Massive key-person risk. If someone leaves, they take the company\u2019s \u201Csecret sauce\u201D with them.',
+    solution:
+      'Use AI voice-to-text tools to extract your processes into a searchable Team Knowledge Base your staff can reference without asking you.',
     fieldKey: 'brain_trap',
   },
   // Pillar 2: Marketing Engine
@@ -60,6 +66,8 @@ const QUESTIONS = [
       'Do new leads wait so long for a reply that they end up calling your competitors?',
     pain:
       'Instant wasted marketing spend. You pay to generate the lead, but hand it to a faster rival.',
+    solution:
+      'An AI Lead Responder that qualifies and engages inbound leads within 60 seconds, 24/7.',
     fieldKey: 'lead_response',
   },
   {
@@ -71,6 +79,8 @@ const QUESTIONS = [
       'Do you or your team spend too much time creating content that doesn\u2019t actually generate new qualified leads?',
     pain:
       'Massive drain on high-value billable time for founders and the team.',
+    solution:
+      'A Content Multiplier workflow that turns one raw video or voice note into 10+ ready-to-publish assets across platforms.',
     fieldKey: 'content_grind',
   },
   {
@@ -82,6 +92,8 @@ const QUESTIONS = [
       'Are your outbound marketing emails getting completely ignored because they look like spam?',
     pain:
       'Burned domains and completely wasted outreach efforts that fail to convert.',
+    solution:
+      'AI-powered email warm-up and personalization tools that improve deliverability and write one-to-one messages at scale.',
     fieldKey: 'spam_outreach',
   },
   // Pillar 3: Sales Engine
@@ -94,6 +106,8 @@ const QUESTIONS = [
       'Do you lose deals because it takes you or your team too long to write and send a custom quote or proposal?',
     pain:
       'The #1 deal killer in B2B. Buyers often go with the first good quote they receive.',
+    solution:
+      'An AI Proposal Generator that pulls scope details from your CRM and produces a branded quote in minutes, not days.',
     fieldKey: 'slow_quotes',
   },
   {
@@ -105,6 +119,8 @@ const QUESTIONS = [
       'Does your team give up on new leads after a few tries and ignore older leads?',
     pain:
       'Bleeding cash at the bottom of the funnel through pure neglect. Sitting on forgotten revenue.',
+    solution:
+      'An automated AI Reactivation Campaign that re-engages cold leads with personalized follow-up sequences on a set schedule.',
     fieldKey: 'lead_neglect',
   },
   {
@@ -116,6 +132,8 @@ const QUESTIONS = [
       'Do you leave easy revenue on the table because your team misses obvious chances to upsell or cross-sell current clients?',
     pain:
       'Leaving high-margin revenue on the table from people who already trust your business.',
+    solution:
+      'AI Account Intelligence that analyzes client usage and purchase history, then flags specific upsell and cross-sell opportunities for your team.',
     fieldKey: 'upsell_miss',
   },
   // Pillar 4: Team Work
@@ -128,6 +146,8 @@ const QUESTIONS = [
       'Does your team do extra work for free because they didn\u2019t check the project scope in the contract?',
     pain:
       'Destroys profit margins instantly. Your team is performing highly-skilled free work.',
+    solution:
+      'An AI Contract Checker that scans project requests against the original SOW and alerts your team before unbilled work begins.',
     fieldKey: 'scope_creep',
   },
   {
@@ -139,6 +159,8 @@ const QUESTIONS = [
       'Do your workers forget to log their client work time, costing you money every week?',
     pain:
       'Literally throwing earned cash in the trash. The work is done, but never billed.',
+    solution:
+      'AI-powered automatic time capture that logs billable hours from calendar events, emails, and project tools without manual entry.',
     fieldKey: 'time_tracking',
   },
   {
@@ -150,6 +172,8 @@ const QUESTIONS = [
       'Does your team spend hours manually typing information from one platform into another?',
     pain:
       'Paying high human salaries for bot-level data entry, while inviting costly errors.',
+    solution:
+      'Automated System Bridges that move data between platforms automatically, eliminating manual re-entry and the errors that come with it.',
     fieldKey: 'copy_paste_pain',
   },
   // Pillar 5: Client Experience
@@ -162,6 +186,8 @@ const QUESTIONS = [
       'Do clients ever quit out of nowhere without warning you they were unhappy?',
     pain:
       'Losing an important account out of the blue. This is a recurring problem in B2B.',
+    solution:
+      'An AI Client Health Monitor that tracks engagement signals and flags at-risk accounts before they cancel.',
     fieldKey: 'client_churn',
   },
   {
@@ -173,6 +199,8 @@ const QUESTIONS = [
       'Does your team spend too much time manually creating update reports for clients and management?',
     pain:
       'Report requests cause scope creep and your team wastes billable hours building manual reports.',
+    solution:
+      'A live Business Health Dashboard that auto-generates client and management reports by pulling data from your existing tools.',
     fieldKey: null, // Not sent to MailerLite
   },
   {
@@ -184,6 +212,8 @@ const QUESTIONS = [
       'Does your team have to manually track down unpaid invoices and send awkward reminder emails?',
     pain:
       'Your cash flow is artificially choked. You delivered the work, but you can\u2019t make payroll on time.',
+    solution:
+      'Automated payment reminders and collections workflows that send escalating follow-ups without your team writing a single awkward email.',
     fieldKey: null, // Not sent to MailerLite
   },
 ]
@@ -499,7 +529,8 @@ export default function MapPage() {
 
         redQuestions.forEach((q) => {
           const painLines = pdf.splitTextToSize(q.pain, contentWidth - 10)
-          const cardHeight = 20 + painLines.length * 4
+          const solLines = pdf.splitTextToSize(q.solution, contentWidth - 10)
+          const cardHeight = 30 + painLines.length * 4 + solLines.length * 4
           checkPage(cardHeight)
 
           pdf.setFillColor(...red)
@@ -528,6 +559,20 @@ export default function MapPage() {
           pdf.setFontSize(9)
           pdf.setTextColor(...muted)
           painLines.forEach((line) => {
+            pdf.text(line, xContent, innerY)
+            innerY += 4
+          })
+
+          innerY += 2
+          pdf.setFont('helvetica', 'bold')
+          pdf.setFontSize(7)
+          pdf.setTextColor(...faint)
+          pdf.text('POTENTIAL AI SOLUTION', xContent, innerY)
+          innerY += 4
+          pdf.setFont('helvetica', 'normal')
+          pdf.setFontSize(9)
+          pdf.setTextColor(...ink)
+          solLines.forEach((line) => {
             pdf.text(line, xContent, innerY)
             innerY += 4
           })
@@ -840,9 +885,13 @@ export default function MapPage() {
                               <span className="text-eyebrow uppercase font-bold tracking-widest" style={{ color: STATUS_HEX.red }}>Breaking Point</span>
                             </div>
                             <h3 className="font-sans font-semibold text-h3 text-ink mb-3">{q.label}</h3>
-                            <div>
+                            <div className="mb-3">
                               <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">The Pain</p>
                               <p className="text-body text-ink-muted">{q.pain}</p>
+                            </div>
+                            <div>
+                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">Potential AI Solution</p>
+                              <p className="text-body text-ink">{q.solution}</p>
                             </div>
                           </div>
                         ))}
