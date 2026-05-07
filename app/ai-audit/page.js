@@ -4,11 +4,11 @@ import Section from '../components/Section'
 import Button from '../components/Button'
 
 export const metadata = {
-  title: 'AI Systems Audit — Rev Vaughn',
+  title: 'AI Audit — Rev Vaughn',
   description:
     'A customized AI implementation roadmap for founder-led brands. 6-10 hours of deep-work synthesis to find the exact tools, sequence, and integrations that fit your business.',
   openGraph: {
-    title: 'AI Systems Audit — Rev Vaughn',
+    title: 'AI Audit — Rev Vaughn',
     description:
       'A customized AI implementation roadmap for founder-led brands. Find the exact AI tools and sequence that fit your business.',
     url: 'https://revvaughn.com/ai-audit',
@@ -25,7 +25,7 @@ export default function AIAuditPage() {
         {/* Hero */}
         <Section bg="paper" width="content" className="pt-20 md:pt-28">
           <div className="max-w-prose">
-            <div className="eyebrow mb-6">Program &middot; AI Systems Audit</div>
+            <div className="eyebrow mb-6">Program &middot; AI Audit</div>
             <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
               Your Customized AI Implementation Roadmap
             </h1>
@@ -35,7 +35,7 @@ export default function AIAuditPage() {
               an Action Plan you can execute.
             </p>
             <Button href="https://checkout.mailerlite.com/checkout/18357" external variant="primary">
-              Book Your AI Systems Audit
+              Book Your AI Audit
             </Button>
             <p className="text-small text-ink-faint mt-3">
               Your order will be processed by Stripe via a secure MailerLite checkout form.
@@ -84,7 +84,7 @@ export default function AIAuditPage() {
                are compounding costs, not one-time inconveniences.
               </p>
               <p>
-                The AI Systems Audit is a surgical strike on your business friction. I find the
+                The AI Audit is a surgical strike on your business friction. I find the
                 low-effort, high-reward combinations that move the needle immediately. The goal:
                 get 5 to 10 hours back per week.
               </p>
@@ -199,7 +199,7 @@ export default function AIAuditPage() {
               for your specific business.
             </p>
             <Button href="https://checkout.mailerlite.com/checkout/18357" external variant="primary">
-              Book Your AI Systems Audit
+              Book Your AI Audit
             </Button>
             <p className="text-small text-ink-faint mt-3">
               Your order will be processed by Stripe via a secure MailerLite checkout form.
