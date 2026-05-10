@@ -125,8 +125,10 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
         />
       </head>
-      <body>{children}</body>
-      <GoogleAnalytics gaId="G-YMW2HJJM2L" />
+      <body>
+        {children}
+        <GoogleAnalytics gaId="G-YMW2HJJM2L" />
+      </body>
     </html>
   )
 }
