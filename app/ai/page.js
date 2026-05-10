@@ -159,7 +159,7 @@ export default function AIPriorityMapPage() {
         <section className="bg-paper py-section">
           <div className="max-w-prose mx-auto px-6 text-center">
             <p className="text-lead text-ink mb-6 leading-relaxed">
-              Built by a fractional CMO who&rsquo;s diagnosed revenue systems for Grant Cardone companies,
+              Built by a fractional CMO who&rsquo;s diagnosed revenue systems for
               7–9 figure founder brands, and teams across 26 countries.
             </p>
             <p className="text-body text-ink-muted mb-10">
