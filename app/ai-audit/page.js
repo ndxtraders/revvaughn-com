@@ -25,8 +25,8 @@ export default function AIAuditPage() {
       <main>
         {/* Hero */}
         <Section bg="paper" width="content" className="pt-20 md:pt-28">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid md:grid-cols-3 gap-12 items-center">
+            <div className="md:col-span-2">
               <div className="eyebrow mb-6">Program &middot; AI Audit</div>
               <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
                 Your Customized AI Implementation Roadmap
