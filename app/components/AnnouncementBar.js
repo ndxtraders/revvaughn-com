@@ -23,10 +23,10 @@ export default function AnnouncementBar() {
   if (!visible) return null
 
   return (
-    <div className="w-full py-2.5 px-6" style={{ backgroundColor: '#83B14E' }}>
+    <div className="w-full py-2 px-6" style={{ backgroundColor: '#83B14E' }}>
       <div className="max-w-wide mx-auto flex items-center justify-between gap-4">
         <div className="flex-1" />
-        <p className="text-small font-medium text-white text-center">
+        <p className="text-body font-medium text-white text-center">
           Not sure where AI fits in your business?{' '}
           <Link
             href="/ai-priority-map"
