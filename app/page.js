@@ -10,19 +10,20 @@ import LeadGenHero from './components/LeadGenHero'
 
 const CLIENTS = [
   'Grant Cardone',
-  'Cardone Ventures',
   '10X Health',
-  'VestRight',
-  'Allied Development',
-  'Copy Chief',
+  'Cardone Ventures',
   'SquadUp Summit',
   '10X Business Coach',
   'Heather Rae Essentials',
-  'Front Porch',
-  'Email Copy Academy',
-  'SpaSurge',
   'CardoMax',
+  'Copy Chief',
+  'Email Copy Academy',
+  'VestRight',
+  'Allied Development',
   'Remix Your Business',
+  'REVIVX'
+  'Get More Math',
+  'SpaSurge',
   'Zenpreneurs',
   '10X GrowthCon',
   '10X Health UK',
@@ -31,6 +32,7 @@ const CLIENTS = [
   '10X Home Services',
   '10X DECODE',
   'REVIVX',
+  ...and many more
 ]
 
 const TESTIMONIALS = [
