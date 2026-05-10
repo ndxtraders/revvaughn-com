@@ -21,7 +21,7 @@ const CLIENTS = [
   'VestRight',
   'Allied Development',
   'Remix Your Business',
-  'REVIVX'
+  'REVIVX',
   'Get More Math',
   'SpaSurge',
   'Zenpreneurs',
