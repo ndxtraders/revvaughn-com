@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Section from '../components/Section'
@@ -24,22 +25,33 @@ export default function AIAuditPage() {
       <main>
         {/* Hero */}
         <Section bg="paper" width="content" className="pt-20 md:pt-28">
-          <div className="max-w-prose">
-            <div className="eyebrow mb-6">Program &middot; AI Audit</div>
-            <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
-              Your Customized AI Implementation Roadmap
-            </h1>
-            <p className="text-lead text-ink-muted mb-10">
-              I spend 6&ndash;10 hours deep-diving into your specific processes to find the
-              exact AI tools, sequence, and integrations that fit your business. You get 
-              an Action Plan you can execute.
-            </p>
-            <Button href="https://checkout.mailerlite.com/checkout/18357" external variant="primary">
-              Book Your AI Audit
-            </Button>
-            <p className="text-small text-ink-faint mt-3">
-              Your order will be processed by Stripe via a secure MailerLite checkout form.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="eyebrow mb-6">Program &middot; AI Audit</div>
+              <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
+                Your Customized AI Implementation Roadmap
+              </h1>
+              <p className="text-lead text-ink-muted mb-10">
+                I spend 6&ndash;10 hours deep-diving into your specific processes to find the
+                exact AI tools, sequence, and integrations that fit your business. You get
+                an Action Plan you can execute.
+              </p>
+              <Button href="https://checkout.mailerlite.com/checkout/18357" external variant="primary">
+                Book Your AI Audit
+              </Button>
+              <p className="text-small text-ink-faint mt-3">
+                Your order will be processed by Stripe via a secure MailerLite checkout form.
+              </p>
+            </div>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/Turn Red Zones into Green Assets.png"
+                alt="Turn Red Zones into Green Assets"
+                width={500}
+                height={500}
+                className="w-full h-auto max-w-sm md:max-w-full"
+              />
+            </div>
           </div>
         </Section>
 
