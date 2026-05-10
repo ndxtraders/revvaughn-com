@@ -902,9 +902,12 @@ export default function MapPage() {
 
                 {/* Download */}
                 <div className="mt-8">
-                  <button onClick={handleDownload} className="inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-ink hover:bg-ink hover:text-paper">
-                    <Download className="w-4 h-4" />
-                    Download Results as PDF
+                  <p className="text-body text-ink-muted mb-4">
+                    Get every breaking point and AI fix, and your full AI Priority Map in one shareable PDF.
+                  </p>
+                  <button onClick={handleDownload} className="inline-flex items-center gap-3 px-8 py-4 text-body font-semibold tracking-wide transition-all duration-200 text-white border border-transparent hover:opacity-90" style={{ backgroundColor: '#83B14E' }}>
+                    <Download className="w-5 h-5" />
+                    Download My Results as PDF
                   </button>
                 </div>
               </div>

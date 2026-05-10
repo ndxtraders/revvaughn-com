@@ -29,7 +29,7 @@ export default function AnnouncementBar() {
         <p className="text-body font-medium text-white text-center">
           Not sure where AI fits in your business?{' '}
           <Link
-            href="/ai-priority-map"
+            href="/ai"
             className="underline underline-offset-2 hover:no-underline font-semibold whitespace-nowrap"
           >
             Take the 5-Minute AI Priority Map →
