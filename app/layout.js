@@ -1,4 +1,5 @@
 import { Poppins } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const poppins = Poppins({
@@ -125,6 +126,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-YMW2HJJM2L" />
     </html>
   )
 }
