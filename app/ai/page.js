@@ -74,8 +74,8 @@ export default function AIPriorityMapPage() {
                   Find exactly where AI will move your business forward
                 </h1>
                 <p className="text-lead text-ink-muted mb-10">
-                  15 questions across 5 pillars. A live heatmap. Specific AI fixes for every
-                  breaking point, plus downloadable results.
+                  15 questions across 5 pillars. You get a live heatmap, specific AI fixes for every
+                  breaking point, plus a downloadable report.
                 </p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mb-4">
