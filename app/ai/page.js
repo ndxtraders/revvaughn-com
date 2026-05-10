@@ -121,7 +121,7 @@ export default function AIPriorityMapPage() {
               <div className="hidden md:block">
                 <div className="border border-rule overflow-hidden shadow-sm">
                   <Image
-                    src="/ai-priority-map-preview.png"
+                    src="/ai-priority-map-preview-v2.png"
                     alt="Sample AI Priority Map results showing pillar breakdown and heatmap"
                     width={600}
                     height={480}
