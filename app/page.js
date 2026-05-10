@@ -221,7 +221,7 @@ export default function Home() {
               <div className="eyebrow mb-3">02 / Architect</div>
               <h3 className="text-h3 font-semibold mb-3">Design the system</h3>
               <p className="text-body text-ink-muted">
-                Messaging, funnel, and conversion logic that compound over time. Owned distribution, not rented attention.
+                Messaging, funnel, and conversion logic that compound over time. Growth Assets, not algorithms you chase.
               </p>
             </div>
             <div>
