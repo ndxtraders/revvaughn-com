@@ -118,7 +118,7 @@ export default function Home() {
         {/* 2. AUTHORITY STRIP */}
         <section className="bg-paper-grey border-y border-rule py-12">
           <div className="max-w-wide mx-auto px-6">
-            <p className="text-h3 font-semibold text-ink mb-6 text-center">Selected Clients &amp; Projects</p>
+            <p className="text-h3 font-semibold text-ink mb-6 text-center">Selected Clients &amp; Business Launches</p>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-body text-ink-soft">
               {CLIENTS.map((c) => (
                 <span key={c} className="whitespace-nowrap">{c}</span>
