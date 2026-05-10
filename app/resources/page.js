@@ -67,6 +67,60 @@ export default function ResourcesPage() {
             New resources added regularly. Check back or grab a briefing to get notified.
           </p>
         </Section>
+
+        {/* The Invisible Founder Research */}
+        <Section bg="paper" width="content">
+          <div className="max-w-prose">
+            <p className="eyebrow mb-6">New Research · Founder-led Brands</p>
+            <h2 className="text-h1 font-semibold mb-4 leading-tight">
+              The Invisible Founder
+            </h2>
+            <p className="text-lead text-ink mb-10">
+              Over the past few days, I&rsquo;ve shared research on the three ways founders are being systematically erased.
+            </p>
+
+            <div className="space-y-8 mb-10">
+              <div>
+                <div className="text-small font-semibold mb-2">Post 1 — Organic Reach Collapse</div>
+                <p className="text-body text-ink-muted">
+                  Instagram went from 10–15% reach in 2020 to 2–3% today. Facebook pages with 10K followers reach 137 people per post.
+                </p>
+              </div>
+              <div>
+                <div className="text-small font-semibold mb-2">Post 2 — The Paid Media Trap</div>
+                <p className="text-body text-ink-muted">
+                  iOS 14 broke targeting. ROAS dropped 38% overnight. Costs doubled or tripled. Can&rsquo;t stop paying because organic is dead. Can&rsquo;t sustain paying because costs keep rising.
+                </p>
+              </div>
+              <div>
+                <div className="text-small font-semibold mb-2">Post 3 — The Attribution Crisis</div>
+                <p className="text-body text-ink-muted">
+                  AI Overviews appear in 80% of search queries. Only 47% of top-10 pages get cited. Your ideas spread everywhere. Your name appears nowhere.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-body text-ink mb-8">
+              I&rsquo;ve received more requests from Founders for early access than I could have guessed.
+            </p>
+            <p className="text-body text-ink mb-4 font-medium">Part 1 of the complete research is now live.</p>
+
+            <p className="text-body text-ink-muted mb-4">Inside Part 1:</p>
+            <ul className="space-y-2 mb-10 text-body text-ink-muted">
+              <li>→ The visibility collapse timeline (2018–2027)</li>
+              <li>→ When each structural break happened and why</li>
+              <li>→ The data proving this is systematic, not accidental</li>
+              <li>→ The turning point and what happens next</li>
+              <li>→ What happens if you do nothing (+ the nightmare scenario)</li>
+            </ul>
+
+            <p className="text-body text-ink-muted mb-10">
+              This connects everything from the last few days with the complete big picture.
+            </p>
+
+            <Button href="https://www.linkedin.com/pulse/part-1-invisible-founder-leadsandclients-9g2gc" external variant="accent">Read Part 1 →</Button>
+          </div>
+        </Section>
       </main>
       <Footer />
     </>
