@@ -127,7 +127,76 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. POSITIONING */}
+        {/* 3. SELECTED WINS */}
+        <Section bg="paper" width="content">
+          <div className="max-w-prose mb-12">
+            <p className="eyebrow mb-4">Selected Wins</p>
+            <h2 className="text-h1 font-semibold text-ink leading-tight">
+              A few cool things I&rsquo;ve done.
+            </h2>
+          </div>
+          <ul className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+            <li className="border-l-2 border-accent pl-6">
+              <p className="text-body text-ink-soft leading-relaxed">
+                Created the control campaign for Grant Cardone&rsquo;s 10X Business Coach
+                (<span className="text-ink font-semibold">$1M+ in sales</span>).
+              </p>
+            </li>
+            <li className="border-l-2 border-accent pl-6">
+              <p className="text-body text-ink-soft leading-relaxed">
+                Converted <span className="text-ink font-semibold">40%+ of prospects</span> to
+                buyers for the new SquadUp Summit event
+                (<span className="text-ink font-semibold">$6.57M total</span>).
+              </p>
+            </li>
+            <li className="border-l-2 border-accent pl-6">
+              <p className="text-body text-ink-soft leading-relaxed">
+                Helped grow martech company Front Porch from startup to
+                <span className="text-ink font-semibold"> $20M+ annually</span>.
+              </p>
+            </li>
+            <li className="border-l-2 border-accent pl-6">
+              <p className="text-body text-ink-soft leading-relaxed">
+                Led an online ad network with clients in
+                <span className="text-ink font-semibold"> 26 countries</span>.
+              </p>
+            </li>
+            <li className="border-l-2 border-accent pl-6">
+              <p className="text-body text-ink-soft leading-relaxed">
+                Launched <span className="text-ink font-semibold">more than a dozen businesses</span>{' '}
+                in Japan, Korea, Taiwan, China, the UK, and the US.
+              </p>
+            </li>
+            <li className="border-l-2 border-accent pl-6">
+              <p className="text-body text-ink-soft leading-relaxed">
+                Introduced <span className="text-ink font-semibold">thousands of products and
+                services</span> into new markets.
+              </p>
+            </li>
+          </ul>
+        </Section>
+
+        {/* 4. TESTIMONIALS */}
+        <Section bg="grey" width="wide">
+          <div className="max-w-prose mb-14">
+            <p className="eyebrow mb-6">What the Experts Say</p>
+            <h2 className="text-h1 font-semibold">Selected endorsements.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-14">
+            {TESTIMONIALS.map((t) => (
+              <blockquote key={t.name} className="border-l-2 border-accent pl-6">
+                <p className="text-body text-ink mb-6 leading-relaxed">"{t.quote}"</p>
+                <footer className="text-small">
+                  <div className="font-semibold text-ink">{t.name}</div>
+                  <div className="text-ink-muted">{t.title}</div>
+                  {t.org && <div className="text-ink-faint">{t.org}</div>}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </Section>
+
+        {/* 5. POSITIONING */}
         <Section bg="paper" width="prose">
           <p className="eyebrow mb-6">The Work</p>
           <p className="text-h2 font-light text-ink leading-tight">
@@ -135,7 +204,7 @@ export default function Home() {
           </p>
         </Section>
 
-        {/* 4. WHAT I DO */}
+        {/* 6. WHAT I DO */}
         <Section bg="grey" width="content">
           <div className="max-w-prose mb-14">
             <p className="eyebrow mb-6">AI Growth Systems</p>
@@ -289,75 +358,6 @@ export default function Home() {
 
             <Button href="https://www.linkedin.com/pulse/part-1-invisible-founder-leadsandclients-9g2gc" external variant="accent">Read Part 1 →</Button>
           </div>
-        </Section>
-
-        {/* 8. TESTIMONIALS */}
-        <Section bg="grey" width="wide">
-          <div className="max-w-prose mb-14">
-            <p className="eyebrow mb-6">What the Experts Say</p>
-            <h2 className="text-h1 font-semibold">Selected endorsements.</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-14">
-            {TESTIMONIALS.map((t) => (
-              <blockquote key={t.name} className="border-l-2 border-accent pl-6">
-                <p className="text-body text-ink mb-6 leading-relaxed">"{t.quote}"</p>
-                <footer className="text-small">
-                  <div className="font-semibold text-ink">{t.name}</div>
-                  <div className="text-ink-muted">{t.title}</div>
-                  {t.org && <div className="text-ink-faint">{t.org}</div>}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </Section>
-
-        {/* 8b. SELECTED WINS */}
-        <Section bg="paper" width="content">
-          <div className="max-w-prose mb-12">
-            <p className="eyebrow mb-4">Selected Wins</p>
-            <h2 className="text-h1 font-semibold text-ink leading-tight">
-              A few cool things I&rsquo;ve done.
-            </h2>
-          </div>
-          <ul className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-            <li className="border-l-2 border-accent pl-6">
-              <p className="text-body text-ink-soft leading-relaxed">
-                Created the control campaign for Grant Cardone&rsquo;s 10X Business Coach
-                (<span className="text-ink font-semibold">$1M+ in sales</span>).
-              </p>
-            </li>
-            <li className="border-l-2 border-accent pl-6">
-              <p className="text-body text-ink-soft leading-relaxed">
-                Converted <span className="text-ink font-semibold">40%+ of prospects</span> to
-                buyers for the new SquadUp Summit event
-                (<span className="text-ink font-semibold">$6.57M total</span>).
-              </p>
-            </li>
-            <li className="border-l-2 border-accent pl-6">
-              <p className="text-body text-ink-soft leading-relaxed">
-                Helped grow martech company Front Porch from startup to
-                <span className="text-ink font-semibold"> $20M+ annually</span>.
-              </p>
-            </li>
-            <li className="border-l-2 border-accent pl-6">
-              <p className="text-body text-ink-soft leading-relaxed">
-                Led an online ad network with clients in
-                <span className="text-ink font-semibold"> 26 countries</span>.
-              </p>
-            </li>
-            <li className="border-l-2 border-accent pl-6">
-              <p className="text-body text-ink-soft leading-relaxed">
-                Launched <span className="text-ink font-semibold">more than a dozen businesses</span>{' '}
-                in Japan, Korea, Taiwan, China, the UK, and the US.
-              </p>
-            </li>
-            <li className="border-l-2 border-accent pl-6">
-              <p className="text-body text-ink-soft leading-relaxed">
-                Introduced <span className="text-ink font-semibold">thousands of products and
-                services</span> into new markets.
-              </p>
-            </li>
-          </ul>
         </Section>
 
         {/* 9. CREDENTIALS */}
