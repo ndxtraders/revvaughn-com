@@ -11,15 +11,15 @@ import Footer from '../components/Footer'
 const OUTCOMES = [
   {
     heading: 'See exactly where your business is breaking',
-    body: '15 questions across 5 pillars — Founder Freedom, Marketing, Sales, Team Work, and Client Experience. A live heatmap updates as you answer.',
+    body: 'Answer 15 questions across 5 business pillars. A live heatmap updates as you answer.',
   },
   {
     heading: 'Get a specific AI fix for every bottleneck you flag',
-    body: 'Every breaking point comes with a precise AI solution — not generic advice. You leave knowing exactly what to build and why.',
+    body: 'Every breaking point comes with a precise AI solution (not generic advice). You leave knowing exactly what to build and why.',
   },
   {
     heading: 'Download a full PDF report of your results',
-    body: 'Your pillar breakdown, priority map, and breaking point recommendations — formatted and ready to share with your team.',
+    body: 'Your pillar breakdown, priority map, and breaking point recommendations, formatted and ready to share with your team.',
   },
 ]
 
