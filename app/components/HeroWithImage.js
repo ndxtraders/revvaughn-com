@@ -16,11 +16,9 @@ export default function HeroWithImage() {
             Turn traffic into qualified pipeline and predictable revenue.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Button href="#programs" variant="primary">See My Work</Button>
-            <Button href="#briefings" variant="secondary">Subscribe to Briefings</Button>
+            <Button href="#programs" variant="primary">How I help</Button>
           </div>
         </div>
-
         {/* Headshot — 1/3 width, top-aligned with headline (below eyebrow) */}
         <div className="hidden md:block pt-10">
           <div className="relative aspect-[4/5] w-full border border-rule">
