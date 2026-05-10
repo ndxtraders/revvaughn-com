@@ -1,5 +1,5 @@
 import { Poppins } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import './globals.css'
 
 const poppins = Poppins({
@@ -127,7 +127,13 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <GoogleAnalytics gaId="G-YMW2HJJM2L" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-YMW2HJJM2L" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YMW2HJJM2L');
+        `}</Script>
       </body>
     </html>
   )
