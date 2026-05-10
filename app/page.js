@@ -32,7 +32,6 @@ const CLIENTS = [
   '10X Home Services',
   '10X DECODE',
   'REVIVX',
-  ...and many more
 ]
 
 const TESTIMONIALS = [
