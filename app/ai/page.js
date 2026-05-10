@@ -10,8 +10,8 @@ import Footer from '../components/Footer'
 
 const OUTCOMES = [
   {
-    heading: 'See exactly where your business is at a breaking point',
-    body: '15 questions across 5 business pillars. A live heatmap updates as you answer.',
+    heading: 'See where your business is at a breaking point',
+    body: 'Answer 15 questions across 5 business pillars. A live heatmap updates as you answer.',
   },
   {
     heading: 'Get a specific AI fix for every bottleneck you flag',
@@ -160,10 +160,10 @@ export default function AIPriorityMapPage() {
           <div className="max-w-prose mx-auto px-6 text-center">
             <p className="text-lead text-ink mb-6 leading-relaxed">
               Built by a fractional CMO who&rsquo;s diagnosed revenue systems for
-              7–9 figure founder brands, and teams across 26 countries.
+              7–9 figure founder brands and teams across 26 countries.
             </p>
             <p className="text-body text-ink-muted mb-10">
-              The same diagnostic framework used in paid engagements —
+              Uses my proprietary diagnostic framework
               condensed into a 5-minute self-assessment.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
