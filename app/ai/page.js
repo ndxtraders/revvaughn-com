@@ -65,10 +65,10 @@ export default function AIPriorityMapPage() {
         {/* Hero */}
         <section className="bg-paper border-b border-rule py-section">
           <div className="max-w-content mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid md:grid-cols-3 gap-16 items-center">
 
               {/* Left — copy + form */}
-              <div>
+              <div className="md:col-span-2">
                 <p className="eyebrow mb-6">Free Diagnostic · 5 Minutes</p>
                 <h1 className="font-sans font-semibold text-display text-ink mb-6 leading-tight">
                   Find exactly where AI will move your business forward
