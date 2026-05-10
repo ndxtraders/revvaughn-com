@@ -19,7 +19,7 @@ const OUTCOMES = [
   },
   {
     heading: 'Download a full PDF report of your results',
-    body: 'Your pillar breakdown, priority map, and breaking point recommendations, formatted and ready to share with your team.',
+    body: 'Your pillar breakdown, priority map, and recommendations, formatted and ready to share with your team.',
   },
 ]
 
