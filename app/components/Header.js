@@ -1,8 +1,10 @@
 import Link from 'next/link'
+import AnnouncementBar from './AnnouncementBar'
 
 export default function Header() {
   return (
     <header className="border-b border-rule bg-paper">
+      <AnnouncementBar />
       <div className="max-w-wide mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="font-semibold text-lg tracking-tight hover:text-accent transition-colors">
           Rev Vaughn
