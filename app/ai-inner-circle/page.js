@@ -48,7 +48,7 @@ export default function AIInnerCirclePage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="https://revvaughn.com/contact" external variant="primary">
-                Get Membership Details
+                Join the Waitlist
               </Button>
               <Button href="/#briefings" variant="ghost">
                 Get the Briefings
@@ -136,10 +136,10 @@ export default function AIInnerCirclePage() {
               Stop guessing. Start building.
             </h2>
             <p className="text-lead text-ink-muted mb-10">
-              Reach out for membership details and pricing.
+              Join the Next AI Inner Circle Cohort.
             </p>
             <Button href="https://revvaughn.com/contact" external variant="primary">
-              Get Membership Details
+              Join the Waitlist
             </Button>
           </div>
         </Section>
