@@ -8,6 +8,8 @@ export async function POST(request) {
     const formData = await request.formData()
     const email = formData.get('email')
     const file = formData.get('pdf')
+    const answersRaw = formData.get('answers')
+    const totalFrictionRaw = formData.get('totalFriction')
 
     if (!email || !file) {
       return NextResponse.json({ error: 'Invalid data' }, { status: 400 })
@@ -48,6 +50,33 @@ export async function POST(request) {
       const errText = await res.text()
       console.error('Supabase Storage upload error:', res.status, errText)
       return NextResponse.json({ error: 'Failed to archive PDF' }, { status: res.status })
+    }
+
+    // Link the PDF to the user: write a queryable row (email + results + pdf path).
+    // Non-fatal — a failure here must not break the PDF flow.
+    if (answersRaw && totalFrictionRaw != null) {
+      try {
+        const dbRes = await fetch(`${SUPABASE_URL}/rest/v1/priority_map_results`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+            apikey: SUPABASE_SERVICE_ROLE_KEY,
+            'Content-Type': 'application/json',
+            Prefer: 'return=minimal',
+          },
+          body: JSON.stringify({
+            email: String(email),
+            answers: JSON.parse(answersRaw),
+            total_friction: parseInt(totalFrictionRaw, 10),
+            pdf_path: path,
+          }),
+        })
+        if (!dbRes.ok) {
+          console.error('priority_map_results insert error:', dbRes.status, await dbRes.text())
+        }
+      } catch (e) {
+        console.error('priority_map_results insert exception:', e)
+      }
     }
 
     return NextResponse.json({ success: true, path }, { status: 200 })

@@ -675,6 +675,8 @@ export default function MapPage() {
           .then((pdf) => {
             const fd = new FormData()
             fd.append('email', email)
+            fd.append('answers', JSON.stringify(final))
+            fd.append('totalFriction', String(friction))
             fd.append('pdf', pdf.output('blob'), 'results.pdf')
             return fetch('/api/save-pdf', { method: 'POST', body: fd })
           })
