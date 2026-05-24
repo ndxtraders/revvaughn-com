@@ -180,7 +180,7 @@ export default function AIAuditPage() {
             <div>
               <div className="eyebrow mb-4">The Investment</div>
               <h2 className="text-h1 font-semibold tracking-tight text-ink">
-                $600
+                $1000
               </h2>
               <p className="text-body text-ink-muted mt-4">
                 Founder&rsquo;s Early-Access Pricing
