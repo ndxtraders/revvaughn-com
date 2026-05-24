@@ -71,10 +71,10 @@ export default function AIPriorityMapPage() {
               <div className="md:col-span-2">
                 <p className="eyebrow mb-6">Free Diagnostic · 5 Minutes</p>
                 <h1 className="font-sans font-semibold text-display text-ink mb-6 leading-tight">
-                  Win Back 5 to 10 Hours A Week with Your Personal AI Operating System
+                  Win Back 5 to 10 Hours A Week
                 </h1>
                 <p className="text-lead text-ink-muted mb-10">
-                  15 questions across 5 pillars. You get a live heatmap, specific AI fixes for every
+                  Answer 15 questions across 5 pillars. You get a live heatmap, specific AI fixes for every
                   breaking point, plus a downloadable report.
                 </p>
 
