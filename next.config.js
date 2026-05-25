@@ -19,6 +19,8 @@ const nextConfig = {
       { source: '/influential-founder', destination: '/', permanent: true },
       { source: '/invitation-funnel', destination: '/resources', permanent: true },
       { source: '/coach-s-checklist', destination: '/resources', permanent: true },
+      // Legacy AI Priority Map landing page — superseded by /ai
+      { source: '/ai-priority-map', destination: '/ai', permanent: true },
     ]
   },
 }
