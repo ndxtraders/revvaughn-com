@@ -31,42 +31,48 @@ const PILLARS = [
 ]
 
 const CADENCE = [
-  { stat: '2', label: 'Live workshops per month' },
-  { stat: '1', label: 'New skill every week' },
-  { stat: 'Weekly', label: 'Friday QA with Rev' },
-  { stat: 'Always', label: 'Direct access to Rev in Skool' },
+  { stat: '2', label: 'Workshops every month. Live and recorded.' },
+  { stat: '1', label: 'New skill every Monday. Use it that week.' },
+  { stat: 'Weekly', label: 'Friday QA. Real problems. Real answers.' },
+  { stat: 'Always', label: 'Direct access to Rev inside the community.' },
 ]
 
 const MONTHS = [
   {
     n: '01',
     theme: 'Strategic Foundations',
-    body: 'Positioning, offer validation, market intelligence, and brand voice. Fix upstream before building downstream.',
+    body: 'You set the foundation. Voice, offer, and market locked in before you build a single piece of content.',
+    skills: ['Brand Voice Architect', 'Market Intelligence Research', 'Idea Pressure Tester', 'Sell Before You Build'],
   },
   {
     n: '02',
     theme: 'Messaging Systems',
-    body: 'Offer design, sales pages, copywriting, and humanization. Turn expertise into words that sell.',
+    body: 'You write copy that converts. Offer design, sales pages, and messaging that does the selling for you.',
+    skills: ['Offer Creation', 'Copywriting', 'Copy Editing', 'Blazer Humanizer'],
   },
   {
     n: '03',
     theme: 'Content Engine',
-    body: 'LinkedIn profile, ghostwriting, content repurposing, and hooks. Scale content without losing your voice.',
+    body: 'You show up consistently. LinkedIn profile optimized, posts ghostwritten, content repurposed across channels.',
+    skills: ['LinkedIn Profile Architect', 'LinkedIn Ghostwriter', 'Content Repurposing', 'YouTube Hook Creator'],
   },
   {
     n: '04',
     theme: 'Email & Lead Generation',
-    body: 'Lead magnets, email sequences, LinkedIn outreach, and carousel content. Build the full opt-in and nurture system.',
+    body: 'Your pipeline runs without you. Lead magnet, email sequence, and LinkedIn outreach all connected.',
+    skills: ['Lead Magnet Designer', 'Email Sequence', 'LinkedIn Content Engine', 'LinkedIn Carousel Builder'],
   },
   {
     n: '05',
     theme: 'Research & Conversion',
-    body: 'Market research, pricing strategy, cold email, and page CRO. Move revenue with data and precision.',
+    body: 'You grow with data. Market research, pricing, cold outreach, and page fixes that move revenue.',
+    skills: ['Market Sauce Research', 'Pricing Strategy', 'Cold Email', 'Page CRO'],
   },
   {
     n: '06',
     theme: 'Advanced Operations',
-    body: 'Prompt engineering, GTM teardowns, business model design, and AI business coaching. Full-stack systems thinking.',
+    body: 'You operate like a full team. Advanced prompts, GTM teardowns, and a complete business model.',
+    skills: ['Engineer Any Prompt', 'GTM Teardown', 'Business Model Canvas', 'AI Business Coach'],
   },
 ]
 
@@ -168,9 +174,9 @@ export default function AIInnerCirclePage() {
         {/* Curriculum */}
         <Section bg="grey" width="content">
           <div className="max-w-prose mb-12">
-            <div className="eyebrow mb-4">What you get every month</div>
+            <div className="eyebrow mb-4">Inside the membership</div>
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
-              Structured. Sequential. Built to compound.
+              One tool a week. A full system by month six.
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
@@ -187,7 +193,14 @@ export default function AIInnerCirclePage() {
               <div key={m.n} className="border-t border-ink pt-6">
                 <div className="text-small font-medium text-accent mb-3">{m.n}</div>
                 <h3 className="text-h3 font-semibold text-ink mb-3">{m.theme}</h3>
-                <p className="text-body text-ink-muted">{m.body}</p>
+                <p className="text-body text-ink-muted mb-4">{m.body}</p>
+                <ul className="space-y-1">
+                  {m.skills.map((s) => (
+                    <li key={s} className="text-small text-ink-faint">
+                      <span className="text-accent mr-2">–</span>{s}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
