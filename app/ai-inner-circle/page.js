@@ -66,7 +66,7 @@ const MONTHS = [
     n: '05',
     theme: 'Research & Conversion',
     body: 'You grow with data. Market research, pricing, cold outreach, and page fixes that move revenue.',
-    skills: ['Market Sauce Research', 'Pricing Strategy', 'Email Outreach', 'Conversion Rate Optimization'],
+    skills: ['Deep Market Research', 'Pricing Strategy', 'Email Outreach', 'Conversion Rate Optimization'],
   },
   {
     n: '06',
