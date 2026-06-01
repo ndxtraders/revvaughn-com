@@ -111,8 +111,8 @@ export default function AIInnerCirclePage() {
             <div className="space-y-5 text-body text-ink-soft">
               <p>
                 Here&rsquo;s what I see every week. Founders doing $1M to $20M in revenue, stuck
-                in one of two places. Either they&rsquo;re writing everything themselves and can&rsquo;t
-                keep up. Or they&rsquo;re using AI and publishing content their audience ignores.
+                in one of two places. Either they&rsquo;re doin everything themselves and can&rsquo;t
+                keep up. Or they&rsquo;re using AI and creating "AI Slop" their audience ignores.
               </p>
               <p>
                 Both cost pipeline. Both waste time.
