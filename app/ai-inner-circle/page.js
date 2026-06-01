@@ -89,7 +89,7 @@ export default function AIInnerCirclePage() {
               Your human voice sells it. AI scales it.
             </h1>
             <p className="text-lead text-ink-muted mb-10">
-              An "Invitation-only" working cohort for founder-led brands that need revenue systems so pipeline grows without burning you out.
+              A private working cohort for founder-led brands that need revenue systems so pipeline grows without burning you out.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="https://revvaughn.com/contact" external variant="primary">
