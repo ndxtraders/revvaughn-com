@@ -69,7 +69,7 @@ export default function AIPriorityMapPage() {
 
               {/* Left — copy + form */}
               <div className="md:col-span-2">
-                <p className="eyebrow mb-6">Free Diagnostic · 5 Minutes</p>
+                <p className="eyebrow mb-6">Free Assessment · 5 Minutes</p>
                 <h1 className="font-sans font-semibold text-display text-ink mb-6 leading-tight">
                   Win Back 5 to 10 Hours A Week
                 </h1>
@@ -164,7 +164,7 @@ export default function AIPriorityMapPage() {
             </p>
             <p className="text-body text-ink-muted mb-10">
               Uses my proprietary diagnostic framework
-              condensed into a 5-minute self-assessment.
+              condensed into a 5-minute Assessment.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
               <input
