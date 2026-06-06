@@ -345,18 +345,50 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* 9. CTA */}
+        {/* 9. PRICING */}
         <Section bg="grey" width="content">
-          <div className="max-w-prose">
-            <h2 className="text-h1 font-semibold tracking-tight text-ink mb-6">
+          <div className="max-w-prose mb-14">
+            <div className="eyebrow mb-4">Join the Inner Circle</div>
+            <h2 className="text-h1 font-semibold tracking-tight text-ink">
               Stop guessing. Start building.
             </h2>
-            <p className="text-lead text-ink-muted mb-10">
-              Join the AI Inner Circle. One skill a week. A full revenue system by month six.
-            </p>
-            <Button href="https://revvaughn.com/contact" external variant="primary">
-              Join the Waitlist
-            </Button>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {/* Option 1 — Community */}
+            <div className="border border-rule bg-paper p-8 flex flex-col">
+              <div className="eyebrow mb-4">Community</div>
+              <h3 className="text-h2 font-semibold text-ink mb-2">AI Inner Circle</h3>
+              <div className="text-display font-semibold text-ink mb-1">$47</div>
+              <div className="text-small text-ink-muted mb-8">per month</div>
+              <ul className="space-y-3 text-body text-ink-soft mb-10 flex-1">
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Full 6-month curriculum (one skill per week)</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>2 live workshops per month</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Friday Q&amp;A with Rev</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Daily community access</li>
+              </ul>
+              <Button href="https://revvaughn.com/contact" external variant="primary">
+                Join the Community
+              </Button>
+            </div>
+
+            {/* Option 2 — Coaching */}
+            <div className="border-2 border-accent bg-paper p-8 flex flex-col">
+              <div className="eyebrow mb-4">Community + Coaching</div>
+              <h3 className="text-h2 font-semibold text-ink mb-2">AI Inner Circle + 1:1</h3>
+              <div className="text-display font-semibold text-ink mb-1">$800</div>
+              <div className="text-small text-ink-muted mb-8">per month</div>
+              <ul className="space-y-3 text-body text-ink-soft mb-10 flex-1">
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Everything in Community</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Weekly 1:1 coaching call with Rev</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Direct access to Rev</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Priority review of your copy and systems</li>
+              </ul>
+              <Button href="https://revvaughn.com/contact" external variant="primary">
+                Apply for Coaching
+              </Button>
+            </div>
+
           </div>
         </Section>
 
