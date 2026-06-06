@@ -733,7 +733,7 @@ export default function MapPage() {
             <div className="max-w-content mx-auto px-6">
               <div className="grid md:grid-cols-3 gap-10 items-start">
                 <div className="md:col-span-2">
-                  <p className="eyebrow mb-6">5-Minute Diagnostic</p>
+                  <p className="eyebrow mb-6">5-Minute Assessment</p>
                   <h1 className="font-sans font-semibold text-display text-ink mb-6">
                     AI Priority Map
                   </h1>
@@ -842,7 +842,7 @@ export default function MapPage() {
             <section className="bg-paper py-section">
               <div className="max-w-content mx-auto px-6">
                 <div className="max-w-prose fade-up">
-                  <p className="eyebrow mb-6">Your Diagnostic</p>
+                  <p className="eyebrow mb-6">Your Assessment</p>
                   <h2 className="font-sans font-semibold text-display text-ink mb-6">Your AI Priority Map</h2>
                   <div className="mb-6">
                     <div className="flex items-baseline gap-3 mb-2">
