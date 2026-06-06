@@ -187,11 +187,11 @@ export default function AIInnerCirclePage() {
               Your human voice sells it. AI scales it.
             </h1>
             <p className="text-lead text-ink-muted mb-10">
-              A private Skool community for founder-led brands building revenue systems with AI &mdash; without losing your voice.
+              A private Skool community for founder-led brands building GTM and revenue growth systems with AI &mdash; 
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="https://revvaughn.com/contact" external variant="primary">
-                Join the Waitlist
+                Join the Community
               </Button>
             </div>
           </div>
