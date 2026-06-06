@@ -9,6 +9,103 @@ export const metadata = {
     'Where founder-led brands build revenue systems that actually scale. Your voice. AI doing the work.',
 }
 
+const CLIENTS = [
+  'Grant Cardone',
+  '10X Health',
+  'Cardone Ventures',
+  'SquadUp Summit',
+  '10X Business Coach',
+  'Heather Rae Essentials',
+  'CardoMax',
+  'Copy Chief',
+  'Email Copy Academy',
+  'VestRight',
+  'Allied Development',
+  'Remix Your Business',
+  'REVIVX',
+  'Get More Math',
+  'SpaSurge',
+  'Zenpreneurs',
+  '10X GrowthCon',
+  '10X Health UK',
+  'IV Academy',
+  '10X Roofing',
+  '10X Home Services',
+  '10X DECODE',
+]
+
+const WINS = [
+  {
+    result: '$1M+ in sales',
+    detail: 'Created the control campaign for Grant Cardone’s 10X Business Coach.',
+  },
+  {
+    result: '$6.57M total',
+    detail: 'Converted 40%+ of prospects to buyers for the new SquadUp Summit event.',
+  },
+  {
+    result: '$20M+ annually',
+    detail: 'Helped grow martech company Front Porch from startup to scale.',
+  },
+  {
+    result: '26 countries',
+    detail: 'Led an online ad network with clients across 26 countries.',
+  },
+  {
+    result: '144% more booked calls',
+    detail: 'CPL reduced below goal. Booked calls rose 144% with 30% conversion rates across Cardone Ventures portfolio.',
+  },
+  {
+    result: 'Sold out in 48 hours',
+    detail: 'First launch sold out in 48 hours, driven by email and social media for HRE Beauty.',
+  },
+]
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "When I think of campaigns that convert, I think of Rev. PERIOD. I’ve brought Rev in on million-dollar campaign launches, hired him for my 7-figure marketing agency, and seen firsthand what happens when real, A-level copy hits the page. Getting time on Rev’s calendar is rare. If he’s available, take it. Most people won’t get the chance. If you do, don’t walk… run.",
+    name: 'Garen Mazon',
+    title: 'Co-Founder, SpaSurge',
+    org: '#1 Spa Marketing Agency',
+  },
+  {
+    quote:
+      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That’s because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
+    name: 'Kevin Rogers',
+    title: 'Founder, Copy Chief',
+    org: '#1 Copywriting Community',
+  },
+  {
+    quote:
+      'Knocked it out of the park. Exceeded our sales goal. I fully endorse Rev. Kevin Rogers and I hired him to redo our Email Copy Academy funnel, and Rev knocked it out of the park. We even exceeded our sales goal. I was blown away by how well it did.',
+    name: 'Chris Orzechowski',
+    title: 'Creator, Email Copy Academy',
+    org: '#1 Email Marketing Program',
+  },
+  {
+    quote:
+      'Our first launch sold out in only 48 hours, driven by email and social media. I had the opportunity to work with Rev on several of our consumer brands, including HRE Beauty and CardoMax. His ability to blend strategy, creative execution, and data made a measurable difference in how those brands grew.',
+    name: 'Lisa De Rosa',
+    title: 'Director, Corporate Partnerships',
+    org: 'Cardone Ventures',
+  },
+  {
+    quote:
+      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev’s work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
+    name: 'Joe Bradley',
+    title: 'Director, Marketing Partnerships',
+    org: 'Cardone Ventures',
+  },
+  {
+    quote:
+      "Listen to his training, and you’ll make more money TODAY! I learned more about guiding people through the sales process than I learned from thousands of dollars in paid sales courses. It doesn’t matter what industry you’re in — listen to his training, and you’ll make more money TODAY.",
+    name: 'Jimmy Parent',
+    title: 'Persuasion Scientist',
+    org: '',
+  },
+]
+
 const PILLARS = [
   {
     n: '01',
@@ -81,7 +178,8 @@ export default function AIInnerCirclePage() {
     <>
       <Header />
       <main>
-        {/* Hero */}
+
+        {/* 1. HERO */}
         <Section bg="paper" width="content" className="pt-20 md:pt-28">
           <div className="max-w-prose">
             <div className="eyebrow mb-6">AI Inner Circle</div>
@@ -89,7 +187,7 @@ export default function AIInnerCirclePage() {
               Your human voice sells it. AI scales it.
             </h1>
             <p className="text-lead text-ink-muted mb-10">
-              A private working cohort for founder-led brands that need revenue systems so pipeline grows without burning you out.
+              A private Skool community for founder-led brands building revenue systems with AI &mdash; without losing your voice.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="https://revvaughn.com/contact" external variant="primary">
@@ -99,7 +197,19 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* Why it exists */}
+        {/* 2. CLIENTS STRIP */}
+        <section className="bg-paper-grey border-y border-rule py-12">
+          <div className="max-w-wide mx-auto px-6">
+            <p className="text-h3 font-semibold text-ink mb-6 text-center">Selected Clients &amp; Business Launches</p>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-body text-ink-soft">
+              {CLIENTS.map((c) => (
+                <span key={c} className="whitespace-nowrap">{c}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 3. WHY IT EXISTS */}
         <Section bg="grey" width="content">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -110,13 +220,11 @@ export default function AIInnerCirclePage() {
             </div>
             <div className="space-y-5 text-body text-ink-soft">
               <p>
-                Every week, I see founders who are doing $1M to $20M in revenue, stuck
-                in one of two places. Either they&rsquo;re doing everything themselves and can&rsquo;t
-                keep up. Or they&rsquo;re using AI and creating "AI Slop" their audience ignores.
+                Every week, I see founders doing $1M to $20M in revenue, stuck in one of two places.
+                Either they&rsquo;re doing everything themselves and can&rsquo;t keep up. Or they&rsquo;re
+                using AI and creating &ldquo;AI Slop&rdquo; their audience ignores.
               </p>
-              <p>
-                Both cost pipeline. Both waste time.
-              </p>
+              <p>Both cost pipeline. Both waste time.</p>
               <p>
                 The Inner Circle is where we build the middle ground. You keep control of your voice
                 and your brand. AI handles the execution. And you work alongside other operators
@@ -126,7 +234,7 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* Three pillars */}
+        {/* 4. THREE PILLARS */}
         <Section bg="paper" width="content">
           <div className="max-w-prose mb-14">
             <div className="eyebrow mb-4">The three pillars</div>
@@ -145,7 +253,7 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* Who it's for */}
+        {/* 5. WHO IT'S FOR */}
         <Section bg="greyDark" width="content">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -155,18 +263,34 @@ export default function AIInnerCirclePage() {
               </h2>
             </div>
             <ul className="space-y-4 text-body text-ink-soft">
-              <li className="border-b border-rule pb-4">
-                You are the face and voice of the brand. That's your advantage and your constraint.
-                You&rsquo;ve paid agencies and bought courses, but revenue didn&rsquo;t grow.
-                You need a system that compounds, not another list of tactics.
-                If you&rsquo;re ready to be coached and to put in the work.
-                AI Inner Circle could be the best investment you make.
-              </li>
+              <li className="border-b border-rule pb-4">You are the face and voice of the brand. That&rsquo;s your advantage and your constraint.</li>
+              <li className="border-b border-rule pb-4">You&rsquo;ve paid agencies and bought courses. Revenue didn&rsquo;t move.</li>
+              <li className="border-b border-rule pb-4">You need a system that compounds. Not another list of tactics.</li>
+              <li className="pb-4">You&rsquo;re ready to be coached. And to put in the work.</li>
             </ul>
           </div>
         </Section>
 
-        {/* Curriculum */}
+        {/* 6. SELECTED WINS */}
+        <Section bg="paper" width="content">
+          <div className="max-w-prose mb-12">
+            <p className="eyebrow mb-4">Selected Wins</p>
+            <h2 className="text-h1 font-semibold text-ink leading-tight">
+              A few cool things I&rsquo;ve done.
+            </h2>
+          </div>
+          <ul className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+            {WINS.map((w) => (
+              <li key={w.result} className="border-l-2 border-accent pl-6">
+                <p className="text-body text-ink-soft leading-relaxed">
+                  <span className="text-ink font-semibold">{w.result}</span> &mdash; {w.detail}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* 7. CURRICULUM */}
         <Section bg="grey" width="content">
           <div className="max-w-prose mb-12">
             <div className="eyebrow mb-4">Inside the membership</div>
@@ -192,7 +316,7 @@ export default function AIInnerCirclePage() {
                 <ul className="space-y-1">
                   {m.skills.map((s) => (
                     <li key={s} className="text-small text-ink-faint">
-                      <span className="text-accent mr-2">–</span>{s}
+                      <span className="text-accent mr-2">&ndash;</span>{s}
                     </li>
                   ))}
                 </ul>
@@ -201,20 +325,41 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* CTA */}
-        <Section bg="paper" width="content">
+        {/* 8. TESTIMONIALS */}
+        <Section bg="paper" width="wide">
+          <div className="max-w-prose mb-14">
+            <p className="eyebrow mb-6">What the Experts Say</p>
+            <h2 className="text-h1 font-semibold">Selected endorsements.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-14">
+            {TESTIMONIALS.map((t) => (
+              <blockquote key={t.name} className="border-l-2 border-accent pl-6">
+                <p className="text-body text-ink mb-6 leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
+                <footer className="text-small">
+                  <div className="font-semibold text-ink">{t.name}</div>
+                  <div className="text-ink-muted">{t.title}</div>
+                  {t.org && <div className="text-ink-faint">{t.org}</div>}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </Section>
+
+        {/* 9. CTA */}
+        <Section bg="grey" width="content">
           <div className="max-w-prose">
             <h2 className="text-h1 font-semibold tracking-tight text-ink mb-6">
               Stop guessing. Start building.
             </h2>
             <p className="text-lead text-ink-muted mb-10">
-              Join the Next AI Inner Circle Cohort.
+              Join the AI Inner Circle. One skill a week. A full revenue system by month six.
             </p>
             <Button href="https://revvaughn.com/contact" external variant="primary">
               Join the Waitlist
             </Button>
           </div>
         </Section>
+
       </main>
       <Footer />
     </>
