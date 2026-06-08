@@ -11,7 +11,7 @@ export default function Header() {
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-small">
           <Link href="/ai" className="text-ink-muted hover:text-ink transition-colors">
-            AI Priority Map
+            AI Assessment
           </Link>
           <Link href="/#programs" className="text-ink-muted hover:text-ink transition-colors">
             Programs

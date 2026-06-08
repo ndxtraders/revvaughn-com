@@ -735,7 +735,7 @@ export default function MapPage() {
                 <div className="md:col-span-2">
                   <p className="eyebrow mb-6">5-Minute Assessment</p>
                   <h1 className="font-sans font-semibold text-display text-ink mb-6">
-                    AI Priority Map
+                    AI Assessment
                   </h1>
                   <p className="text-lead text-ink-muted">
                     Find the real bottleneck. See exactly where your business is leaking time

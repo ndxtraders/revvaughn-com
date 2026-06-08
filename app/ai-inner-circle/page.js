@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Section from '../components/Section'
@@ -37,7 +38,7 @@ const CLIENTS = [
 const WINS = [
   {
     result: '$1M+ in sales',
-    detail: 'Created the control campaign for Grant Cardone’s 10X Business Coach.',
+    detail: 'Created the control campaign for Grant Cardone's 10X Business Coach.',
   },
   {
     result: '$6.57M total',
@@ -64,14 +65,14 @@ const WINS = [
 const TESTIMONIALS = [
   {
     quote:
-      "When I think of campaigns that convert, I think of Rev. PERIOD. I’ve brought Rev in on million-dollar campaign launches, hired him for my 7-figure marketing agency, and seen firsthand what happens when real, A-level copy hits the page. Getting time on Rev’s calendar is rare. If he’s available, take it. Most people won’t get the chance. If you do, don’t walk… run.",
+      "When I think of campaigns that convert, I think of Rev. PERIOD. I've brought Rev in on million-dollar campaign launches, hired him for my 7-figure marketing agency, and seen firsthand what happens when real, A-level copy hits the page. Getting time on Rev's calendar is rare. If he's available, take it. Most people won't get the chance. If you do, don't walk… run.",
     name: 'Garen Mazon',
     title: 'Co-Founder, SpaSurge',
     org: '#1 Spa Marketing Agency',
   },
   {
     quote:
-      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That’s because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
+      'Rev Vaughn is that ultra-rare copywriter who practically cannot fail. That's because he has not only mastered the craft, but he also deeply understands people and what drives their desires. Although I could have hired almost anyone, I was proud to call Rev my personal copywriter inside Copy Chief.',
     name: 'Kevin Rogers',
     title: 'Founder, Copy Chief',
     org: '#1 Copywriting Community',
@@ -92,14 +93,14 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev’s work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
+      'Reduced CPL below goal. Booked calls rose 144% with 30% conversion rates. Rev's work set a new standard for how we approach campaign structure, messaging, and analytics across multiple brands. I confidently recommend Rev for any role requiring strategic marketing leadership, copy expertise, and proven results.',
     name: 'Joe Bradley',
     title: 'Director, Marketing Partnerships',
     org: 'Cardone Ventures',
   },
   {
     quote:
-      "Listen to his training, and you’ll make more money TODAY! I learned more about guiding people through the sales process than I learned from thousands of dollars in paid sales courses. It doesn’t matter what industry you’re in — listen to his training, and you’ll make more money TODAY.",
+      "Listen to his training, and you'll make more money TODAY! I learned more about guiding people through the sales process than I learned from thousands of dollars in paid sales courses. It doesn't matter what industry you're in — listen to his training, and you'll make more money TODAY.",
     name: 'Jimmy Parent',
     title: 'Persuasion Scientist',
     org: '',
@@ -173,6 +174,48 @@ const MONTHS = [
   },
 ]
 
+function PricingCards() {
+  return (
+    <div className="grid md:grid-cols-2 gap-8">
+
+      {/* Option 1 — Community */}
+      <div className="border border-rule bg-paper p-8 flex flex-col">
+        <div className="eyebrow mb-4">Community</div>
+        <h3 className="text-h2 font-semibold text-ink mb-2">AI Inner Circle</h3>
+        <div className="text-display font-semibold text-ink mb-1">$47</div>
+        <div className="text-small text-ink-muted mb-8">per month</div>
+        <ul className="space-y-3 text-body text-ink-soft mb-10 flex-1">
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Full 6-month curriculum (one skill per week)</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>1-2 live workshops per month</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Friday Q&amp;A with Rev</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Daily community access</li>
+        </ul>
+        <Button href="https://revvaughn.com/contact" external variant="primary">
+          Join the Community
+        </Button>
+      </div>
+
+      {/* Option 2 — Coaching */}
+      <div className="border-2 border-accent bg-paper p-8 flex flex-col">
+        <div className="eyebrow mb-4">Community + Coaching</div>
+        <h3 className="text-h2 font-semibold text-ink mb-2">AI Inner Circle + 1:1</h3>
+        <div className="text-display font-semibold text-ink mb-1">$800</div>
+        <div className="text-small text-ink-muted mb-8">per month</div>
+        <ul className="space-y-3 text-body text-ink-soft mb-10 flex-1">
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Everything in Community</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Weekly 1:1 coaching call with Rev</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Direct access to Rev</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Priority review of your copy and systems</li>
+        </ul>
+        <Button href="https://revvaughn.com/contact" external variant="primary">
+          Apply for Coaching
+        </Button>
+      </div>
+
+    </div>
+  )
+}
+
 export default function AIInnerCirclePage() {
   return (
     <>
@@ -181,18 +224,29 @@ export default function AIInnerCirclePage() {
 
         {/* 1. HERO */}
         <Section bg="paper" width="content" className="pt-20 md:pt-28">
-          <div className="max-w-prose">
-            <div className="eyebrow mb-6">AI Inner Circle</div>
-            <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
-              Your human voice sells it. AI scales it.
-            </h1>
-            <p className="text-lead text-ink-muted mb-10">
-              A private Skool community for founder-led brands building GTM and revenue growth systems with AI 
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="https://revvaughn.com/contact" external variant="primary">
-                Join the Community
-              </Button>
+          <div className="grid md:grid-cols-3 gap-10 items-start">
+            <div className="md:col-span-2">
+              <div className="eyebrow mb-6">AI Inner Circle</div>
+              <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
+                Your human voice sells it. AI scales it.
+              </h1>
+              <p className="text-lead text-ink-muted mb-10">
+                A private Skool community for founder-led brands building GTM and revenue growth systems with AI &mdash; without losing your voice.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button href="https://revvaughn.com/contact" external variant="primary">
+                  Join the Community
+                </Button>
+              </div>
+            </div>
+            <div className="hidden md:flex items-start justify-center pt-8">
+              <Image
+                src="/ai-inner-circle-logo.jpg"
+                alt="AI Inner Circle"
+                width={220}
+                height={220}
+                className="opacity-90"
+              />
             </div>
           </div>
         </Section>
@@ -253,45 +307,8 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* 5. WHO IT'S FOR */}
-        <Section bg="greyDark" width="content">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="eyebrow mb-4">Who it&rsquo;s for</div>
-              <h2 className="text-h1 font-semibold tracking-tight text-ink">
-                Founder-led brands doing $1M to $20M.
-              </h2>
-            </div>
-            <ul className="space-y-4 text-body text-ink-soft">
-              <li className="border-b border-rule pb-4">You are the face and voice of the brand. That&rsquo;s your advantage and your constraint.</li>
-              <li className="border-b border-rule pb-4">You&rsquo;ve paid agencies and bought courses. Revenue didn&rsquo;t move.</li>
-              <li className="border-b border-rule pb-4">You need a system that compounds. Not another list of tactics.</li>
-              <li className="pb-4">You&rsquo;re ready to be coached. And to put in the work.</li>
-            </ul>
-          </div>
-        </Section>
-
-        {/* 6. SELECTED WINS */}
+        {/* 5. CURRICULUM */}
         <Section bg="paper" width="content">
-          <div className="max-w-prose mb-12">
-            <p className="eyebrow mb-4">Selected Wins</p>
-            <h2 className="text-h1 font-semibold text-ink leading-tight">
-              A few cool things I&rsquo;ve done.
-            </h2>
-          </div>
-          <ul className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-            {WINS.map((w) => (
-              <li key={w.result} className="border-l-2 border-accent pl-6">
-                <p className="text-body text-ink-soft leading-relaxed">
-                  <span className="text-ink font-semibold">{w.result}</span> &mdash; {w.detail}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </Section>
-
-        {/* 7. CURRICULUM */}
-        <Section bg="grey" width="content">
           <div className="max-w-prose mb-12">
             <div className="eyebrow mb-4">Inside the membership</div>
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
@@ -325,8 +342,69 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* 8. TESTIMONIALS */}
-        <Section bg="paper" width="wide">
+        {/* 6. ABOUT */}
+        <Section bg="grey" width="content">
+          <div className="grid md:grid-cols-12 gap-10 items-start">
+            <div className="md:col-span-4">
+              <div className="aspect-[4/5] relative w-full max-w-xs">
+                <Image
+                  src="/headshot-4.png"
+                  alt="Rev Vaughn"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 320px"
+                  className="object-cover grayscale"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-8">
+              <p className="eyebrow mb-6">About</p>
+              <h2 className="text-h1 font-semibold mb-6 leading-tight">
+                Most revenue problems come from breakdowns inside the funnel. That&rsquo;s where I work.
+              </h2>
+              <div className="space-y-5 text-body text-ink-muted">
+                <p>
+                  I help founders fix funnel leaks, sharpen messaging, and close the gap between marketing and sales. My approach combines strategy, psychology, and execution... supported by AI where it adds leverage.
+                </p>
+                <p>
+                  After 25 years building businesses across six countries, I now help founders and leadership teams create revenue systems that convert more consistently and scale more predictably.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* 7. PRICING — FIRST CTA */}
+        <Section bg="grey" width="content">
+          <div className="max-w-prose mb-14">
+            <div className="eyebrow mb-4">Join the Inner Circle</div>
+            <h2 className="text-h1 font-semibold tracking-tight text-ink">
+              Stop guessing. Start building.
+            </h2>
+          </div>
+          <PricingCards />
+        </Section>
+
+        {/* 8. SELECTED WINS */}
+        <Section bg="paper" width="content">
+          <div className="max-w-prose mb-12">
+            <p className="eyebrow mb-4">Selected Wins</p>
+            <h2 className="text-h1 font-semibold text-ink leading-tight">
+              A few cool things I&rsquo;ve done.
+            </h2>
+          </div>
+          <ul className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+            {WINS.map((w) => (
+              <li key={w.result} className="border-l-2 border-accent pl-6">
+                <p className="text-body text-ink-soft leading-relaxed">
+                  <span className="text-ink font-semibold">{w.result}</span> &mdash; {w.detail}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* 9. TESTIMONIALS */}
+        <Section bg="grey" width="wide">
           <div className="max-w-prose mb-14">
             <p className="eyebrow mb-6">What the Experts Say</p>
             <h2 className="text-h1 font-semibold">Selected endorsements.</h2>
@@ -345,51 +423,15 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* 9. PRICING */}
-        <Section bg="grey" width="content">
+        {/* 10. CLOSING CTA */}
+        <Section bg="paper" width="content">
           <div className="max-w-prose mb-14">
             <div className="eyebrow mb-4">Join the Inner Circle</div>
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
-              Stop guessing. Start building.
+              Start building your GTM and revenue growth systems with AI
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-
-            {/* Option 1 — Community */}
-            <div className="border border-rule bg-paper p-8 flex flex-col">
-              <div className="eyebrow mb-4">Community</div>
-              <h3 className="text-h2 font-semibold text-ink mb-2">AI Inner Circle</h3>
-              <div className="text-display font-semibold text-ink mb-1">$47</div>
-              <div className="text-small text-ink-muted mb-8">per month</div>
-              <ul className="space-y-3 text-body text-ink-soft mb-10 flex-1">
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Full 6-month curriculum (one skill per week)</li>
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>1-2 live workshops per month</li>
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Friday Q&amp;A with Rev</li>
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Daily community access</li>
-              </ul>
-              <Button href="https://revvaughn.com/contact" external variant="primary">
-                Join the Community
-              </Button>
-            </div>
-
-            {/* Option 2 — Coaching */}
-            <div className="border-2 border-accent bg-paper p-8 flex flex-col">
-              <div className="eyebrow mb-4">Community + Coaching</div>
-              <h3 className="text-h2 font-semibold text-ink mb-2">AI Inner Circle + 1:1</h3>
-              <div className="text-display font-semibold text-ink mb-1">$800</div>
-              <div className="text-small text-ink-muted mb-8">per month</div>
-              <ul className="space-y-3 text-body text-ink-soft mb-10 flex-1">
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Everything in Community</li>
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Weekly 1:1 coaching call with Rev</li>
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Direct access to Rev</li>
-                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Priority review of your copy and systems</li>
-              </ul>
-              <Button href="https://revvaughn.com/contact" external variant="primary">
-                Apply for Coaching
-              </Button>
-            </div>
-
-          </div>
+          <PricingCards />
         </Section>
 
       </main>
