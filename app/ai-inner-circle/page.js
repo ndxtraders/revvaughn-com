@@ -342,8 +342,19 @@ export default function AIInnerCirclePage() {
           </div>
         </Section>
 
-        {/* 6. ABOUT */}
+        {/* 6. PRICING — FIRST CTA */}
         <Section bg="grey" width="content">
+          <div className="max-w-prose mb-14">
+            <div className="eyebrow mb-4">Join the Inner Circle</div>
+            <h2 className="text-h1 font-semibold tracking-tight text-ink">
+              Stop guessing. Start building.
+            </h2>
+          </div>
+          <PricingCards />
+        </Section>
+
+        {/* 7. ABOUT */}
+        <Section bg="paper" width="content">
           <div className="grid md:grid-cols-12 gap-10 items-start">
             <div className="md:col-span-4">
               <div className="aspect-[4/5] relative w-full max-w-xs">
@@ -371,17 +382,6 @@ export default function AIInnerCirclePage() {
               </div>
             </div>
           </div>
-        </Section>
-
-        {/* 7. PRICING — FIRST CTA */}
-        <Section bg="grey" width="content">
-          <div className="max-w-prose mb-14">
-            <div className="eyebrow mb-4">Join the Inner Circle</div>
-            <h2 className="text-h1 font-semibold tracking-tight text-ink">
-              Stop guessing. Start building.
-            </h2>
-          </div>
-          <PricingCards />
         </Section>
 
         {/* 8. SELECTED WINS */}
