@@ -124,13 +124,12 @@ const PILLARS = [
     n: '03',
     title: 'GTM Execution',
     body:
-      'Build the full system. Traffic, opt-in, nurture, sales, onboarding. Track what moves revenue.',
+      'Build the complete GTM Revenue Growth system.',
   },
 ]
 
 const CADENCE = [
-  { stat: '1-2', label: 'Workshops every month. Live and recorded.' },
-  { stat: '1', label: 'New skill every Tuesday. Use it that same day.' },
+  { stat: 'Monthly', label: '1 or 2 Workshops every month. Live or pre-recorded.' },
   { stat: 'Weekly', label: 'Friday Q&A with Rev' },
   { stat: 'Daily', label: 'Direct access to Rev inside the community.' },
 ]
@@ -188,10 +187,10 @@ function PricingCards() {
           <li className="flex gap-3"><span className="text-accent mt-1">–</span>Full 6-month curriculum (one skill per week)</li>
           <li className="flex gap-3"><span className="text-accent mt-1">–</span>1-2 live workshops per month</li>
           <li className="flex gap-3"><span className="text-accent mt-1">–</span>Friday Q&amp;A with Rev</li>
-          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Daily community access</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Answers to your questions inside the community</li>
         </ul>
         <Button href="https://revvaughn.com/contact" external variant="primary">
-          Join the Community
+          Join AI Inner Circle
         </Button>
       </div>
 
@@ -204,8 +203,8 @@ function PricingCards() {
         <ul className="space-y-3 text-body text-ink-soft mb-10 flex-1">
           <li className="flex gap-3"><span className="text-accent mt-1">–</span>Everything in Community</li>
           <li className="flex gap-3"><span className="text-accent mt-1">–</span>Weekly 1:1 coaching call with Rev</li>
-          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Direct access to Rev</li>
-          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Priority review of your copy and systems</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Customized to your business, market and offer</li>
+          <li className="flex gap-3"><span className="text-accent mt-1">–</span>Email support in between sessions</li>
         </ul>
         <Button href="https://revvaughn.com/contact" external variant="primary">
           Apply for Coaching
@@ -231,11 +230,11 @@ export default function AIInnerCirclePage() {
                 Your human voice sells it. AI scales it.
               </h1>
               <p className="text-lead text-ink-muted mb-10">
-                A private Skool community for founder-led brands building GTM and revenue growth systems with AI &mdash; without losing your voice.
+                A private Skool community and 1:1 coaching for founder-led brands building GTM and revenue growth systems with AI
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="https://revvaughn.com/contact" external variant="primary">
-                  Join the Community
+                  Join AI Inner Circle
                 </Button>
               </div>
             </div>
@@ -254,7 +253,7 @@ export default function AIInnerCirclePage() {
         {/* 2. CLIENTS STRIP */}
         <section className="bg-paper-grey border-y border-rule py-12">
           <div className="max-w-wide mx-auto px-6">
-            <p className="text-h3 font-semibold text-ink mb-6 text-center">Selected Clients &amp; Business Launches</p>
+            <p className="text-h3 font-semibold text-ink mb-6 text-center">Clients &amp; Campaigns</p>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-body text-ink-soft">
               {CLIENTS.map((c) => (
                 <span key={c} className="whitespace-nowrap">{c}</span>
@@ -279,8 +278,7 @@ export default function AIInnerCirclePage() {
                 using AI and creating &ldquo;AI Slop&rdquo; their audience ignores.
               </p>
               <p>
-                AI Inner Circle is where we amplify you the business owner. You keep control of your voice
-                and your brand for human trust. AI handles execution for speed and scale.
+                AI Inner Circle fixes both. You keep the voice your audience trusts. AI handles the execution that was slowing you down.
               </p>
             </div>
           </div>
@@ -291,7 +289,7 @@ export default function AIInnerCirclePage() {
           <div className="max-w-prose mb-14">
             <div className="eyebrow mb-4">The three pillars</div>
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
-              What we build together.
+              Grow without being the bottleneck.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -312,8 +310,11 @@ export default function AIInnerCirclePage() {
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
               One tool a week. A full system by month six.
             </h2>
+            <p className="text-lead text-ink-muted mt-4">
+              A new skill drops every Tuesday. Use it that same day.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-3 gap-8 mb-20">
             {CADENCE.map((c) => (
               <div key={c.label} className="border-t-2 border-accent pt-4">
                 <div className="text-h2 font-semibold text-ink mb-2">{c.stat}</div>
@@ -368,14 +369,11 @@ export default function AIInnerCirclePage() {
             <div className="md:col-span-8">
               <p className="eyebrow mb-6">About</p>
               <h2 className="text-h1 font-semibold mb-6 leading-tight">
-                Most revenue problems come from breakdowns inside the funnel. That&rsquo;s where I work.
+                I&rsquo;m not teaching theory. I&rsquo;m building with these tools right now.
               </h2>
               <div className="space-y-5 text-body text-ink-muted">
                 <p>
-                  I help founders fix funnel leaks, sharpen messaging, and close the gap between marketing and sales. My approach combines strategy, psychology, and execution... supported by AI where it adds leverage.
-                </p>
-                <p>
-                  After 25 years building businesses across six countries, I now help founders and leadership teams create revenue systems that convert more consistently and scale more predictably.
+                  I&rsquo;ve founded or helped build over a dozen businesses across six countries &mdash; Japan, Korea, Taiwan, China, the UK, and the US. Every system inside AI Inner Circle is one I&rsquo;m actively running in my own businesses. You&rsquo;re not getting a course. You&rsquo;re getting what&rsquo;s working today.
                 </p>
               </div>
             </div>
@@ -387,7 +385,7 @@ export default function AIInnerCirclePage() {
           <div className="max-w-prose mb-12">
             <p className="eyebrow mb-4">Selected Wins</p>
             <h2 className="text-h1 font-semibold text-ink leading-tight">
-              A few cool things I&rsquo;ve done.
+              Results from the field.
             </h2>
           </div>
           <ul className="grid md:grid-cols-2 gap-x-10 gap-y-8">
@@ -426,7 +424,7 @@ export default function AIInnerCirclePage() {
           <div className="max-w-prose mb-14">
             <div className="eyebrow mb-4">Join the Inner Circle</div>
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
-              Start building your GTM and revenue growth systems with AI
+              Every week you wait is another week of overwhelm and falling behind.
             </h2>
           </div>
           <PricingCards />
