@@ -240,7 +240,7 @@ export default function AIInnerCirclePage() {
             </div>
             <div className="hidden md:flex items-start justify-center pt-8">
               <Image
-                src="/AI Inner Circle Logo 940.jpg"
+                src="/AI%20Inner%20Circle%20Logo%20940.jpg"
                 alt="AI Inner Circle"
                 width={220}
                 height={220}
@@ -358,7 +358,7 @@ export default function AIInnerCirclePage() {
             <div className="md:col-span-4">
               <div className="aspect-[4/5] relative w-full max-w-xs">
                 <Image
-                  src="/Raul Rev Vaughn gray scale 800.jpg"
+                  src="/Raul%20Rev%20Vaughn%20gray%20scale%20800.jpg"
                   alt="Rev Vaughn"
                   fill
                   sizes="(max-width: 768px) 100vw, 320px"
