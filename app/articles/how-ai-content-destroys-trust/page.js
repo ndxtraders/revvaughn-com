@@ -2,6 +2,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Section from '../../components/Section'
 import Button from '../../components/Button'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'How AI-Generated Content Is Destroying Trust | Rev Vaughn',
@@ -24,6 +25,15 @@ export default function Article() {
             And The Mathematical Solution No One&rsquo;s Talking About
           </p>
           <p className="text-small text-ink-muted">Apr 2, 2026 &middot; 8 min read</p>
+          <div className="mt-8">
+            <Image
+              src="/Make-this-sound-more-human.webp"
+              alt="Make this sound more human"
+              width={1200}
+              height={630}
+              className="w-full h-auto"
+            />
+          </div>
         </Section>
 
         {/* Article body */}
@@ -209,6 +219,15 @@ export default function Article() {
             <h2 className="text-h2 font-semibold text-ink mt-10 pt-10 border-t border-rule">
               New models won&rsquo;t solve this &mdash; and here&rsquo;s why
             </h2>
+            <div className="my-6">
+              <Image
+                src="/But-what-if-I-did-it-again.webp"
+                alt="But what if I did it again"
+                width={1200}
+                height={630}
+                className="w-full h-auto"
+              />
+            </div>
             <p>New models are coming. They will be faster, more capable, more sophisticated in every measurable dimension. Will the redundancy problem improve? No.</p>
             <p>
               AI language models are fundamentally probabilistic. That is not a bug. It is how they work. They train

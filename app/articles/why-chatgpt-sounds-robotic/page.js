@@ -2,6 +2,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Section from '../../components/Section'
 import Button from '../../components/Button'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Why ChatGPT Writing Will Always Sound Robotic | Rev Vaughn',
@@ -24,6 +25,15 @@ export default function Article() {
             And Why There&rsquo;s Not a Damn Thing You Can Do About It
           </p>
           <p className="text-small text-ink-muted">Feb 4, 2026 &middot; 4 min read</p>
+          <div className="mt-8">
+            <Image
+              src="/Why-Chat-GPT-will-always-sound-robotic.webp"
+              alt="Why ChatGPT will always sound robotic"
+              width={1200}
+              height={630}
+              className="w-full h-auto"
+            />
+          </div>
         </Section>
 
         {/* Article body */}
