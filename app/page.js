@@ -212,7 +212,7 @@ export default function Home() {
             <p className="eyebrow mb-6">The three pillars</p>
             <h2 className="text-h1 font-semibold mb-6">Grow without being the bottleneck.</h2>
             <p className="text-lead text-ink-muted">
-              Most founders have a bottleneck. Adding AI before fixing it only makes it worse. I fix the system first, then scale it.
+              Most founders have a growth bottleneck. Adding AI before fixing it only makes it worse. I fix the system first, then scale it.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -283,7 +283,7 @@ export default function Home() {
             </div>
             <div className="md:col-span-8">
               <h2 className="text-h1 font-semibold mb-6 leading-tight">
-                Stop being the bottleneck in your own company.
+                Stop being the bottleneck in your business.
               </h2>
               <p className="text-lead text-ink-muted mb-8">
                 The AI Inner Circle is a trust-first system for founder-led brands to scale execution without losing voice or quality. Three pillars. One outcome: you're no longer the growth bottleneck.
