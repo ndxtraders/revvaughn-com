@@ -26,7 +26,7 @@ export default function ResourcesPage() {
       <main>
         {/* Hero */}
         <Section bg="paper" width="prose" className="pt-20 md:pt-28">
-          <div className="eyebrow mb-6">Free Resources</div>
+          <div className="eyebrow mb-6">Founder's Resources</div>
           <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
             Tools Built for Founders.
           </h1>
