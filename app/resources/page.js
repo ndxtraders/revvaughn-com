@@ -28,11 +28,10 @@ export default function ResourcesPage() {
         <Section bg="paper" width="prose" className="pt-20 md:pt-28">
           <div className="eyebrow mb-6">Free Resources</div>
           <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
-            Free tools. Built for operators.
+            Tools Built for Founders.
           </h1>
           <p className="text-lead text-ink-muted leading-relaxed">
-            The frameworks, AI skills, and playbooks I use with clients. Take what&rsquo;s
-            useful. Steal what&rsquo;s great.
+            Ethically steal the frameworks, AI skills, and playbooks I use with clients.
           </p>
         </Section>
 
