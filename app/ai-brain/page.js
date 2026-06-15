@@ -122,7 +122,7 @@ export default function AIBrainPage() {
             <div className="md:col-span-2">
               <div className="eyebrow mb-6">For founder-led brand owners who use AI every day</div>
               <h1 className="text-display font-semibold tracking-tight text-ink mb-8">
-                Build an AI That Knows Your Business, Your Voice, and How You Think — in 2 to 3 Hours
+                Build an AI That Knows You, Your Business, and How You Think
               </h1>
               <p className="text-lead text-ink-muted mb-10">
                 In one on-demand workshop, you’ll set up a version of Claude that stops handing you
