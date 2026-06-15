@@ -243,7 +243,7 @@ export default function Home() {
         {/* 5. PROGRAMS */}
         <Section bg="paper" width="content" id="programs">
           <div className="max-w-prose mb-14">
-            <p className="eyebrow mb-6">Programs</p>
+            <p className="eyebrow mb-6">Consulting</p>
             <h2 className="text-h1 font-semibold">Three ways to work together.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

@@ -14,7 +14,7 @@ export default function Header() {
             AI Leverage
           </Link>
           <Link href="/#programs" className="text-ink-muted hover:text-ink transition-colors">
-            Programs
+            Consulting
           </Link>
           <Link href="/#about" className="text-ink-muted hover:text-ink transition-colors">
             About
