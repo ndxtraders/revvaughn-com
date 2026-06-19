@@ -33,9 +33,9 @@ const DELIVERABLES = [
   },
   {
     n: '03',
-    title: 'Your first custom automation.',
+    title: 'Your first Custom Command.',
     body:
-      'Turn a task you repeat into a shortcut. Repurpose a post in your voice, prep for a sales call, review copy against your standards — built into a command like /repurpose-post. Type it, and Claude runs the whole task your way, no re-explaining. Most people who use AI never build this. You will.',
+      'Turn a task you repeat — repurpose a post in your voice, prep for a sales call, review copy against your standards — and turn it into a shortcut slash command like /repurpose-post. Type it, and Claude runs the whole task your way, no re-explaining. Most people who use AI never build this. You will.',
   },
 ]
 
