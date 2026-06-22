@@ -65,7 +65,7 @@ const REQUIREMENTS = [
 const INCLUDES = [
   'The full on-demand workshop, yours to revisit anytime',
   'A written, step-by-step guide you keep',
-  'The guided tools that build your AI Brain for you',
+  'The guided tools that build your AI Brain with you and for you',
   'A Live Q&A Call',
   'A setup that’s yours forever, and gets sharper every time you use it',
 ]
@@ -388,7 +388,7 @@ export default function AIBrainPage() {
             <div className="border border-rule bg-paper p-8 flex flex-col">
               <div className="eyebrow mb-4">AI Brain Workshop</div>
               <h3 className="text-h2 font-semibold text-ink mb-2">Founders’ Cohort</h3>
-              <div className="text-display font-semibold text-ink mb-1">$97</div>
+              <div className="text-display font-semibold text-ink mb-1">$49</div>
               <div className="text-small text-ink-muted mb-8">one-time — going up to $199 soon</div>
               <p className="text-body text-ink-soft mb-8 flex-1">
                 Founders’ cohort pricing is early-access and based on current capacity. This price is
