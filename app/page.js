@@ -289,20 +289,6 @@ export default function Home() {
                 Hire 24 AI Assistants across 6 departments, one a week for six months. Each one plugs into
                 Maestro, your Command Center. You keep the voice. The team runs the work.
               </p>
-              <div className="grid sm:grid-cols-3 gap-6 mb-10">
-                <div className="border-t-2 border-accent pt-4">
-                  <div className="text-small font-semibold mb-2">Month 1 · Offer Desk</div>
-                  <p className="text-small text-ink-muted">Rebuild the offer first, so price stops being the objection.</p>
-                </div>
-                <div className="border-t-2 border-accent pt-4">
-                  <div className="text-small font-semibold mb-2">Month 2 · Sales Floor</div>
-                  <p className="text-small text-ink-muted">Real buyer conversations on your calendar. No cold email, no ad spend.</p>
-                </div>
-                <div className="border-t-2 border-accent pt-4">
-                  <div className="text-small font-semibold mb-2">Month 5 · Operations</div>
-                  <p className="text-small text-ink-muted">Move the routine out of your head. You stop being the ceiling.</p>
-                </div>
-              </div>
               <p className="text-body italic text-ink-muted mb-8">Human for Trust. AI for Scale.</p>
               <Button href="/ai-inner-circle" variant="primary">Learn More</Button>
             </div>
