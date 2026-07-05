@@ -233,7 +233,7 @@ export default function AIInnerCirclePage() {
               <WaitlistForm buttonLabel="Join the Waitlist" />
               <p className="text-small text-ink-muted mt-4">
                 Founding cohort. Enrollment closes <span className="text-ink font-medium">August 1</span>. Founding price is $149 a month. Regular price is $199.{' '}
-                <Link href="/map" className="text-accent underline underline-offset-2 hover:no-underline">
+                <Link href="/ai" className="text-accent underline underline-offset-2 hover:no-underline">
                   Not sure yet? Take the 5-minute assessment &rarr;
                 </Link>
               </p>
@@ -605,7 +605,7 @@ export default function AIInnerCirclePage() {
             </div>
             <p className="text-small text-ink-muted">
               Still deciding?{' '}
-              <Link href="/map" className="text-accent underline underline-offset-2 hover:no-underline">
+              <Link href="/ai" className="text-accent underline underline-offset-2 hover:no-underline">
                 Take the 5-minute assessment &rarr;
               </Link>
             </p>

@@ -21,12 +21,6 @@ export default function Header() {
           <Link href="/ai-leverage" className="text-ink-muted hover:text-ink transition-colors">
             AI Leverage
           </Link>
-          <Link href="/ai-inner-circle" className="text-ink-muted hover:text-ink transition-colors">
-            AI Inner Circle
-          </Link>
-          <Link href="/map" className="text-ink-muted hover:text-ink transition-colors">
-            AI Assessment
-          </Link>
           <Link href="/#programs" className="text-ink-muted hover:text-ink transition-colors">
             Consulting
           </Link>
@@ -40,7 +34,7 @@ export default function Header() {
             Contact
           </Link>
           <Link
-            href="/map"
+            href="/ai"
             className="bg-accent text-paper border border-accent px-4 py-2 font-medium hover:bg-accent-hover hover:border-accent-hover transition-colors whitespace-nowrap"
           >
             Take the Assessment
@@ -63,12 +57,6 @@ export default function Header() {
           <Link href="/ai-leverage" className="text-ink-muted hover:text-ink transition-colors" onClick={() => setOpen(false)}>
             AI Leverage
           </Link>
-          <Link href="/ai-inner-circle" className="text-ink-muted hover:text-ink transition-colors" onClick={() => setOpen(false)}>
-            AI Inner Circle
-          </Link>
-          <Link href="/map" className="text-ink-muted hover:text-ink transition-colors" onClick={() => setOpen(false)}>
-            AI Assessment
-          </Link>
           <Link href="/#programs" className="text-ink-muted hover:text-ink transition-colors" onClick={() => setOpen(false)}>
             Consulting
           </Link>
@@ -82,7 +70,7 @@ export default function Header() {
             Contact
           </Link>
           <Link
-            href="/map"
+            href="/ai"
             className="bg-accent text-paper border border-accent px-4 py-2 font-medium text-center hover:bg-accent-hover hover:border-accent-hover transition-colors"
             onClick={() => setOpen(false)}
           >

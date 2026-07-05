@@ -7,7 +7,7 @@ const PAGES = [
   { path: '/', priority: 1.0, changeFrequency: 'weekly' },
   { path: '/ai-inner-circle', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/quick-win', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/map', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/ai', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/ai-audit', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/ai-brain', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/ai-leverage', priority: 0.9, changeFrequency: 'monthly' },
