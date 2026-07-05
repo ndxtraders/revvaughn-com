@@ -1,17 +1,13 @@
-'use client'
-
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Loader2, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const OUTCOMES = [
   {
     heading: 'See where your business is at a breaking point',
-    body: 'Find exactly where AI will move your business forward. Answer 15 questions across 5 business pillars.',
+    body: 'Find exactly where AI will move your business forward. Answer 12 questions across 4 business pillars.',
   },
   {
     heading: 'Get a specific AI fix for every bottleneck you flag',
@@ -24,39 +20,6 @@ const OUTCOMES = [
 ]
 
 export default function AIPriorityMapPage() {
-  const [email, setEmail] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
-  const router = useRouter()
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (!email) return
-
-    setIsLoading(true)
-    setError('')
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
-
-      if (response.ok) {
-        sessionStorage.setItem('map_email', email)
-        router.push('/map')
-      } else {
-        const data = await response.json().catch(() => ({}))
-        setError(data.error || 'Something went wrong. Please try again.')
-        setIsLoading(false)
-      }
-    } catch (err) {
-      setError('Network error. Please try again.')
-      setIsLoading(false)
-    }
-  }
-
   return (
     <>
       <Header />
@@ -74,43 +37,18 @@ export default function AIPriorityMapPage() {
                   Win Back 5 to 10 Hours A Week
                 </h1>
                 <p className="text-lead text-ink-muted mb-10">
-                  Answer 15 questions across 5 pillars. You get a live heatmap, specific AI fixes for every
+                  Answer 12 questions across 4 pillars. You get a live heatmap, specific AI fixes for every
                   breaking point, plus a downloadable report.
                 </p>
 
-                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mb-4">
-                  <input
-                    type="email"
-                    required
-                    placeholder="you@company.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    disabled={isLoading}
-                    className="flex-1 px-5 py-3 bg-paper border border-rule text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none transition-colors disabled:opacity-50"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-ink text-paper border border-ink hover:bg-accent hover:border-accent disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
+                <div className="mb-4">
+                  <Link
+                    href="/map"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-ink text-paper border border-ink hover:bg-accent hover:border-accent whitespace-nowrap"
                   >
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        Starting...
-                      </>
-                    ) : (
-                      <>
-                        Start My Map <ArrowRight className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
-                </form>
-
-                {error && (
-                  <p className="text-small mb-4 font-medium" style={{ color: '#d9534f' }}>
-                    {error}
-                  </p>
-                )}
+                    Start My Map <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
 
                 <p className="text-small text-ink-faint">
                   Takes 5 minutes &nbsp;·&nbsp; Zero technical jargon &nbsp;·&nbsp; PDF results included
@@ -166,33 +104,14 @@ export default function AIPriorityMapPage() {
               Uses my proprietary diagnostic framework
               condensed into a 5-minute Assessment.
             </p>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
-              <input
-                type="email"
-                required
-                placeholder="you@company.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isLoading}
-                className="flex-1 px-5 py-3 bg-paper border border-rule text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none transition-colors disabled:opacity-50"
-              />
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-ink text-paper border border-ink hover:bg-accent hover:border-accent disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
+            <div className="flex justify-center mb-4">
+              <Link
+                href="/map"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-ink text-paper border border-ink hover:bg-accent hover:border-accent whitespace-nowrap"
               >
-                {isLoading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    Starting...
-                  </>
-                ) : (
-                  <>
-                    Start My Map <ArrowRight className="w-4 h-4" />
-                  </>
-                )}
-              </button>
-            </form>
+                Start My Map <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
             <p className="text-small text-ink-faint">
               Takes 5 minutes &nbsp;·&nbsp; Zero technical jargon &nbsp;·&nbsp; PDF results included
             </p>

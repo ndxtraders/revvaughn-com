@@ -16,214 +16,173 @@ import {
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const QUESTIONS = [
-  // Pillar 1: Founder Freedom
+  // Pillar 1: Authority Engine (get noticed and trusted) - 3 questions
   {
     id: 1,
-    category: 'Founder Freedom',
+    category: 'Authority Engine',
     categoryIndex: 0,
-    label: 'The Vacation Test',
+    label: 'The Lookalike',
     symptom:
-      'If you leave for 2 weeks, does revenue drop or operations slow down?',
+      "When a buyer compares you to your competitors, do you sound basically the same?",
     pain:
-      'You own a stressful job, not a transferable asset. You are the operational ceiling.',
+      "Nothing makes you the obvious choice, so you end up competing on price.",
     solution:
-      'Build AI Agentic Workflows that handle routine decisions, approvals, and client communication while you\u2019re away.',
-    fieldKey: 'vacation_test',
+      "Hire your Unique Mechanism Builder and Sales Council. They name what only you do and pressure-test the pitch. Both start in Month 1.",
+    fieldKey: 'lookalike',
   },
   {
     id: 2,
-    category: 'Founder Freedom',
+    category: 'Authority Engine',
     categoryIndex: 0,
-    label: 'Missed Emails',
-    symptom:
-      'Do you ever miss important emails from current or potential clients?',
-    pain:
-      'Instant high-ticket loss. Missing a massive opportunity simply because it was buried in your inbox.',
-    solution:
-      'Deploy an AI Email Triage system that flags high-priority messages, auto-drafts responses, and ensures nothing revenue-critical gets buried.',
-    fieldKey: 'missed_emails',
-  },
-  {
-    id: 3,
-    category: 'Founder Freedom',
-    categoryIndex: 0,
-    label: 'The Brain Trap',
-    symptom:
-      'Do your core processes live only in your head because you \u201Cdon\u2019t have time\u201D to write them down?',
-    pain:
-      'Massive key-person risk. If someone leaves, they take the company\u2019s \u201Csecret sauce\u201D with them.',
-    solution:
-      'Use AI voice-to-text tools to extract your processes into a searchable Team Knowledge Base your staff can reference without asking you.',
-    fieldKey: 'brain_trap',
-  },
-  // Pillar 2: Marketing Engine
-  {
-    id: 4,
-    category: 'Marketing Engine',
-    categoryIndex: 1,
-    label: 'Lead Speed',
-    symptom:
-      'Do new leads wait so long for a reply that they end up calling your competitors?',
-    pain:
-      'Instant wasted marketing spend. You pay to generate the lead, but hand it to a faster rival.',
-    solution:
-      'An AI Lead Responder that qualifies and engages inbound leads within 60 seconds, 24/7.',
-    fieldKey: 'lead_response',
-  },
-  {
-    id: 5,
-    category: 'Marketing Engine',
-    categoryIndex: 1,
     label: 'Content Grind',
     symptom:
-      'Do you or your team spend too much time creating content that doesn\u2019t actually generate new qualified leads?',
+      "Does creating content eat time you don't have, so you end up not publishing?",
     pain:
-      'Massive drain on high-value billable time for founders and the team.',
+      "You disappear from the feed. Out of sight, you fall out of the buying conversation.",
     solution:
-      'A Content Multiplier workflow that turns one raw video or voice note into 10+ ready-to-publish assets across platforms.',
+      "Hire your Recording to Content Engine and Content Repurposer. Record 30 minutes and they turn it into a month of content. Both start in Month 3.",
     fieldKey: 'content_grind',
   },
   {
-    id: 6,
-    category: 'Marketing Engine',
-    categoryIndex: 1,
-    label: 'Spam Outreach',
+    id: 3,
+    category: 'Authority Engine',
+    categoryIndex: 0,
+    label: 'Invisible Online',
     symptom:
-      'Are your outbound marketing emails getting completely ignored because they look like spam?',
+      "When people search for what you offer (on search, social media, AI, etc.), are you virtually invisible?",
     pain:
-      'Burned domains and completely wasted outreach efforts that fail to convert.',
+      "Buyers find your competitors instead of you. You're absent where decisions start.",
     solution:
-      'AI-powered email warm-up and personalization tools that improve deliverability and write one-to-one messages at scale.',
-    fieldKey: 'spam_outreach',
+      "Hire your SEO / GEO Citation Optimizer and LinkedIn Ghostwriter. They get you found by Google and cited by AI. Both start in Month 3.",
+    fieldKey: 'invisible_online',
   },
-  // Pillar 3: Sales Engine
+  // Pillar 2: Pipeline Engine (fill the calendar) - 3 questions
+  {
+    id: 4,
+    category: 'Pipeline Engine',
+    categoryIndex: 1,
+    label: 'Empty Calendar',
+    symptom:
+      "Do you lack a reliable way to find new qualified buyers every week?",
+    pain:
+      "Pipeline runs on referrals and luck. When they dry up, so does revenue.",
+    solution:
+      "Hire your LinkedIn Signal Scraper and ICP Match & Prioritizer. They surface real buyers showing intent and score them for you. Both start in Month 2.",
+    fieldKey: 'empty_calendar',
+  },
+  {
+    id: 5,
+    category: 'Pipeline Engine',
+    categoryIndex: 1,
+    label: 'Ignored Outreach',
+    symptom:
+      "Do your DMs or emails get ignored because they sound generic or like spam?",
+    pain:
+      "Wasted outreach. Your message reads like everyone else's, so it starts no conversations.",
+    solution:
+      "Hire your Surgical DM Writer and AI Slop Killer. They write one-to-one messages in your voice that actually get replies. Both start in Month 2.",
+    fieldKey: 'ignored_outreach',
+  },
+  {
+    id: 6,
+    category: 'Pipeline Engine',
+    categoryIndex: 1,
+    label: 'Feast or Famine',
+    symptom:
+      "Does your lead flow swing between slammed and dead, with no system you can switch on?",
+    pain:
+      "Unpredictable revenue. You can't plan, hire, or grow on a pipeline you can't control.",
+    solution:
+      "Hire your LinkedIn Signal Scraper and ICP Match & Prioritizer. They turn lead-gen into a repeatable weekly engine. Both start in Month 2.",
+    fieldKey: 'feast_or_famine',
+  },
+  // Pillar 3: Conversion Engine (turn interest into revenue) - 3 questions
   {
     id: 7,
-    category: 'Sales Engine',
+    category: 'Conversion Engine',
     categoryIndex: 2,
-    label: 'Slow Quotes',
+    label: 'Price Objection',
     symptom:
-      'Do you lose deals because it takes you or your team too long to write and send a custom quote or proposal?',
+      "Do prospects go quiet after you send a quote or tell you you're too expensive?",
     pain:
-      'The #1 deal killer in B2B. Buyers often go with the first good quote they receive.',
+      "Price becomes the objection. You lose deals you should win, or discount to save them.",
     solution:
-      'An AI Proposal Generator that pulls scope details from your CRM and produces a branded quote in minutes, not days.',
-    fieldKey: 'slow_quotes',
+      "Hire your Offer & Pricing Architect and Objection Tester. They rebuild your offer and pricing so the right buyers stop flinching at the number. Both start in Month 1.",
+    fieldKey: 'price_objection',
   },
   {
     id: 8,
-    category: 'Sales Engine',
+    category: 'Conversion Engine',
     categoryIndex: 2,
-    label: 'Lead Neglect',
+    label: 'Cold Fast',
     symptom:
-      'Does your team give up on new leads after a few tries and ignore older leads?',
+      "Do leads go cold fast because follow-up is slow or inconsistent?",
     pain:
-      'Bleeding cash at the bottom of the funnel through pure neglect. Sitting on forgotten revenue.',
+      "Interested buyers slip away through neglect. You sit on revenue you already earned.",
     solution:
-      'An automated AI Reactivation Campaign that re-engages cold leads with personalized follow-up sequences on a set schedule.',
-    fieldKey: 'lead_neglect',
+      "Hire your Reply Classifier and Follow-up & Reactivation. They sort hot replies and keep every lead warm. Both start in Month 4.",
+    fieldKey: 'cold_fast',
   },
   {
     id: 9,
-    category: 'Sales Engine',
+    category: 'Conversion Engine',
     categoryIndex: 2,
-    label: 'Upsell Miss',
+    label: 'Slow Quotes',
     symptom:
-      'Do you leave easy revenue on the table because your team misses obvious chances to upsell or cross-sell current clients?',
+      "Do proposals and quotes take too long and buyers go with someone else?",
     pain:
-      'Leaving high-margin revenue on the table from people who already trust your business.',
+      "The #1 deal killer in B2B. Speed loses to slower, and you were slower.",
     solution:
-      'AI Account Intelligence that analyzes client usage and purchase history, then flags specific upsell and cross-sell opportunities for your team.',
-    fieldKey: 'upsell_miss',
+      "Hire your Proposal & Quote Generator and Discovery Call-Prep. They put a branded proposal in front of the buyer while the deal is warm. Both start in Month 4.",
+    fieldKey: 'slow_quotes',
   },
-  // Pillar 4: Team Work
+  // Pillar 4: Founder Freedom (stop being the bottleneck) - 3 questions
   {
     id: 10,
-    category: 'Team Work',
+    category: 'Founder Freedom',
     categoryIndex: 3,
-    label: 'Scope Creep',
+    label: 'The Vacation Test',
     symptom:
-      'Does your team do extra work for free because they didn\u2019t check the project scope in the contract?',
+      "If you leave for 2 weeks, does revenue drop or operations slow down?",
     pain:
-      'Destroys profit margins instantly. Your team is performing highly-skilled free work.',
+      "You own a job, not an asset. You are the ceiling everything waits on.",
     solution:
-      'An AI Contract Checker that scans project requests against the original SOW and alerts your team before unbilled work begins.',
-    fieldKey: 'scope_creep',
+      "Hire your Inbox Triage and Decision & Delegation Memo. They handle the routine so the business runs without you in the loop. Both start in Month 5.",
+    fieldKey: 'vacation_test',
   },
   {
     id: 11,
-    category: 'Team Work',
+    category: 'Founder Freedom',
     categoryIndex: 3,
-    label: 'Time Tracking',
+    label: 'The Brain Trap',
     symptom:
-      'Do your workers forget to log their client work time, costing you money every week?',
+      "Do your core processes live only in your head because you “don’t have time” to write them down?",
     pain:
-      'Literally throwing earned cash in the trash. The work is done, but never billed.',
+      "Key-person risk. Nothing can be delegated, so everything routes back to you.",
     solution:
-      'AI-powered automatic time capture that logs billable hours from calendar events, emails, and project tools without manual entry.',
-    fieldKey: 'time_tracking',
+      "Hire your Transcription to SOP and Team Knowledge Base. They pull the process out of your head into something your team can run. Both start in Month 5.",
+    fieldKey: 'brain_trap',
   },
   {
     id: 12,
-    category: 'Team Work',
+    category: 'Founder Freedom',
     categoryIndex: 3,
-    label: 'Copy-Paste Pain',
+    label: 'The Bottleneck',
     symptom:
-      'Does your team spend hours manually typing information from one platform into another?',
+      "Does every important decision have to run through you before anything moves?",
     pain:
-      'Paying high human salaries for bot-level data entry, while inviting costly errors.',
+      "You are the single point of failure. The business only moves as fast as your attention.",
     solution:
-      'Automated System Bridges that move data between platforms automatically, eliminating manual re-entry and the errors that come with it.',
-    fieldKey: 'copy_paste_pain',
-  },
-  // Pillar 5: Client Experience
-  {
-    id: 13,
-    category: 'Client Experience',
-    categoryIndex: 4,
-    label: 'Client Churn',
-    symptom:
-      'Do clients ever quit out of nowhere without warning you they were unhappy?',
-    pain:
-      'Losing an important account out of the blue. This is a recurring problem in B2B.',
-    solution:
-      'An AI Client Health Monitor that tracks engagement signals and flags at-risk accounts before they cancel.',
-    fieldKey: 'client_churn',
-  },
-  {
-    id: 14,
-    category: 'Client Experience',
-    categoryIndex: 4,
-    label: 'Manual Reports',
-    symptom:
-      'Does your team spend too much time manually creating update reports for clients and management?',
-    pain:
-      'Report requests cause scope creep and your team wastes billable hours building manual reports.',
-    solution:
-      'A live Business Health Dashboard that auto-generates client and management reports by pulling data from your existing tools.',
-    fieldKey: null, // Not sent to MailerLite
-  },
-  {
-    id: 15,
-    category: 'Client Experience',
-    categoryIndex: 4,
-    label: 'Invoice Chase',
-    symptom:
-      'Does your team have to manually track down unpaid invoices and send awkward reminder emails?',
-    pain:
-      'Your cash flow is artificially choked. You delivered the work, but you can\u2019t make payroll on time.',
-    solution:
-      'Automated payment reminders and collections workflows that send escalating follow-ups without your team writing a single awkward email.',
-    fieldKey: null, // Not sent to MailerLite
+      "Hire Maestro, your Command Center, and your Decision & Delegation Memo. Maestro routes the routine and turns your calls into briefs the team runs without you. Your Command Center is where the whole system starts.",
+    fieldKey: 'bottleneck',
   },
 ]
 
 const CATEGORIES = [
+  'Authority Engine',
+  'Pipeline Engine',
+  'Conversion Engine',
   'Founder Freedom',
-  'Marketing Engine',
-  'Sales Engine',
-  'Team Work',
-  'Client Experience',
 ]
 
 // ─── Constants ───────────────────────────────────────────────────────────────
@@ -241,10 +200,14 @@ const STATUS_LABEL = {
 }
 
 const POINTS = { red: 5, yellow: 2, green: 0 }
-const MAX_TOTAL = 75 // 15 questions × 5 max each
-const MAX_PER_CATEGORY = 15 // 3 questions × 5 max each
+const MAX_TOTAL = QUESTIONS.length * 5 // 12 questions × 5 max each
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
+
+// Denominator is per-category so pillar friction stays correct if counts ever differ.
+function getCategoryMax(categoryIndex) {
+  return QUESTIONS.filter((q) => q.categoryIndex === categoryIndex).length * 5
+}
 
 function getCategoryFriction(answers, categoryIndex) {
   let sum = 0
@@ -253,7 +216,8 @@ function getCategoryFriction(answers, categoryIndex) {
       sum += POINTS[a]
     }
   })
-  return Math.round((sum / MAX_PER_CATEGORY) * 100)
+  const max = getCategoryMax(categoryIndex) || 1
+  return Math.round((sum / max) * 100)
 }
 
 function getTotalFriction(answers) {
@@ -345,7 +309,7 @@ function FrictionBar({ percentage, status }) {
           className="text-eyebrow font-bold tracking-widest uppercase"
           style={{ color }}
         >
-          {status ? STATUS_LABEL[status] : '\u2014'}
+          {status ? STATUS_LABEL[status] : '—'}
         </span>
         <span className="text-eyebrow font-semibold tracking-widest text-ink-faint">
           {percentage}% friction
@@ -358,12 +322,14 @@ function FrictionBar({ percentage, status }) {
 // ─── Page Component ──────────────────────────────────────────────────────────
 
 export default function MapPage() {
-  const [answers, setAnswers] = useState(Array(15).fill(null))
+  const [answers, setAnswers] = useState(Array(12).fill(null))
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [tempSelection, setTempSelection] = useState(null)
   const [justSetCell, setJustSetCell] = useState(null)
   const [fadeKey, setFadeKey] = useState(0)
+  const [email, setEmail] = useState('')
+  const [emailSaved, setEmailSaved] = useState(false)
 
   const progress = answers.filter((a) => a !== null).length
   const question = QUESTIONS[currentQuestion]
@@ -373,6 +339,12 @@ export default function MapPage() {
   const redCount = answers.filter((a) => a === 'red').length
   const hasRed = redCount > 0
   const redQuestions = QUESTIONS.filter((_, i) => answers[i] === 'red')
+  // Worst pillar = highest friction (ties resolve to the earliest / earliest-month pillar)
+  const worstPillarIndex = categoryFrictions.reduce(
+    (best, f, i, arr) => (f > arr[best] ? i : best),
+    0
+  )
+  const worstPillar = CATEGORIES[worstPillarIndex]
 
   // Build the results PDF from an answers array. Derives every value from the
   // array, so it works at reveal time (before React state settles) and on download.
@@ -475,7 +447,7 @@ export default function MapPage() {
         pdf.setFontSize(8)
         pdf.setTextColor(...color)
         pdf.text(
-          catStatus ? `${STATUS_LABEL[catStatus]} \u00B7 ${friction}%` : `${friction}%`,
+          catStatus ? `${STATUS_LABEL[catStatus]} · ${friction}%` : `${friction}%`,
           pageWidth - margin, y, { align: 'right' }
         )
         y += 4
@@ -529,7 +501,7 @@ export default function MapPage() {
         pdf.setFont('helvetica', 'bold')
         pdf.setFontSize(8)
         pdf.setTextColor(...faint)
-        pdf.text('BREAKING POINTS \u2014 IMMEDIATE ATTENTION REQUIRED', margin, y)
+        pdf.text('BREAKING POINTS — IMMEDIATE ATTENTION REQUIRED', margin, y)
         y += 8
 
         redQuestions.forEach((q) => {
@@ -572,7 +544,7 @@ export default function MapPage() {
           pdf.setFont('helvetica', 'bold')
           pdf.setFontSize(7)
           pdf.setTextColor(...faint)
-          pdf.text('POTENTIAL AI SOLUTION', xContent, innerY)
+          pdf.text('YOUR AI HIRE', xContent, innerY)
           innerY += 4
           pdf.setFont('helvetica', 'normal')
           pdf.setFontSize(9)
@@ -595,12 +567,12 @@ export default function MapPage() {
       pdf.setFont('helvetica', 'normal')
       pdf.setFontSize(8)
       pdf.setTextColor(...muted)
-      pdf.text('Next step: Book your AI Systems Audit at revvaughn.com/ai-audit', margin, y)
+      pdf.text('Next step: Hire your first Assistant. Start at revvaughn.com/ai-inner-circle', margin, y)
 
       return pdf
   }, [])
 
-  // Download results as PDF (manual button)
+  // Download results as PDF (manual button, used once email has been captured)
   const handleDownload = useCallback(async () => {
     try {
       const pdf = await buildPdf(answers)
@@ -638,7 +610,7 @@ export default function MapPage() {
 
   const handleNext = () => {
     commitAnswer()
-    if (currentQuestion < 14) {
+    if (currentQuestion < 11) {
       setCurrentQuestion(currentQuestion + 1)
     }
   }
@@ -647,41 +619,35 @@ export default function MapPage() {
     const final = commitAnswer()
     if (final && final.every((a) => a !== null)) {
       setRevealed(true)
+    }
+  }
 
-      let email = null
-      try {
-        email = sessionStorage.getItem('map_email')
-      } catch (e) {
-        // sessionStorage might not be available
-      }
+  // Inline email capture on the results screen — replaces the old upstream
+  // gate page. Saves results, archives the PDF, and downloads it in one step.
+  const handleEmailSubmit = async (e) => {
+    e.preventDefault()
+    if (!email) return
+    setEmailSaved(true)
 
-      if (email) {
-        const friction = getTotalFriction(final)
+    const friction = getTotalFriction(answers)
 
-        // Send structured results to MailerLite (existing behavior)
-        fetch('/api/save-results', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email,
-            answers: final,
-            totalFriction: friction,
-          }),
-        }).catch(() => {})
+    fetch('/api/save-results', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, answers, totalFriction: friction }),
+    }).catch(() => {})
 
-        // Archive the generated PDF to Supabase Storage so results are never lost
-        // if the visitor leaves without downloading.
-        buildPdf(final)
-          .then((pdf) => {
-            const fd = new FormData()
-            fd.append('email', email)
-            fd.append('answers', JSON.stringify(final))
-            fd.append('totalFriction', String(friction))
-            fd.append('pdf', pdf.output('blob'), 'results.pdf')
-            return fetch('/api/save-pdf', { method: 'POST', body: fd })
-          })
-          .catch(() => {})
-      }
+    try {
+      const pdf = await buildPdf(answers)
+      const fd = new FormData()
+      fd.append('email', email)
+      fd.append('answers', JSON.stringify(answers))
+      fd.append('totalFriction', String(friction))
+      fd.append('pdf', pdf.output('blob'), 'results.pdf')
+      fetch('/api/save-pdf', { method: 'POST', body: fd }).catch(() => {})
+      pdf.save('ai-priority-map-results.pdf')
+    } catch (err) {
+      console.error('Save/download failed:', err)
     }
   }
 
@@ -691,11 +657,13 @@ export default function MapPage() {
   }
 
   const handleReset = () => {
-    setAnswers(Array(15).fill(null))
+    setAnswers(Array(12).fill(null))
     setCurrentQuestion(0)
     setRevealed(false)
     setTempSelection(null)
     setJustSetCell(null)
+    setEmail('')
+    setEmailSaved(false)
   }
 
   return (
@@ -716,10 +684,6 @@ export default function MapPage() {
             Rev Vaughn
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-small">
-            <Link href="/#programs" className="text-ink-muted hover:text-ink transition-colors">Programs</Link>
-            <Link href="/ai-inner-circle" className="text-ink-muted hover:text-ink transition-colors">AI Inner Circle</Link>
-            <Link href="/#about" className="text-ink-muted hover:text-ink transition-colors">About</Link>
-            <Link href="/#briefings" className="text-ink-muted hover:text-ink transition-colors">Briefings</Link>
             <Link href="/resources" className="text-ink-muted hover:text-ink transition-colors">Resources</Link>
             <Link href="/contact" className="text-ink hover:text-accent transition-colors font-medium">Contact</Link>
           </nav>
@@ -739,7 +703,7 @@ export default function MapPage() {
                   </h1>
                   <p className="text-lead text-ink-muted">
                     Find the real bottleneck. See exactly where your business is leaking time
-                    and money and the exact AI fix for each one.
+                    and money, and the exact AI Assistant that fixes each one.
                   </p>
                 </div>
                 <div className="hidden md:flex items-start justify-center pt-4">
@@ -760,14 +724,14 @@ export default function MapPage() {
                   <div className="mb-10">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
-                        Question {currentQuestion + 1} of 15
+                        Question {currentQuestion + 1} of 12
                       </span>
                       <span className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint">
                         {progress} answered
                       </span>
                     </div>
                     <div className="w-full h-px bg-rule overflow-hidden">
-                      <div className="h-full bg-ink transition-all duration-500" style={{ width: `${(progress / 15) * 100}%` }} />
+                      <div className="h-full bg-ink transition-all duration-500" style={{ width: `${(progress / 12) * 100}%` }} />
                     </div>
                   </div>
 
@@ -791,7 +755,7 @@ export default function MapPage() {
                         &larr; Back
                       </button>
                     )}
-                    {currentQuestion < 14 ? (
+                    {currentQuestion < 11 ? (
                       <button onClick={handleNext} disabled={tempSelection === null} className={['inline-flex items-center gap-2 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 border', tempSelection !== null ? 'bg-ink text-paper border-ink hover:bg-accent hover:border-accent' : 'bg-paper-greyDark text-ink-faint border-rule cursor-not-allowed'].join(' ')}>
                         Next <ChevronRight className="w-4 h-4" />
                       </button>
@@ -918,7 +882,7 @@ export default function MapPage() {
                               <p className="text-body text-ink-muted">{q.pain}</p>
                             </div>
                             <div>
-                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">Potential AI Solution</p>
+                              <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-1">Your AI Hire</p>
                               <p className="text-body text-ink">{q.solution}</p>
                             </div>
                           </div>
@@ -931,46 +895,83 @@ export default function MapPage() {
                 {/* Download */}
                 <div className="mt-8">
                   <p className="text-body text-ink-muted mb-4">
-                    Get every breaking point and AI fix, and your full AI Priority Map in one shareable PDF.
+                    Get every breaking point and the AI Assistant that fixes it, plus your full AI Priority Map in one shareable PDF.
                   </p>
-                  <button onClick={handleDownload} className="inline-flex items-center gap-3 px-8 py-4 text-body font-semibold tracking-wide transition-all duration-200 text-white border border-transparent hover:opacity-90" style={{ backgroundColor: '#83B14E' }}>
-                    <Download className="w-5 h-5" />
-                    Download My Results as PDF
-                  </button>
+                  {emailSaved ? (
+                    <button onClick={handleDownload} className="inline-flex items-center gap-3 px-8 py-4 text-body font-semibold tracking-wide transition-all duration-200 text-white border border-transparent hover:opacity-90" style={{ backgroundColor: '#83B14E' }}>
+                      <Download className="w-5 h-5" />
+                      Download My Results as PDF
+                    </button>
+                  ) : (
+                    <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
+                      <input
+                        type="email"
+                        required
+                        placeholder="you@company.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="flex-1 px-5 py-3 bg-paper border border-rule text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none transition-colors"
+                      />
+                      <button
+                        type="submit"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 text-small font-semibold tracking-wide transition-all duration-200 text-white border border-transparent hover:opacity-90 whitespace-nowrap"
+                        style={{ backgroundColor: '#83B14E' }}
+                      >
+                        <Download className="w-4 h-4" />
+                        Get My Results as PDF
+                      </button>
+                    </form>
+                  )}
                 </div>
               </div>
             </section>
 
             {/* Dynamic CTA */}
-            <section className="bg-ink py-section">
+            <section className="py-section" style={{ backgroundColor: '#83B14E' }}>
               <div className="max-w-content mx-auto px-6">
-                <div className="max-w-prose">
-                  <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-6">Next Step</p>
-                  {hasRed ? (
-                    <>
-                      <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
-                        You have {redCount} Red Zone{redCount > 1 ? 's' : ''} that need immediate attention.
-                      </h3>
-                      <p className="text-lead text-ink-faint mb-10">
-                        In an AI Systems Audit, I provide the exact tech stack and roadmap to flip these to Green.
-                      </p>
-                      <Link href="/ai-audit" className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent">
-                        Book Your Full Systems Diagnostic <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </>
-                  ) : (
-                    <>
-                      <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
-                        You&rsquo;ve avoided critical breaking points.
-                      </h3>
-                      <p className="text-lead text-ink-faint mb-10">
-                        You have scale risks, but no fires. To keep optimizing and stay ahead of the curve, join a community of founders mastering these systems.
-                      </p>
-                      <Link href="/ai-inner-circle" className="inline-flex items-center gap-3 px-6 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-paper text-ink border border-paper hover:bg-accent hover:text-paper hover:border-accent">
-                        Join the AI Inner Circle <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </>
-                  )}
+                <p className="text-eyebrow uppercase font-semibold tracking-widest text-paper opacity-70 mb-6">Next Step</p>
+                {hasRed ? (
+                  <>
+                    <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
+                      Your biggest breaking point is your {worstPillar}.
+                    </h3>
+                    <p className="text-lead text-paper opacity-80 mb-12">
+                      Good news: the membership starts you exactly here. Hire the AI Assistants that fix it, one a week.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="font-sans font-semibold text-h1 text-paper mb-4">
+                      You&rsquo;ve avoided the critical breaking points.
+                    </h3>
+                    <p className="text-lead text-paper opacity-80 mb-12">
+                      You have scale risks, not fires. Two ways to stay ahead — pick the one that fits where you are.
+                    </p>
+                  </>
+                )}
+                <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
+                  {/* Option 1 — Membership */}
+                  <div className="bg-paper p-8 flex flex-col">
+                    <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-3">Your First Hire</p>
+                    <h4 className="font-sans font-semibold text-h3 text-ink mb-3">Join AI Inner Circle</h4>
+                    <p className="text-body text-ink-muted mb-8 flex-1">
+                      Set up your Command Center, then hire one AI Assistant a week. A full system in six months, starting with the department this map flagged reddest.
+                    </p>
+                    <Link href="/ai-inner-circle" className="inline-flex items-center gap-2 px-5 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-ink text-paper border border-ink hover:bg-accent hover:border-accent">
+                      See AI Inner Circle <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                  {/* Option 2 — AI Audit */}
+                  <div className="bg-paper p-8 flex flex-col">
+                    <p className="text-eyebrow uppercase font-semibold tracking-widest text-ink-faint mb-3">Done With You</p>
+                    <h4 className="font-sans font-semibold text-h3 text-ink mb-3">Full AI Implementation Roadmap</h4>
+                    <p className="text-body text-ink-muted mb-8 flex-1">
+                      A complete diagnostic of your business. Every system audited, every bottleneck mapped, and a full AI roadmap built for your specific operation.
+                    </p>
+                    <Link href="/ai-audit" className="inline-flex items-center gap-2 px-5 py-3 text-small font-medium tracking-wide transition-all duration-200 bg-ink text-paper border border-ink hover:bg-accent hover:border-accent">
+                      Book Your AI Audit <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </section>

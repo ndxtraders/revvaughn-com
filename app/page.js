@@ -286,20 +286,21 @@ export default function Home() {
                 Stop being the bottleneck in your business.
               </h2>
               <p className="text-lead text-ink-muted mb-8">
-                The AI Inner Circle is a trust-first system for founder-led brands to scale execution without losing voice or quality. Three pillars. One outcome: you're no longer the growth bottleneck.
+                Hire 24 AI Assistants across 6 departments, one a week for six months. Each one plugs into
+                Maestro, your Command Center. You keep the voice. The team runs the work.
               </p>
               <div className="grid sm:grid-cols-3 gap-6 mb-10">
                 <div className="border-t-2 border-accent pt-4">
-                  <div className="text-small font-semibold mb-2">Strategic Foundations</div>
-                  <p className="text-small text-ink-muted">Remove the upstream bottlenecks — offer, positioning, messaging — before AI scales the wrong thing.</p>
+                  <div className="text-small font-semibold mb-2">Month 1 · Offer Desk</div>
+                  <p className="text-small text-ink-muted">Rebuild the offer first, so price stops being the objection.</p>
                 </div>
                 <div className="border-t-2 border-accent pt-4">
-                  <div className="text-small font-semibold mb-2">Messaging Systems</div>
-                  <p className="text-small text-ink-muted">Turn founder insight into scalable, trust-building assets without losing your voice.</p>
+                  <div className="text-small font-semibold mb-2">Month 2 · Sales Floor</div>
+                  <p className="text-small text-ink-muted">Real buyer conversations on your calendar. No cold email, no ad spend.</p>
                 </div>
                 <div className="border-t-2 border-accent pt-4">
-                  <div className="text-small font-semibold mb-2">GTM Execution</div>
-                  <p className="text-small text-ink-muted">Remove the downstream bottlenecks. Ship campaigns and workflows with less friction.</p>
+                  <div className="text-small font-semibold mb-2">Month 5 · Operations</div>
+                  <p className="text-small text-ink-muted">Move the routine out of your head. You stop being the ceiling.</p>
                 </div>
               </div>
               <p className="text-body italic text-ink-muted mb-8">Human for Trust. AI for Scale.</p>

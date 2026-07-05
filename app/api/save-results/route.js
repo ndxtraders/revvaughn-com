@@ -1,30 +1,26 @@
 import { NextResponse } from 'next/server'
 
 // Maps question index to MailerLite field key
-// Q14 (index 13) and Q15 (index 14) are null — not sent to MailerLite
 const FIELD_MAP = [
-  'vacation_test',   // Q1
-  'missed_emails',   // Q2
-  'brain_trap',      // Q3
-  'lead_response',   // Q4
-  'content_grind',   // Q5
-  'spam_outreach',   // Q6
-  'slow_quotes',     // Q7
-  'lead_neglect',    // Q8
-  'upsell_miss',     // Q9
-  'scope_creep',     // Q10
-  'time_tracking',   // Q11
-  'copy_paste_pain', // Q12
-  'client_churn',    // Q13
-  null,              // Q14 — not tracked in MailerLite
-  null,              // Q15 — not tracked in MailerLite
+  'lookalike',         // Q1  — Authority Engine
+  'content_grind',     // Q2  — Authority Engine
+  'invisible_online',  // Q3  — Authority Engine
+  'empty_calendar',    // Q4  — Pipeline Engine
+  'ignored_outreach',  // Q5  — Pipeline Engine
+  'feast_or_famine',   // Q6  — Pipeline Engine
+  'price_objection',   // Q7  — Conversion Engine
+  'cold_fast',         // Q8  — Conversion Engine
+  'slow_quotes',       // Q9  — Conversion Engine
+  'vacation_test',     // Q10 — Founder Freedom
+  'brain_trap',        // Q11 — Founder Freedom
+  'bottleneck',        // Q12 — Founder Freedom
 ]
 
 export async function POST(request) {
   try {
     const { email, answers, totalFriction } = await request.json()
 
-    if (!email || !answers || answers.length !== 15) {
+    if (!email || !answers || answers.length !== 12) {
       return NextResponse.json({ error: 'Invalid data' }, { status: 400 })
     }
 
