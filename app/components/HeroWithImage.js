@@ -23,7 +23,7 @@ export default function HeroWithImage() {
         <div className="hidden md:block pt-10">
           <div className="relative aspect-[4/5] w-full border border-rule">
             <Image
-              src="/Rev Vaughn Hero.png"
+              src="/Rev-Vaughn-800.jpg"
               alt="Rev Vaughn"
               fill
               sizes="320px"
