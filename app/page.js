@@ -286,8 +286,9 @@ export default function Home() {
                 Stop being the bottleneck in your business.
               </h2>
               <p className="text-lead text-ink-muted mb-8">
-                Hire 24 AI Assistants across 6 departments, one a week for six months. Each one plugs into
-                Maestro, your Command Center. You keep the voice. The team runs the work.
+                Hire 24 AI Assistants across 6 departments — a new department each month for six months.
+                Each one plugs into Maestro, your Command Center, who reviews their work before it reaches you.
+                You keep the voice. The team runs the work.
               </p>
               <p className="text-body italic text-ink-muted mb-8">Human for Trust. AI for Scale.</p>
               <Button href="/ai-inner-circle" variant="primary">Learn More</Button>

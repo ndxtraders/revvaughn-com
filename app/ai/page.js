@@ -936,7 +936,7 @@ export default function MapPage() {
                       Your biggest breaking point is your {worstPillar}.
                     </h3>
                     <p className="text-lead text-paper opacity-80 mb-12">
-                      Good news: the membership starts you exactly here. Hire the AI Assistants that fix it, one a week.
+                      Good news: the membership starts you exactly here. Hire the AI Assistants that fix it, a department a month.
                     </p>
                   </>
                 ) : (

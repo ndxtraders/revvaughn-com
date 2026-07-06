@@ -53,10 +53,10 @@ const OFFERS = [
     eyebrow: 'Stay sharp · Membership & coaching',
     title: 'Keep your voice. Let AI carry the workload.',
     body:
-      'A private community and 1:1 coaching for founder-led brands building GTM and revenue systems with AI. One new skill every week, live workshops, and a Friday Q&A — so the execution that used to slow you down finally runs without you.',
+      'A private community and 1:1 coaching for founder-led brands building GTM and revenue systems with AI. A new department of AI Assistants each month, live workshops, and a Friday Q&A — so the execution that used to slow you down finally runs without you.',
     cta: 'Join AI Inner Circle',
     href: '/ai-inner-circle',
-    note: 'From $149/month',
+    note: 'From $199/month',
     img: '/AI-Inner-Circle-Logo-940.jpg',
     imgAlt: 'AI Inner Circle',
     w: 240,

@@ -8,7 +8,7 @@ import WaitlistForm from '../components/WaitlistForm'
 export const metadata = {
   title: 'AI Inner Circle Membership | Rev Vaughn',
   description:
-    'AI Assistants that attract and convert buyers for you. One new Assistant every week, built in your voice. Founder-led B2B membership from Rev Vaughn.',
+    'AI Assistants that attract and convert buyers for you. A full team of 24, built in your voice, run by Maestro. Founder-led B2B membership from Rev Vaughn.',
 }
 
 // ---------------------------------------------------------------------------
@@ -167,7 +167,9 @@ const ORG_CHART = `YOU
         Invoice & Payment Chaser · GTM Teardown & Rebuild`
 
 const INCLUDED = [
-  ['One new AI Assistant every week', '24 over six months. Each one fixes a real problem. It drops Tuesday. You use it that day.'],
+  ['A new department of Assistants every month', 'All 24 across six months, built in your voice. A full department lands each month; Rev demos one a week so you always know how to use it.'],
+  ['A live command board of everything in flight', 'One screen shows every task your team touches — queued, in progress, waiting on you, done. You always know where things stand without asking a soul.'],
+  ['Maestro reviews the work before you ever see it', 'Your Chief of Staff checks every deliverable against your standards, sends weak drafts back for a rewrite on his own, and only surfaces what’s ready. You approve or ask for changes. You stop being the one who chases.'],
   ['1–2 live workshops every month', 'The month’s big move, walked through step by step. Live or pre-recorded.'],
   ['Friday Q&A with Rev', 'Bring what you’re stuck on. Get unstuck before the weekend.'],
   ['Daily access inside the community', 'A direct line to Rev and the room, every day.'],
@@ -202,8 +204,11 @@ const FAQ = [
   ['Which AI do I need?', 'Claude. That’s the only subscription required. The Assistants are built to run there.'],
   ['How much time per week?', 'Plan on about an hour to install and use the week’s Assistant. That hour buys back far more.'],
   ['Will this work for my B2B service?', 'Yes. It fits founder-led B2B service businesses: coaches, consultants, agencies, done-for-you services.'],
-  ['Anything cost extra beyond the $149?', 'Two small, optional things for the outreach month: a paid LinkedIn plan, and a few dollars of pay-as-you-go Apify. No expensive CRM, no cold-email tools.'],
+  ['Anything cost extra beyond the price?', 'Two small, optional things for the outreach month: a paid LinkedIn plan, and a few dollars of pay-as-you-go Apify. No expensive CRM, no cold-email tools.'],
   ['Do I keep the Assistants if I cancel?', 'Yes. They live in your own folder on your own machine. What you build is yours to keep.'],
+  ['What’s the difference between the monthly plan and the one-time option?', 'Same team, same community. Monthly is $199 and unlocks one department a month. The one-time $995 is six months for the price of five — Maestro and all 24 Assistants unlocked today, no recurring charge, price locked, yours to keep. Workshops and weekly demos are still released on schedule for everyone. Most members take the one-time.'],
+  ['How do I keep track of what the team is doing?', 'A live command board. Every task the Assistants touch moves across it — queued, in progress, waiting on your review, done. Open it any morning and the whole picture is there, already up to date.'],
+  ['Do I have to check all the AI’s work myself?', 'No. Maestro reviews each deliverable first, against your voice and your standards, and sends anything weak back for a rewrite before you see it. You just approve what’s ready or ask for a change.'],
 ]
 
 // ---------------------------------------------------------------------------
@@ -225,14 +230,14 @@ export default function AIInnerCirclePage() {
                 AI Assistants that attract and convert buyers for you.
               </h1>
               <p className="text-lead text-ink-muted mb-4">
-                You get the actual skills. One new Assistant drops every week. Each one does real work in your voice.
+                You get the actual skills — a full team of 24, built in your voice, run by a Chief of Staff who reviews their work before it reaches you.
               </p>
               <p className="text-body text-ink-soft mb-8">
                 The difference is simple. <span className="text-ink font-medium">The AI knows you now.</span>
               </p>
               <WaitlistForm buttonLabel="Join the Waitlist" />
               <p className="text-small text-ink-muted mt-4">
-                Founding cohort. Enrollment closes <span className="text-ink font-medium">August 1</span>. Founding price is $149 a month. Regular price is $199.{' '}
+                Founding cohort. Enrollment closes <span className="text-ink font-medium">August 1</span>. Founding price is $199 a month before it rises to $249 — or own the whole team once for $995.{' '}
                 <Link href="/ai" className="text-accent underline underline-offset-2 hover:no-underline">
                   Not sure yet? Take the 5-minute assessment &rarr;
                 </Link>
@@ -366,20 +371,42 @@ export default function AIInnerCirclePage() {
               </p>
             </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 text-body text-ink-soft">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-body text-ink-soft">
             <div>
               <p className="text-ink font-medium mb-1">1. Command Center first</p>
               <p>Your Assistants learn your voice, offer, and market once, up front.</p>
             </div>
             <div>
-              <p className="text-ink font-medium mb-1">2. One Assistant every Tuesday</p>
-              <p>A new skill drops each week. You use it that same day.</p>
+              <p className="text-ink font-medium mb-1">2. A department every month</p>
+              <p>All 24 Assistants over six months. Rev demos one a week so nothing overwhelms you.</p>
             </div>
             <div>
               <p className="text-ink font-medium mb-1">3. It stacks up</p>
               <p>Each one plugs into the Center. Nothing gets forgotten.</p>
             </div>
+            <div>
+              <p className="text-ink font-medium mb-1">4. One board, full visibility</p>
+              <p>Every task moves across your command board. You see the whole operation at a glance.</p>
+            </div>
           </div>
+        </Section>
+
+        {/* 7b. YOU APPROVE, YOU DON'T OPERATE */}
+        <Section bg="grey" width="content">
+          <div className="eyebrow mb-4">You approve. You don’t operate.</div>
+          <h2 className="text-h1 font-semibold tracking-tight text-ink mb-6 max-w-prose">
+            Maestro runs the team so you don’t have to.
+          </h2>
+          <p className="text-body text-ink-soft max-w-prose mb-4">
+            You don’t manage 24 Assistants. You manage one. Maestro assigns the
+            work, checks it against your voice and your standards, and quietly
+            sends the weak stuff back for a rewrite. What lands on your board is
+            already good.
+          </p>
+          <p className="text-body text-ink-soft max-w-prose">
+            Your job shrinks to two words: approve, or “change this.” The chasing,
+            the QA, the “did that ever get done” — that’s his.
+          </p>
         </Section>
 
         {/* 8. THE 6-MONTH JOURNEY */}
@@ -433,7 +460,7 @@ export default function AIInnerCirclePage() {
                 <pre className="text-small text-ink-soft leading-relaxed whitespace-pre font-mono">{ORG_CHART}</pre>
               </div>
               <p className="text-body text-ink-muted mt-4 max-w-prose">
-                Twenty-four Assistants. Six departments. All reporting to Maestro. Cancel anytime and the team stays yours.
+                Twenty-four Assistants. Six departments. All reporting to Maestro — who assigns the work, reviews it, and sends it back for changes before it ever reaches you. You approve the finished work. Cancel anytime and the team stays yours.
               </p>
             </div>
           </div>
@@ -539,27 +566,54 @@ export default function AIInnerCirclePage() {
         {/* 13. PRICING */}
         <Section bg="paper" width="content">
           <div className="text-center mb-10">
-            <div className="eyebrow mb-4">Founding price</div>
+            <div className="eyebrow mb-4">Choose your way in</div>
             <h2 className="text-h1 font-semibold tracking-tight text-ink">
               Less than one lost deal. Less than one agency invoice.
             </h2>
           </div>
-          <div className="max-w-md mx-auto border-2 border-accent bg-paper p-8">
-            <div className="eyebrow mb-4">AI Inner Circle</div>
-            <div className="text-display font-semibold text-ink mb-1">$149</div>
-            <div className="text-small text-ink-muted mb-8">per month · founding price (regular $199)</div>
-            <ul className="space-y-3 text-body text-ink-soft mb-8">
-              <li className="flex gap-3"><span className="text-accent mt-1">–</span>A new AI Assistant every week</li>
-              <li className="flex gap-3"><span className="text-accent mt-1">–</span>1–2 live workshops per month</li>
-              <li className="flex gap-3"><span className="text-accent mt-1">–</span>Friday Q&amp;A with Rev</li>
-              <li className="flex gap-3"><span className="text-accent mt-1">–</span>Daily access inside the community</li>
-              <li className="flex gap-3"><span className="text-accent mt-1">–</span>Your Command Center, set up with you</li>
-            </ul>
-            <WaitlistForm buttonLabel="Join the Waitlist" />
-            <p className="text-small text-ink-muted mt-4">
-              Enrollment closes August 1. A 1:1 coaching tier opens soon at $999 a month.
-            </p>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto items-start">
+
+            {/* One-time — the hero */}
+            <div className="border-2 border-accent bg-paper p-8 relative md:-mt-2">
+              <div className="inline-block bg-accent text-paper text-eyebrow uppercase tracking-widest px-3 py-1 mb-4">
+                Best value · own it outright
+              </div>
+              <div className="text-display font-semibold text-ink mb-1">$995</div>
+              <div className="text-small text-ink-muted mb-6">one time · the whole team is yours today</div>
+              <p className="text-body text-ink font-medium mb-6">
+                Six months for the price of five. Every Assistant unlocked today, not six months from now.
+              </p>
+              <ul className="space-y-3 text-body text-ink-soft mb-8">
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Maestro and all 24 Assistants, unlocked immediately</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>A full month free — $199 &times; 5 covers all six</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>No recurring charge. Price locked. Yours to keep</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Live workshops &amp; weekly demos as they’re released</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Friday Q&amp;A and daily community access</li>
+              </ul>
+              <WaitlistForm buttonLabel="Get the Full Team" />
+            </div>
+
+            {/* Monthly — the secondary */}
+            <div className="border border-rule bg-paper p-8">
+              <div className="eyebrow mb-4">Or pay monthly</div>
+              <div className="text-display font-semibold text-ink mb-1">$199</div>
+              <div className="text-small text-ink-muted mb-6">per month · founding price, rises to $249</div>
+              <p className="text-body text-ink-soft mb-6">
+                Unlock one department a month as we go. What you build stays yours.
+              </p>
+              <ul className="space-y-3 text-body text-ink-soft mb-8">
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>A new department every month</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>1–2 live workshops per month</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Friday Q&amp;A with Rev</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Daily community access</li>
+                <li className="flex gap-3"><span className="text-accent mt-1">–</span>Your Command Center, set up with you</li>
+              </ul>
+              <WaitlistForm buttonLabel="Join the Waitlist" />
+            </div>
           </div>
+          <p className="text-small text-ink-muted mt-6 text-center">
+            Enrollment closes August 1. A 1:1 coaching tier opens soon at $999 a month.
+          </p>
         </Section>
 
         {/* 14. RISK REVERSAL */}
@@ -598,7 +652,7 @@ export default function AIInnerCirclePage() {
               The AI knows you now. Put it to work.
             </h2>
             <p className="text-lead text-ink-muted mb-8 max-w-prose mx-auto">
-              Join the founding cohort before enrollment closes August 1. Lock in $149 a month.
+              Join the founding cohort before enrollment closes August 1. Lock in $199 a month before it rises to $249 — or own the whole team once for $995.
             </p>
             <div className="flex justify-center mb-6">
               <WaitlistForm buttonLabel="Join the Waitlist" />
