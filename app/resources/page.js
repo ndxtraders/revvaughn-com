@@ -51,7 +51,7 @@ export default function ResourcesPage() {
               The Future of AI Agents in Business
             </h3>
             <p className="text-body text-ink-muted leading-relaxed mb-6">
-              One big AI assistant always breaks down. The fix isn&rsquo;t a better prompt &mdash; it&rsquo;s composition over inheritance: a coordinator running a team of small specialists, the same shift the whole AI industry is converging on.
+              One big AI assistant always breaks down. The fix isn&rsquo;t a better prompt &mdash; it&rsquo;s an orchestator running a team of small specialists, the same shift the whole AI industry is converging on.
             </p>
             <Button href="/articles/future-of-ai-agents-in-business" variant="primary">
               Read Article &rarr;
