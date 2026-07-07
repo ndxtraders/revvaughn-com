@@ -320,7 +320,7 @@ export default function CaseStudies() {
         <Section bg="paper" width="content">
           <p className="eyebrow mb-6">Selected Win / 05</p>
           <h2 className="text-h1 font-semibold leading-tight mb-10">
-            The $1M control campaign for 10X Business Coach.
+            $1M control campaign for 10X Business Coach.
           </h2>
           <div className="mb-12">
             <Image
@@ -367,7 +367,7 @@ export default function CaseStudies() {
         <Section bg="grey" width="content">
           <p className="eyebrow mb-6">Selected Win / 06</p>
           <h2 className="text-h1 font-semibold leading-tight mb-10">
-            A 59% open rate on a high-ticket investor list.
+            59% open rate on a high-ticket investor list.
           </h2>
           <div className="mb-12">
             <Image
@@ -416,7 +416,7 @@ export default function CaseStudies() {
         <Section bg="paper" width="content">
           <p className="eyebrow mb-6">Selected Win / 07</p>
           <h2 className="text-h1 font-semibold leading-tight mb-10">
-            A direct-to-consumer relaunch that lowered CAC while volume grew.
+            A direct-to-consumer relaunch that lowered acquisition costs while volume grew.
           </h2>
           <div className="mb-12">
             <Image
