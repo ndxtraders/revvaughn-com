@@ -534,26 +534,27 @@ export default function CaseStudies() {
     <div>
       <h3 className="text-h3 font-semibold mb-4">The Setup</h3>
       <div className="space-y-4 text-body text-ink leading-relaxed">
-        <p>Natalie Dawson wanted to grow her personal brand and launch her first course, Remix Your Business.</p>
+        <p>Natalie Dawson wanted to grow her personal brand and launch her first course, "Remix Your Business."</p>
         <p>Her audience already knew her, liked her, and trusted her. So the temptation was to send a few emails and let the relationship do the work.</p>
-        <p>That is where most warm launches leave money on the table.</p>
+        <p>That is where most warm launches leave money on the table... a whole lot of money.</p>
       </div>
     </div>
     <div>
       <h3 className="text-h3 font-semibold mb-4">The Work</h3>
       <div className="space-y-4 text-body text-ink leading-relaxed">
-        <p>I ran the internal launch. And here is a myth worth killing. A warm list sells itself. It does not.</p>
-        <p>Trust gets you attention. It does not fill a live class on its own. That takes real promotion. So we promoted.</p>
+        <p>And here is a myth worth killing. A warm list sells itself. Na-na. No, it does not.</p>
+        <p>Trust might get you in the door, but it doesn't close a live class on its own. That takes real promotion. So we promoted. I created the internal launch campaign all in Natalie's unique voice, style and tone.</p>
       </div>
+        <h3 className="text-h3 font-semibold mb-4">The Campaign</h3>
       <ul className="space-y-2 text-body text-ink my-4">
         <li>2 pre-launch, 9 launch, and 4 nurture emails</li>
-        <li>32 show-up emails and texts for the live class</li>
-        <li>4 replay emails and 4 testimonial emails</li>
+        <li>32 show-up emails and texts to boost attandance at the live class</li>
+        <li>4 replay emails and 4 testimonial getting emails</li>
         <li>2 landing pages and a thank-you page</li>
-        <li>A webinar to sell the program</li>
+        <li>A webinar script to sell the program</li>
       </ul>
       <p className="text-body text-ink leading-relaxed">
-        The 32 show-up touches did the heavy lifting. Getting a warm audience to show up live is the hard part, and it is where most launches quietly fail.
+        Here's what you might not know: Getting a warm audience to show up live is the hard part. And that's what this campaign delivered.
       </p>
     </div>
     <div>
@@ -562,13 +563,13 @@ export default function CaseStudies() {
         <li>61.92% open rate</li>
         <li>14.96% Click-Through Rate (CTR)</li>
         <li>42.91% conversion rate</li>
-        <li>1,205 people through the program</li>
+        <li>1,205 people through the program (the last time I heard)</li>
       </ul>
     </div>
     <div>
       <h3 className="text-h3 font-semibold mb-4">The Takeaway</h3>
       <p className="text-body text-ink leading-relaxed">
-        Even when people know, like, and trust you, you still have to promote. Then promote again. Trust gets your email opened. It does not close the sale for you. That part still takes a real launch.
+        Even when people know, like, and trust you, you still have to promote. Then promote again. And promote again. Trust does not close the sale for you. That part still takes a real launch.
       </p>
     </div>
   </div>
