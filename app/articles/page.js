@@ -15,7 +15,7 @@ const FEATURED = {
   date: 'Jan 2, 2026',
   readTime: '9 min read',
   excerpt:
-    'One big AI assistant always breaks down. The fix isn\'t a better prompt — it\'s composition over inheritance: a coordinator running a team of small specialists, the same shift the whole AI industry is converging on.',
+    'One big AI assistant always breaks down. The fix isn\'t a better prompt — it\'s composition over inheritance: an orchestator running a team of small specialists, the same shift the whole AI industry is converging on.',
 }
 
 const ARTICLES = [
