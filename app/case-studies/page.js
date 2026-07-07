@@ -515,40 +515,6 @@ export default function CaseStudies() {
           </div>
         </Section>
 
-        {/* CLIENT LOGO STRIP */}
-        <section className="bg-paper-grey border-y border-rule py-12">
-          <div className="max-w-wide mx-auto px-6">
-            <p className="text-h3 font-semibold text-ink mb-6 text-center">
-              Clients &amp; Campaigns
-            </p>
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-body text-ink-soft">
-              {CLIENTS.map((c) => (
-                <span key={c} className="whitespace-nowrap">{c}</span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* WHAT THE EXPERTS SAY */}
-        <Section bg="paper" width="wide">
-          <div className="max-w-prose mb-14">
-            <p className="eyebrow mb-6">What the Experts Say</p>
-            <h2 className="text-h1 font-semibold">Selected endorsements.</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-x-10 gap-y-14">
-            {ENDORSEMENTS.map((e) => (
-              <blockquote key={e.name} className="border-l-2 border-accent pl-6">
-                <p className="text-body text-ink mb-6 leading-relaxed">&ldquo;{e.quote}&rdquo;</p>
-                <footer className="text-small">
-                  <div className="font-semibold text-ink">{e.name}</div>
-                  <div className="text-ink-muted">{e.title}</div>
-                  {e.org && <div className="text-ink-faint">{e.org}</div>}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </Section>
-
 {/* SELECTED WIN / 09 */}
 <Section bg="paper" width="content">
   <p className="eyebrow mb-6">Selected Win / 09</p>
@@ -615,6 +581,40 @@ export default function CaseStudies() {
     </Button>
   </div>
 </Section>
+  
+        {/* CLIENT LOGO STRIP */}
+        <section className="bg-paper-grey border-y border-rule py-12">
+          <div className="max-w-wide mx-auto px-6">
+            <p className="text-h3 font-semibold text-ink mb-6 text-center">
+              Clients &amp; Campaigns
+            </p>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-body text-ink-soft">
+              {CLIENTS.map((c) => (
+                <span key={c} className="whitespace-nowrap">{c}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT THE EXPERTS SAY */}
+        <Section bg="paper" width="wide">
+          <div className="max-w-prose mb-14">
+            <p className="eyebrow mb-6">What the Experts Say</p>
+            <h2 className="text-h1 font-semibold">Selected endorsements.</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-x-10 gap-y-14">
+            {ENDORSEMENTS.map((e) => (
+              <blockquote key={e.name} className="border-l-2 border-accent pl-6">
+                <p className="text-body text-ink mb-6 leading-relaxed">&ldquo;{e.quote}&rdquo;</p>
+                <footer className="text-small">
+                  <div className="font-semibold text-ink">{e.name}</div>
+                  <div className="text-ink-muted">{e.title}</div>
+                  {e.org && <div className="text-ink-faint">{e.org}</div>}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </Section>
 
         {/* CLOSING CTA */}
         <Section bg="grey" width="content">
