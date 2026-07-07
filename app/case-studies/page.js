@@ -545,6 +545,7 @@ export default function CaseStudies() {
         <p>And here is a myth worth killing. A warm list sells itself. Na-na. No, it does not.</p>
         <p>Trust might get you in the door, but it doesn't close a live class on its own. That takes real promotion. So we promoted. I created the internal launch campaign all in Natalie's unique voice, style and tone.</p>
       </div>
+         </p>
         <h3 className="text-h3 font-semibold mb-4">The Campaign</h3>
       <ul className="space-y-2 text-body text-ink my-4">
         <li>2 pre-launch, 9 launch, and 4 nurture emails</li>
