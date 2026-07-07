@@ -549,6 +549,73 @@ export default function CaseStudies() {
           </div>
         </Section>
 
+{/* SELECTED WIN / 09 */}
+<Section bg="paper" width="content">
+  <p className="eyebrow mb-6">Selected Win / 09</p>
+  <h2 className="text-h1 font-semibold leading-tight mb-10">
+    Even a warm audience needs a full launch.
+  </h2>
+  <div className="mb-12">
+    <Image
+      src="/remix-your-business.webp"
+      alt="Remix Your Business launch"
+      width={1280}
+      height={720}
+      className="w-full h-auto grayscale"
+    />
+  </div>
+  <div className="space-y-10">
+    <div>
+      <h3 className="text-h3 font-semibold mb-4">The Setup</h3>
+      <div className="space-y-4 text-body text-ink leading-relaxed">
+        <p>Natalie Dawson wanted to grow her personal brand and launch her first course, Remix Your Business.</p>
+        <p>Her audience already knew her, liked her, and trusted her. So the temptation was to send a few emails and let the relationship do the work.</p>
+        <p>That is where most warm launches leave money on the table.</p>
+      </div>
+    </div>
+    <div>
+      <h3 className="text-h3 font-semibold mb-4">The Work</h3>
+      <div className="space-y-4 text-body text-ink leading-relaxed">
+        <p>I ran the internal launch. And here is a myth worth killing. A warm list sells itself. It does not.</p>
+        <p>Trust gets you attention. It does not fill a live class on its own. That takes real promotion. So we promoted.</p>
+      </div>
+      <ul className="space-y-2 text-body text-ink my-4">
+        <li>2 pre-launch, 9 launch, and 4 nurture emails</li>
+        <li>32 show-up emails and texts for the live class</li>
+        <li>4 replay emails and 4 testimonial emails</li>
+        <li>2 landing pages and a thank-you page</li>
+        <li>A webinar to sell the program</li>
+      </ul>
+      <p className="text-body text-ink leading-relaxed">
+        The 32 show-up touches did the heavy lifting. Getting a warm audience to show up live is the hard part, and it is where most launches quietly fail.
+      </p>
+    </div>
+    <div>
+      <h3 className="text-h3 font-semibold mb-4">The Numbers</h3>
+      <ul className="space-y-2 text-body text-ink">
+        <li>61.92% open rate</li>
+        <li>14.96% Click-Through Rate (CTR)</li>
+        <li>42.91% conversion rate</li>
+        <li>1,205 people through the program</li>
+      </ul>
+    </div>
+    <div>
+      <h3 className="text-h3 font-semibold mb-4">The Takeaway</h3>
+      <p className="text-body text-ink leading-relaxed">
+        Even when people know, like, and trust you, you still have to promote. Then promote again. Trust gets your email opened. It does not close the sale for you. That part still takes a real launch.
+      </p>
+    </div>
+  </div>
+  <div className="mt-12 border-t border-rule pt-10">
+    <p className="text-body text-ink-muted leading-relaxed mb-6">
+      Sitting on a warm list and a new offer? A Quick Win Consult maps the launch that gets them to show up and buy.
+    </p>
+    <Button href="https://revvaughn.com/quick-win/" external variant="primary">
+      Book a Quick Win Consult &rarr;
+    </Button>
+  </div>
+</Section>
+
         {/* CLOSING CTA */}
         <Section bg="grey" width="content">
           <p className="eyebrow mb-6">Work with me</p>
