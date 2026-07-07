@@ -44,7 +44,21 @@ export default function ResourcesPage() {
           <p className="text-lead text-ink-muted leading-relaxed mb-10">
             Thought leadership on AI writing, revenue systems, and marketing strategy. Written when I have something worth saying.
           </p>
-          <Button href="/articles" variant="primary">Browse Articles &rarr;</Button>
+
+          <div className="border border-accent bg-paper p-8 mb-10">
+            <p className="eyebrow mb-4">Featured Article</p>
+            <h3 className="text-h2 font-semibold text-ink leading-snug mb-3">
+              The Future of AI Agents in Business
+            </h3>
+            <p className="text-body text-ink-muted leading-relaxed mb-6">
+              One big AI assistant always breaks down. The fix isn&rsquo;t a better prompt &mdash; it&rsquo;s composition over inheritance: a coordinator running a team of small specialists, the same shift the whole AI industry is converging on.
+            </p>
+            <Button href="/articles/future-of-ai-agents-in-business" variant="primary">
+              Read Article &rarr;
+            </Button>
+          </div>
+
+          <Button href="/articles" variant="secondary">Browse All Articles &rarr;</Button>
         </Section>
 
         {/* Case Studies */}

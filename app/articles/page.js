@@ -9,6 +9,15 @@ export const metadata = {
     'Thought leadership from Rev Vaughn on AI writing, revenue systems, and marketing strategy for founder-led brands.',
 }
 
+const FEATURED = {
+  slug: 'future-of-ai-agents-in-business',
+  title: 'The Future of AI Agents in Business',
+  date: 'Jan 2, 2026',
+  readTime: '9 min read',
+  excerpt:
+    'One big AI assistant always breaks down. The fix isn\'t a better prompt — it\'s composition over inheritance: a coordinator running a team of small specialists, the same shift the whole AI industry is converging on.',
+}
+
 const ARTICLES = [
   {
     slug: 'how-ai-content-destroys-trust',
@@ -53,6 +62,25 @@ export default function ArticlesPage() {
           <p className="text-lead text-ink-muted leading-relaxed">
             AI writing, revenue systems, and marketing strategy for founder-led brands. Written when I have something worth saying.
           </p>
+        </Section>
+
+        {/* Featured article */}
+        <Section bg="grey" width="content">
+          <div className="border border-accent bg-paper p-8 md:p-10">
+            <p className="eyebrow mb-4">Featured Article</p>
+            <div className="text-small text-ink-muted mb-3">
+              {FEATURED.date} &middot; {FEATURED.readTime}
+            </div>
+            <h2 className="text-h2 font-semibold text-ink leading-snug mb-4">
+              {FEATURED.title}
+            </h2>
+            <p className="text-body text-ink-muted leading-relaxed mb-6">
+              {FEATURED.excerpt}
+            </p>
+            <Button href={`/articles/${FEATURED.slug}`} variant="primary">
+              Read Article &rarr;
+            </Button>
+          </div>
         </Section>
 
         {/* Article list */}
