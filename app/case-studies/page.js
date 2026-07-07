@@ -538,22 +538,25 @@ export default function CaseStudies() {
         <p>Her audience already knew her, liked her, and trusted her. So the temptation was to send a few emails and let the relationship do the work.</p>
         <p>That is where most warm launches leave money on the table... a whole lot of money.</p>
       </div>
-    </div>
     <div>
-      <h3 className="text-h3 font-semibold mb-4">The Work</h3>
-      <div className="space-y-4 text-body text-ink leading-relaxed">
-        <p>And here is a myth worth killing. A warm list sells itself. Na-na. No, it does not.</p>
-        <p>Trust might get you in the door, but it doesn't close a live class on its own. That takes real promotion. So we promoted. I created the internal launch campaign all in Natalie's unique voice, style and tone.</p>
-      </div>
-    </div>
-        <h3 className="text-h3 font-semibold mb-4">The Campaign</h3>
-      <ul className="space-y-2 text-body text-ink my-4">
-        <li>2 pre-launch, 9 launch, and 4 nurture emails</li>
-        <li>32 show-up emails and texts to boost attandance at the live class</li>
-        <li>4 replay emails and 4 testimonial getting emails</li>
-        <li>2 landing pages and a thank-you page</li>
-        <li>A webinar script to sell the program</li>
-      </ul>
+      <div>
+  <h3 className="text-h3 font-semibold mb-4">The Work</h3>
+  <div className="space-y-4 text-body text-ink leading-relaxed">
+    <p>And here is a myth worth killing. A warm list sells itself. Na-na. No, it does not.</p>
+    <p>Trust might get you in the door, but it doesn&rsquo;t close a live class on its own. That takes real promotion. So we promoted. I created the internal launch campaign all in Natalie&rsquo;s unique voice, style and tone.</p>
+  </div>
+</div>
+<div>
+  <h3 className="text-h3 font-semibold mb-4">The Campaign</h3>
+  <ul className="space-y-2 text-body text-ink my-4">
+    <li>2 pre-launch, 9 launch, and 4 nurture emails</li>
+    <li>32 show-up emails and texts to boost attendance at the live class</li>
+    <li>4 replay emails and 4 testimonial getting emails</li>
+    <li>2 landing pages and a thank-you page</li>
+    <li>A webinar script to sell the program</li>
+  </ul>
+</div>
+
       <p className="text-body text-ink leading-relaxed">
         Here's what you might not know: Getting a warm audience to show up live is the hard part. And that's what this campaign delivered.
       </p>
