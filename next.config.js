@@ -21,9 +21,10 @@ const nextConfig = {
       { source: '/coach-s-checklist', destination: '/resources', permanent: true },
       // Legacy AI Priority Map landing page — superseded by /ai
       { source: '/ai-priority-map', destination: '/ai', permanent: true },
-      // aiinnercircle.com domain redirect → AI Inner Circle page
-      { source: '/:path*', has: [{ type: 'host', value: 'aiinnercircle.com' }], destination: 'https://revvaughn.com/ai-inner-circle', permanent: true },
-      { source: '/:path*', has: [{ type: 'host', value: 'www.aiinnercircle.com' }], destination: 'https://revvaughn.com/ai-inner-circle', permanent: true },
+      // NOTE: the aiinnercircle.com / www.aiinnercircle.com host redirects were
+      // removed. aiinnercircle.com is now its own Vercel project. Re-adding a
+      // catch-all host redirect here would 301 that entire site into
+      // revvaughn.com/ai-inner-circle the moment its DNS points at Vercel.
     ]
   },
 }
