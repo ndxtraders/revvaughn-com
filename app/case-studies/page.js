@@ -484,8 +484,7 @@ export default function CaseStudies() {
             <div>
               <h3 className="text-h3 font-semibold mb-4">The Build</h3>
               <div className="space-y-4 text-body text-ink leading-relaxed">
-                <p>I re-engineered the acquisition funnel and the launch messaging. Then we added AI workflows that got a writer 80% of the way to good copy.</p>
-                <p>No drift. No hallucinations. Human judgment finished the last 20%.</p>
+                <p>I re-engineered the acquisition funnel and the launch messaging. The team added AI workflows that got a writer 80% of the way to good copy. Human judgment finished the last 20%.</p>
                 <p>That is the whole idea behind one of my core philosophies. Human for Trust. AI for Scale. You need the human in the loop for the part that builds trust.</p>
               </div>
             </div>
